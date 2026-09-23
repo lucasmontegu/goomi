@@ -1,22 +1,27 @@
 {
   "expo": {
-    "name": "goomi",
+    "name": "Goomi",
     "slug": "goomi",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/goomi/app-icon.png",
     "scheme": "goomi",
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.goomi"
+      "bundleIdentifier": "com.anonymous.goomi",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSPhotoLibraryUsageDescription": "Goomi reads the images you choose so it can turn your notes and slides into recall prompts.",
+        "NSCameraUsageDescription": "Take a photo of your notes so Goomi can turn them into recall prompts."
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "backgroundColor": "#D9FF6B",
+        "foregroundImage": "./assets/goomi/android-foreground.png",
+        "backgroundImage": "./assets/goomi/android-background.png",
+        "monochromeImage": "./assets/goomi/android-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
       "package": "com.anonymous.goomi"
@@ -24,26 +29,43 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/goomi/app-icon.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
+          "image": "./assets/goomi/splash.png",
+          "imageWidth": 220,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff",
+          "backgroundColor": "#FAFAF8",
           "dark": {
-            "backgroundColor": "#000000"
+            "image": "./assets/goomi/splash.png",
+            "backgroundColor": "#0F0F10"
           }
+        }
+      ],
+      "expo-image",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "17.4"
+          }
+        }
+      ],
+      [
+        "./plugins/with-goomi-screen-time",
+        {
+          "mascotImage": "./assets/goomi/poses/wave.png"
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "backgroundColor": "#FAFAF8"
   }
 }

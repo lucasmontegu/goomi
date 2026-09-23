@@ -8,6 +8,18 @@
       "computedHash": "4a04a46743f211420f0844d09110ba4f6219e70f59c89377ba0293650ec12ed4",
       "wellKnownDigest": "sha256:85611ea5ab31c54e745ad5ebaf994c6aff1405c58a218c26a7ecef02244193b6"
     },
+    "appllama-app-design-skill": {
+      "source": "appllama/appllama-skills",
+      "sourceType": "github",
+      "skillPath": "skills/appllama-app-design-skill/SKILL.md",
+      "computedHash": "023b25559a5e9a4ab85ccffc9612d0d0f650608eb7f281dce8408a32649b2340"
+    },
+    "appllama-usage": {
+      "source": "appllama/appllama-skills",
+      "sourceType": "github",
+      "skillPath": "skills/appllama-usage/SKILL.md",
+      "computedHash": "9b9ecf34e1585ad0e77d749e5e5178270ea1b73147459ef53db7340aa16eb4e2"
+    },
     "better-auth-best-practices": {
       "source": "better-auth/skills",
       "sourceType": "github",
