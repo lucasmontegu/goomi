@@ -2,7 +2,8 @@ import Constants, { ExecutionEnvironment } from "expo-constants";
 import { Platform } from "react-native";
 import type { CustomerInfo, PurchasesPackage } from "react-native-purchases";
 
-export const PLUS_ENTITLEMENT = "plus";
+/** RevenueCat entitlement identifier (dashboard: "Goomi Pro"). Shown to users as Goomi Plus. */
+export const PLUS_ENTITLEMENT = "goomi_pro";
 
 export type BillingError = { code: string; message: string; cancelled: boolean };
 export type BillingResult<T> = { ok: true; value: T } | { ok: false; error: BillingError };
@@ -37,7 +38,7 @@ export function billingAvailability(): { available: boolean; reason: string | nu
     return { available: false, reason: "Subscriptions are available in the Goomi iPhone and Android app." };
   }
   if (Constants.executionEnvironment === ExecutionEnvironment.StoreClient) {
-    return { available: false, reason: "Purchases need the Goomi development build or App Store app." };
+    return { available: false, reason: "Purchases need the Goomi app from the App Store." };
   }
   if (!apiKey()?.trim()) {
     return { available: false, reason: "Subscriptions are not available in this build yet." };

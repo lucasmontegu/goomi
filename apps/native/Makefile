@@ -3,16 +3,17 @@ APP_PROJECT := Goomi.xcodeproj
 APP_WORKSPACE := Goomi.xcworkspace
 APP_SCHEME ?= Goomi
 APP_PLATFORM := ios
-APP_GENERATOR := xcodegen
+# Expo owns the native project: `bunx expo prebuild --platform ios` generates ios/, never XcodeGen.
+APP_GENERATOR := expo
 CONFIGURATION ?= Debug
 SIM_NAME ?= Goomi · iPhone 17 Pro Max
 TARGET_PREFIX := 
 SCRIPTS_DIR := ./scripts
 
-WORKSPACE ?= $(firstword $(wildcard *.xcworkspace))
-PROJECT ?= $(firstword $(wildcard *.xcodeproj))
+WORKSPACE ?= $(firstword $(wildcard ios/*.xcworkspace))
+PROJECT ?= $(firstword $(wildcard ios/*.xcodeproj))
 ifeq ($(strip $(PROJECT)),)
-PROJECT := $(APP_PROJECT)
+PROJECT := ios/$(APP_PROJECT)
 endif
 
 ifeq ($(strip $(WORKSPACE)),)

@@ -30,3 +30,11 @@ export const STREAK_MILESTONES = [3, 7, 14, 21, 30, 50, 75, 100, 150, 200, 365];
 export function plural(count: number, one: string, many = `${one}s`) {
   return `${count} ${count === 1 ? one : many}`;
 }
+
+const KIND_LABELS: Record<string, string> = {
+  'multiple-choice': 'Quick pick', 'true-false': 'True or false', geography: 'Map moment', vocabulary: 'New word', translation: 'Translate',
+  'mental-math': 'Mental math', logic: 'Logic', pattern: 'Pattern', 'art-identification': 'Art', 'spaced-recall': 'Recall', 'study-question': 'Your notes',
+  'image-identification': 'Look closely', 'fill-blank': 'Fill the gap', memory: 'Memory', sequence: 'Put in order', 'historical-order': 'Timeline',
+  matching: 'Match up', 'micro-sudoku': 'Micro sudoku', listening: 'Listen', pronunciation: 'Say it', reflection: 'Reflect', breathing: 'Breathe',
+};
+export function kindLabel(type: string): string { return KIND_LABELS[type] ?? 'Surprise'; }

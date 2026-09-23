@@ -14,7 +14,7 @@ const native = Platform.OS === 'ios'
 export const studyExtraction = {
   isAvailable: native !== null,
   async extractText(uri: string, kind: 'pdf' | 'image'): Promise<StudyExtraction> {
-    if (!native) throw new Error('PDF and image extraction needs the Goomi iOS development build. You can paste your notes instead.');
+    if (!native) throw new Error('Reading PDFs and photos works in Goomi on iPhone. You can paste your notes instead.');
     return native.extractText(uri, kind);
   },
 };

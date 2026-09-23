@@ -61,14 +61,14 @@ export function NumberVisual({ pattern }: { pattern: boolean }) {
   </Svg></View>;
 }
 
-export function ChallengeInteraction({ challenge, value, onChange }: { challenge: Challenge; value: Answer; onChange: (answer: Answer, ready: boolean) => void }) {
+export function ChallengeInteraction({ challenge, value, onChange, onSubmit }: { challenge: Challenge; value: Answer; onChange: (answer: Answer, ready: boolean) => void; onSubmit?: () => void }) {
   const [left, setLeft] = useState<string | null>(null);
   const [speaking, setSpeaking] = useState(false);
   useEffect(() => () => { void Speech.stop(); }, []);
   if (challenge.type === 'memory') return <MemoryInteraction challenge={challenge} value={value} onChange={onChange} />;
   if (challenge.type === 'breathing') return <Breath seconds={challenge.seconds ?? 12} onChange={onChange} />;
   if (challenge.type === 'reflection') return <View style={{ gap: 18 }}><TextInput accessibilityLabel="Your next small step" placeholder="My next small step is…" placeholderTextColor="#888A83" value={typeof value === 'string' ? value : ''} onChangeText={(text) => onChange(text, Boolean(text.trim()))} style={s.input} multiline maxLength={240} returnKeyType="done" /><Pressable onPress={() => onChange('I have my next step in mind', true)} style={{ minHeight: 44, justifyContent: 'center' }}><Txt size={12} color={palette.lavender} style={{ textAlign: 'center' }}>Or keep your answer to yourself</Txt></Pressable></View>;
-  if (challenge.type === 'fill-blank') return <View style={{ gap: 10 }}><TextInput autoCapitalize="none" autoCorrect={false} accessibilityLabel="Your answer" placeholder="Bring it back to mind…" placeholderTextColor="#888A83" value={typeof value === 'string' ? value : ''} onChangeText={(text) => onChange(text, Boolean(text.trim()))} style={s.input} maxLength={160} returnKeyType="done" /><Txt size={11} color="#A1A39B">A guess is a good place to start.</Txt></View>;
+  if (challenge.type === 'fill-blank') return <View style={{ gap: 10 }}><TextInput autoCapitalize="none" autoCorrect={false} submitBehavior="blurAndSubmit" onSubmitEditing={() => onSubmit?.()} accessibilityLabel="Your answer" placeholder="Bring it back to mind…" placeholderTextColor="#888A83" value={typeof value === 'string' ? value : ''} onChangeText={(text) => onChange(text, Boolean(text.trim()))} style={s.input} maxLength={160} returnKeyType="done" /><Txt size={11} color="#A1A39B">A guess is a good place to start.</Txt></View>;
   if (challenge.type === 'sequence' || challenge.type === 'historical-order') {
     const order = Array.isArray(value) ? value : [];
     return <View style={{ gap: 9 }}>

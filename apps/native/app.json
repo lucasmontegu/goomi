@@ -46,6 +46,12 @@
           }
         }
       ],
+      [
+        "expo-notifications",
+        {
+          "color": "#D9FF6B"
+        }
+      ],
       "expo-image",
       [
         "expo-build-properties",

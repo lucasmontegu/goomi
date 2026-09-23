@@ -33,9 +33,11 @@ const art: Record<PropName, () => ReactNode> = {
     <Defs><Clay id="sea" hi="#9FD4FF" mid="#3F95EC" lo="#1D5FBF" /><Clay id="land" hi="#B8F07A" mid="#62C94B" lo="#2F9A3A" /></Defs>
     <Floor w={28} />
     <Circle cx="50" cy="50" r="36" fill="url(#sea)" />
-    <Path d="M30 30c6-5 14-6 18-2 3 3-1 7 2 10 3 3 9 1 10 6 1 6-7 7-9 12-2 5 2 11-3 13-6 2-9-6-12-10-3-4-9-4-10-10-1-7-1-15 4-19z" fill="url(#land)" />
-    <Path d="M64 24c6 2 12 8 14 15 1 5-4 5-7 3-3-2-4-6-8-7-4-1-5-4-3-7 1-2 2-4 4-4z" fill="url(#land)" />
-    <Path d="M60 64c4-2 10-1 11 3 1 4-3 8-7 10-4 2-7 0-7-4 0-4 0-7 3-9z" fill="url(#land)" />
+    {/* The Americas, turned toward the viewer: North America up-left, South America tapering south. */}
+    <Path d="M22 27c6-8 19-12 29-9 5 2 4 7-1 9-4 2-3 6-6 9-3 3-8 3-10 7-1 2-4 2-5 0-2-4-6-5-8-9-1-3 0-5 1-7z" fill="url(#land)" />
+    <Path d="M40 45c3 1 6 3 8 6-2 1-5 0-7-2z" fill="url(#land)" />
+    <Path d="M49 52c6-2 13 1 15 7 2 5-2 9-5 14-2 5-3 11-7 13-2-2-1-8-3-13-2-5-4-10-3-15 0-3 1-5 3-6z" fill="url(#land)" />
+    <Path d="M68 22c5 1 9 4 11 8-3 1-7 0-10-3z" fill="url(#land)" />
     <Shine cx={36} cy={30} rx={9} ry={5} o={0.45} />
   </>,
   planet: () => <>

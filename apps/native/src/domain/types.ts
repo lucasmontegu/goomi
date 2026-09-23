@@ -96,6 +96,8 @@ export type Profile = {
   defaultMode: Mode;
   selectedApps: string[];
   estimatedUsageMinutes: number;
+  /** When scrolling tends to happen, as the user described it in onboarding. */
+  scrollMoments?: 'gaps' | 'focus' | 'evening' | 'all';
   onboardingComplete: boolean;
 };
 export type Settings = {

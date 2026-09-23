@@ -1,5 +1,34 @@
 # Goomi — continuation handoff
 
+## Status update — 2026-09-23 (design pass completed)
+
+The full app design is now implemented and **running in the dedicated simulator** (Goomi · iPhone 17 Pro Max, BD4B113C…). Everything below this section is the earlier handoff, kept for history; where it conflicts, this section wins.
+
+### What exists and was verified in the simulator (light + dark)
+- **Native build works.** `expo prebuild --platform ios` → `ios/Goomi.xcworkspace`, scheme `Goomi`. Pods need `LANG=en_US.UTF-8`. The Screen Time plugin had two real bugs (fixed): `addResourceFile` crashed (no Resources group) and extension groups had `path = undefined`; the shared Swift file is now copied per target as `<Target>+Shared.swift`.
+- **Brand assets:** `assets/goomi/poses/{wave,read,globe,sleep,celebrate,think}.png` (trimmed from the atlas), `app-icon.png`, `splash.png`, Android adaptive icons. `src/ui/props.tsx` = soft-clay SVG object library (globe, planet, atom, book, cards, flame…) matching the brand board's 3D elements.
+- **Design system:** `src/ui/theme.ts` (tokens, radius/space scale, springs), `use-theme.ts`, `core.tsx` (theme-aware Button/CircleButton/Header, haptics honor the setting), `kit.tsx` (Surface incl. `solidLime`, ListRow/Group, ModeSwitcher, Ring, WeekDots, GrowthBars, Doodle, Bubble, GoomiLoader, Notice, EmptyState, TopScrim), `mascot.tsx` (motion vocabulary: breathe/bounce/think/peek/sleep/still, contact shadow, poke).
+- **Screens:** onboarding (22 moments, keyboard-safe, real first challenge → reward → plan → paywall), paywall, challenge (subject-prop hero, Correct!/Almost! feedback, memory hook, “+1 to memory”, source provenance, return-key submit), tabs Home / Explore / Stats / Profile, Add sheet, compose (paste/PDF/camera/images, real states), library, material/[id], topic/[id], settings, legal (privacy/terms/help), screen-time (all permission states), goal, mode, languages sheets, not-found, Plus-paused guard.
+- **State:** `src/state/runtime.ts` — session-only Screen Time status, connectivity, store-confirmed billing; `useAppLifecycle` reconciles on foreground (revocation → `revoked`, pending shield challenge → interruption challenge). Tabs require a store entitlement or the non-persisted `__DEV__` preview.
+- **Checks:** `bun run check-types` 6/6; `bun test apps/native/src/domain` 22 pass.
+
+### Gotchas learned
+- Form sheets (`presentation: 'formSheet'`) collapse a `flex: 1` root to zero height — make the ScrollView the root.
+- `expo start` with `CI=1` disables file watching (no Fast Refresh).
+- Onboarding/controlled inputs: never re-seed `defaultValue` from the store on each keystroke; use the `Field` pattern (default captured once).
+- Heavy negative letterSpacing (< −0.8) with Plus Jakarta collapses word gaps.
+
+### Still open (cannot be done from the simulator) — see apps/native/tasks/TASKS.md
+1. Signed physical-device Screen Time validation (docs/screen-time.md release gate).
+2. RevenueCat project + `plus` entitlement + monthly/annual products; `EXPO_PUBLIC_REVENUECAT_IOS_KEY`.
+3. `EXPO_PUBLIC_POSTHOG_KEY` (analytics stays opt-in).
+4. Release-build 60 fps measurement on the slowest supported iPhone; full screen-recorded motion pass.
+5. PDF / Vision OCR extraction test on device with real files.
+6. Reminders require rebuilding the dev client (expo-notifications plugin was added to app.json after the last native build).
+
+---
+
+
 Updated 2026-09-23. The user requested this handoff to continue with another agent because credits were running out. The original goal is NOT complete. Do not restart from scratch or claim this is a working finished app.
 
 ## User intent and authoritative brief

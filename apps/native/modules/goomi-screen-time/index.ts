@@ -33,7 +33,7 @@ const unavailable: ScreenTimeStatus = {
   canOpenFromShield: false,
 };
 function requireDevice(): NativeScreenTime {
-  if (!native) throw new Error('Screen Time requires Goomi’s iOS development build on a physical iPhone.');
+  if (!native) throw new Error('Screen Time works on iPhone with iOS 17.4 or later. This device can’t connect to it.');
   return native;
 }
 export const screenTime = {

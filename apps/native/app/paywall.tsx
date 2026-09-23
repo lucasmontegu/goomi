@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, CircleButton, Eyebrow, Icon, Tactile, Txt } from '../src/ui/core';
 import { Mascot } from '../src/ui/mascot';
+import { Prop } from '../src/ui/props';
 import { palette } from '../src/ui/theme';
 import { useGoomi } from '../src/state/store';
 import { loadBillingPlans, purchasePlan, restoreBillingPurchases, type BillingPlan, type BillingStatus } from '../src/services/billing';
@@ -12,9 +13,9 @@ import { trackEvent } from '../src/services/analytics';
 
 const muted = '#B7B9B0';
 const benefits = [
-  ['planet-outline', 'A whole world to get curious about', 'Unlimited challenges, every topic & language practice'],
-  ['git-network-outline', 'Knowledge that stays with you', 'A personal path, spaced repetition & memory insights'],
-  ['book-outline', 'Your notes. Your next little breakthrough.', 'Study with PDFs, notes & a complete intervention system'],
+  ['globe', 'A whole world to get curious about', 'Unlimited challenges, every topic & language practice'],
+  ['cards', 'Knowledge that stays with you', 'A personal path, spaced repetition & memory insights'],
+  ['book', 'Your notes. Your next little breakthrough.', 'Study mode with PDFs & notes, plus the full app moments system'],
 ] as const;
 
 function periodLabel(period: string): string {
@@ -132,13 +133,12 @@ export default function Paywall() {
       </View>
       <Txt weight="display" size={35} color={palette.ivory} style={s.title}>Invest in a{ '\n' }more curious you.</Txt>
       <View style={s.hero}>
-        <View style={s.heroGround} />
-        <Mascot pose={loading ? 'think' : 'wave'} size={210} alive />
+        <Mascot pose={loading ? 'think' : 'wave'} size={196} motion={loading ? 'think' : 'breathe'} />
         <View style={s.note}><Txt weight="display" size={14} color={palette.lime}>Small moments.{ '\n' }A bigger you.</Txt></View>
       </View>
       <View style={s.benefits}>
         {benefits.map(([icon, title, detail]) => <View key={title} style={s.benefit}>
-          <View style={s.benefitIcon}><Icon name={icon} size={18} color={palette.lime} /></View>
+          <Prop name={icon} size={40} />
           <View style={{ flex: 1 }}><Txt size={13} weight="semibold" color={palette.ivory}>{title}</Txt><Txt size={11} color={muted} style={{ marginTop: 3 }}>{detail}</Txt></View>
         </View>)}
       </View>
@@ -179,11 +179,11 @@ const s = StyleSheet.create({
   topBar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   restore: { minWidth: 54, minHeight: 44, alignItems: 'flex-end', justifyContent: 'center' },
   title: { textAlign: 'center', lineHeight: 40, marginTop: 17 },
-  hero: { alignItems: 'center', justifyContent: 'center', height: 188, marginTop: 5, marginBottom: 4 },
+  hero: { alignItems: 'center', justifyContent: 'center', height: 214, marginTop: 4, marginBottom: 14 },
   heroGround: { position: 'absolute', width: 168, height: 20, bottom: 7, borderRadius: 100, backgroundColor: '#242A17' },
   note: { position: 'absolute', right: 1, top: 35, transform: [{ rotate: '9deg' }] },
   benefits: { gap: 17, marginBottom: 24 },
-  benefit: { flexDirection: 'row', gap: 11, alignItems: 'center' },
+  benefit: { flexDirection: 'row', gap: 12, alignItems: 'center' },
   benefitIcon: { width: 29, height: 29, alignItems: 'center', justifyContent: 'center', borderRadius: 15, backgroundColor: '#252E18' },
   plans: { gap: 10 },
   plan: { minHeight: 72, padding: 15, borderRadius: 20, borderCurve: 'continuous', borderWidth: 1, borderColor: '#41443A', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 8, backgroundColor: '#191B17' },

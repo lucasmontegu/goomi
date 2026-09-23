@@ -3,6 +3,7 @@ import { Pressable, View, type StyleProp, type ViewStyle } from 'react-native';
 import { Image } from 'expo-image';
 import Svg, { Defs, Ellipse, RadialGradient, Stop } from 'react-native-svg';
 import * as Haptics from 'expo-haptics';
+import { useGoomi } from '../state/store';
 import Animated, {
   cancelAnimation, Easing, interpolate, useAnimatedStyle, useReducedMotion, useSharedValue,
   withDelay, withRepeat, withSequence, withSpring, withTiming,
@@ -97,7 +98,7 @@ export function Mascot({ pose = 'wave', size = 220, alive, motion, shadow = true
 
   function pressed() {
     if (reduce) { onPoke?.(); return; }
-    void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Soft);
+    if (useGoomi.getState().settings.haptics) void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Soft);
     poke.set(withSequence(withTiming(-0.9, { duration: 110, easing: easeOut }), withSpring(0, springs.pop)));
     onPoke?.();
   }

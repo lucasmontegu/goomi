@@ -5,7 +5,7 @@ import { router, type Href } from 'expo-router';
 import { create } from 'zustand';
 import screenTime, { type ScreenTimeStatus } from '@/modules/goomi-screen-time';
 import { getProgress, type Progress } from '../domain';
-import { billingAvailability, getBillingStatus, subscribeToBillingStatus } from '../services/billing';
+import { billingAvailability, getBillingStatus, subscribeToBillingStatus, type BillingStatus } from '../services/billing';
 import { initializeAnalytics, trackEvent } from '../services/analytics';
 import { useGoomi } from './store';
 
@@ -14,6 +14,8 @@ type Runtime = {
   online: boolean;
   /** 'unknown' until the store has answered; never inferred from local settings alone. */
   billing: 'unknown' | 'unavailable' | 'checked';
+  /** Latest store answer (expiry, renewal, management link); null until checked. */
+  billingStatus: BillingStatus | null;
   refreshScreenTime: () => Promise<ScreenTimeStatus>;
 };
 
@@ -22,6 +24,7 @@ export const useRuntime = create<Runtime>()((set) => ({
   screenTime: null,
   online: true,
   billing: 'unknown',
+  billingStatus: null,
   refreshScreenTime: async () => {
     const status = await screenTime.getStatus();
     set({ screenTime: status });
@@ -63,7 +66,9 @@ export function useAppLifecycle() {
     const { analyticsConsent, updateSettings } = useGoomi.getState();
     void initializeAnalytics(analyticsConsent);
 
-    const applyBilling = (hasPlus: boolean, isTrial: boolean) => {
+    const applyBilling = (status: BillingStatus) => {
+      const { hasPlus, isTrial } = status;
+      useRuntime.setState({ billingStatus: status });
       const current = useGoomi.getState().settings.subscription;
       const next = hasPlus ? (isTrial ? 'trial' : 'active') : current === 'not-configured' ? 'not-configured' : 'expired';
       if (next !== current) updateSettings({ subscription: next });
@@ -73,7 +78,7 @@ export function useAppLifecycle() {
       const result = await getBillingStatus();
       if (!alive) return;
       // Offline or store errors keep the last confirmed state; RevenueCat caches customer info itself.
-      if (result.ok) { applyBilling(result.value.hasPlus, result.value.isTrial); useRuntime.setState({ billing: 'checked' }); }
+      if (result.ok) { applyBilling(result.value); useRuntime.setState({ billing: 'checked' }); }
     }
     async function checkNative() {
       try {
@@ -93,7 +98,7 @@ export function useAppLifecycle() {
 
     void checkNative();
     void checkBilling();
-    void subscribeToBillingStatus((status) => applyBilling(status.hasPlus, status.isTrial)).then((unsubscribe) => {
+    void subscribeToBillingStatus(applyBilling).then((unsubscribe) => {
       if (alive) unsubscribeBilling = unsubscribe; else unsubscribe();
     });
     const networkSubscription = Network.addNetworkStateListener((state) => {

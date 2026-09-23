@@ -7,7 +7,7 @@ import { useGoomi } from '@/src/state/store';
 import { useProgress, useRuntime } from '@/src/state/runtime';
 import { trackEvent } from '@/src/services/analytics';
 import { Icon, ProgressLine, Reveal, Tactile, Txt } from '@/src/ui/core';
-import { Bubble, Doodle, Figure, ModeSwitcher, Notice, Surface } from '@/src/ui/kit';
+import { Bubble, Doodle, Figure, ModeSwitcher, Notice, Surface, TopScrim } from '@/src/ui/kit';
 import { Mascot } from '@/src/ui/mascot';
 import { Prop, TOPIC_PROP } from '@/src/ui/props';
 import { STREAK_MILESTONES, greeting, homeLine, homePose, plural } from '@/src/ui/copy';
@@ -46,11 +46,11 @@ export default function Home() {
       {/* Greeting and Goomi share one composition: type on the left, the character stepping in from the right. */}
       <View style={styles.hero}>
         <View style={{ flex: 1, paddingTop: 18, zIndex: 2 }}>
-          <Txt size={34} weight="bold" color={t.text} style={styles.greeting}>{name ? `${greeting()},\n${name}` : `${greeting()}.`}</Txt>
+          <Txt size={30} weight="bold" color={t.text} style={styles.greeting}>{name ? `${greeting()},\n${name}` : `${greeting()}.`}</Txt>
           <Txt weight="display" size={17} color={t.muted} style={{ marginTop: 10, transform: [{ rotate: '-2deg' }] }}>{sleep ? 'Easy does it tonight.' : 'A little progress\nevery day.'}</Txt>
         </View>
         <View style={styles.heroArt}>
-          <Mascot pose={homePose(mode, progress, goal)} size={186} motion={sleep ? 'sleep' : goalReached ? 'bounce' : 'peek'} />
+          <Mascot pose={homePose(mode, progress, goal)} size={176} motion={sleep ? 'sleep' : goalReached ? 'bounce' : 'peek'} />
           {!sleep && <Doodle kind="spark" size={30} color={t.text} style={{ position: 'absolute', left: -4, top: 30, transform: [{ rotate: '-24deg' }] }} />}
           {sleep && <Doodle kind="zz" size={30} color={t.muted} style={{ position: 'absolute', right: 8, top: 26 }} />}
         </View>
@@ -65,12 +65,12 @@ export default function Home() {
 
         {/* Today's goal: segments rather than a thin bar, so each discovery is a thing you can see land. */}
         <Reveal delay={40}>
-          <Surface theme={t} tone={goalReached && !sleep ? 'lime' : 'raised'} style={styles.goal}>
+          <Surface theme={t} tone={goalReached && !sleep ? 'solidLime' : 'raised'} style={styles.goal}>
             <View style={styles.row}>
               <Prop name={goalReached ? 'check' : 'target'} size={40} />
               <View style={{ flex: 1 }}>
-                <Txt size={15} weight="bold" color={t.text}>{goalReached ? 'Daily goal reached' : 'Today’s goal'}</Txt>
-                <Txt size={12} color={t.muted}>{goalReached ? 'Anything more today is a bonus.' : `${progress.todayCompleted} of ${plural(goal, 'discovery', 'discoveries')}`}</Txt>
+                <Txt size={15} weight="bold" color={goalReached && !sleep ? palette.ink : t.text}>{goalReached ? 'Daily goal reached' : 'Today’s goal'}</Txt>
+                <Txt size={12} color={goalReached && !sleep ? '#3D4A12' : t.muted}>{goalReached ? 'Anything more today is a bonus.' : `${progress.todayCompleted} of ${plural(goal, 'discovery', 'discoveries')}`}</Txt>
               </View>
               <Tactile label="Change daily goal" onPress={() => router.push('/goal' as Href)} style={[styles.smallPill, { backgroundColor: goalReached ? palette.ivory : t.soft }]}>
                 <Txt size={12} weight="semibold" color={goalReached ? palette.ink : t.text}>Change</Txt>
@@ -112,7 +112,7 @@ export default function Home() {
         </Reveal>}
 
         {!sleep && streakLost && <Notice theme={t} tone="lavender" icon="moon-outline" title="Your streak took a little nap" body="No stress. One challenge today starts a fresh one." action="Start one now" onAction={startChallenge} />}
-        {!sleep && milestone && <Surface theme={t} tone="lime" style={[styles.row, { padding: 16 }]}>
+        {!sleep && milestone && <Surface theme={t} tone="solidLime" style={[styles.row, { padding: 16 }]}>
           <Prop name="flame" size={44} />
           <View style={{ flex: 1 }}>
             <Txt weight="displayBold" size={18} color={palette.ink}>{progress.streak} days in a row!</Txt>
@@ -135,7 +135,7 @@ export default function Home() {
             <View style={[styles.pathArt, { backgroundColor: t.scheme === 'dark' ? t.soft : `${topic.color}66` }]}><Prop name={TOPIC_PROP[path.topicId]} size={78} /></View>
             <View style={{ padding: 14, gap: 8 }}>
               <View>
-                <Txt size={11} weight="semibold" color={t.muted}>{topic.subtitle}</Txt>
+                <Txt size={11} weight="semibold" color={t.muted} lines={1}>{topic.subtitle}</Txt>
                 <Txt size={15} weight="bold" color={t.text} lines={1}>{topic.name}</Txt>
               </View>
               <View style={[styles.row, { gap: 8 }]}>
@@ -154,6 +154,7 @@ export default function Home() {
         </View>
       </View>
     </ScrollView>
+    <TopScrim theme={t} />
   </View>;
 }
 
@@ -213,9 +214,9 @@ function WorkTask() {
 }
 
 const styles = StyleSheet.create({
-  hero: { flexDirection: 'row', paddingLeft: 24, paddingRight: 10, minHeight: 214 },
-  greeting: { letterSpacing: -1.2, lineHeight: 39 },
-  heroArt: { width: 186, alignItems: 'center', justifyContent: 'flex-end', marginTop: 24 },
+  hero: { flexDirection: 'row', paddingLeft: 24, paddingRight: 12, minHeight: 222, marginBottom: 6 },
+  greeting: { letterSpacing: -0.6, lineHeight: 35 },
+  heroArt: { width: 176, alignItems: 'center', justifyContent: 'flex-end', marginTop: 46 },
   streak: { position: 'absolute', right: 20, top: 0, flexDirection: 'row', alignItems: 'center', gap: 4, paddingLeft: 8, paddingRight: 12, minHeight: 36, borderRadius: radius.pill, boxShadow: '0 6px 16px -10px rgba(38,44,20,0.4)' },
   body: { paddingHorizontal: 20, gap: 16 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12 },

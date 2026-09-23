@@ -1,6 +1,9 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { Pressable, StyleSheet, View, type LayoutChangeEvent, type StyleProp, type ViewStyle } from 'react-native';
 import * as Haptics from 'expo-haptics';
+import { BlurView } from 'expo-blur';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useGoomi } from '../state/store';
 import Svg, { Circle, Path } from 'react-native-svg';
 import Animated, {
   Easing, useAnimatedProps, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withRepeat,
@@ -15,8 +18,9 @@ import { easeOut, fonts, palette, radius, springs, type Theme } from './theme';
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
 /** A raised object: white clay slab with one soft, warm elevation. */
-export function Surface({ children, theme, style, tone = 'raised' }: { children: ReactNode; theme: Theme; style?: StyleProp<ViewStyle>; tone?: 'raised' | 'soft' | 'lime' | 'lavender' | 'mint' | 'ink' }) {
-  const background = { raised: theme.raised, soft: theme.soft, lime: theme.limeSoft, lavender: theme.lavenderSoft, mint: theme.mintSoft, ink: theme.inverse }[tone];
+export function Surface({ children, theme, style, tone = 'raised' }: { children: ReactNode; theme: Theme; style?: StyleProp<ViewStyle>; tone?: 'raised' | 'soft' | 'lime' | 'solidLime' | 'lavender' | 'mint' | 'ink' }) {
+  // solidLime is the celebratory slab: the same bright lime in both themes, always with ink content.
+  const background = { raised: theme.raised, soft: theme.soft, lime: theme.limeSoft, solidLime: palette.lime, lavender: theme.lavenderSoft, mint: theme.mintSoft, ink: theme.inverse }[tone];
   return <View style={[{ backgroundColor: background, borderRadius: radius.card, borderCurve: 'continuous', boxShadow: tone === 'raised' ? `0 10px 30px -18px ${theme.shadow}, 0 1px 0 ${theme.scheme === 'dark' ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.9)'} inset` : undefined }, style]}>{children}</View>;
 }
 
@@ -45,7 +49,7 @@ export function ListRow({ icon, title, detail, value, onPress, theme, tone, trai
   </>;
   const border = last ? null : { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: theme.line };
   if (!onPress) return <View style={[styles.row, border]}>{content}</View>;
-  return <Pressable accessibilityRole="button" accessibilityLabel={title} onPress={() => { void Haptics.selectionAsync(); onPress(); }} style={({ pressed }) => [styles.row, border, pressed && { backgroundColor: theme.soft }]}>{content}</Pressable>;
+  return <Pressable accessibilityRole="button" accessibilityLabel={title} onPress={() => { if (useGoomi.getState().settings.haptics) void Haptics.selectionAsync(); onPress(); }} style={({ pressed }) => [styles.row, border, pressed && { backgroundColor: theme.soft }]}>{content}</Pressable>;
 }
 export function ListGroup({ children, theme, title, style }: { children: ReactNode; theme: Theme; title?: string; style?: StyleProp<ViewStyle> }) {
   return <View style={[{ gap: 10 }, style]}>
@@ -76,7 +80,7 @@ export function ModeSwitcher({ value, onChange, theme }: { value: Mode; onChange
     {MODE_ORDER.map((mode) => {
       const active = mode === value;
       return <Pressable key={mode} accessibilityRole="tab" accessibilityState={{ selected: active }} accessibilityLabel={`${MODE_META[mode].label} mode`}
-        onPress={() => { if (!active) { void Haptics.selectionAsync(); onChange(mode); } }} style={styles.modeCell}>
+        onPress={() => { if (!active) { if (useGoomi.getState().settings.haptics) void Haptics.selectionAsync(); onChange(mode); } }} style={styles.modeCell}>
         <Icon name={MODE_META[mode].icon} size={19} color={active ? palette.ink : theme.muted} />
         <Txt size={11} weight={active ? 'bold' : 'medium'} color={active ? palette.ink : theme.muted}>{MODE_META[mode].label}</Txt>
       </Pressable>;
@@ -135,7 +139,7 @@ function Bar({ value, empty, active, label, height, delay, theme }: { value: num
 }
 
 /** Hand-drawn marks from the brand board. Always charcoal or lime, always a little crooked. */
-export function Doodle({ kind, size = 28, color = palette.ink, style }: { kind: 'spark' | 'arrow' | 'loop' | 'underline' | 'zz' | 'heart'; size?: number; color?: string; style?: StyleProp<ViewStyle> }) {
+export function Doodle({ kind, size = 28, width, color = palette.ink, style }: { kind: 'spark' | 'arrow' | 'loop' | 'underline' | 'zz' | 'heart'; size?: number; width?: number; color?: string; style?: StyleProp<ViewStyle> }) {
   const paths: Record<typeof kind, string> = {
     spark: 'M10 30 L4 22 M18 24 L17 12 M26 30 L33 22',
     arrow: 'M6 8 C 10 24, 22 32, 34 30 M26 24 L34 30 L27 36',
@@ -144,7 +148,7 @@ export function Doodle({ kind, size = 28, color = palette.ink, style }: { kind: 
     zz: 'M8 12 H18 L8 22 H18 M22 6 H30 L22 14 H30',
     heart: 'M20 32 C 8 24, 6 14, 13 11 C 17 9, 20 13, 20 15 C 20 13, 23 9, 27 11 C 34 14, 32 24, 20 32',
   };
-  return <View style={style} pointerEvents="none"><Svg width={size} height={size} viewBox="0 0 40 40"><Path d={paths[kind]} stroke={color} strokeWidth={2.6} strokeLinecap="round" strokeLinejoin="round" fill="none" /></Svg></View>;
+  return <View style={style} pointerEvents="none"><Svg width={width ?? size} height={size} viewBox="0 0 40 40" preserveAspectRatio="none"><Path d={paths[kind]} stroke={color} strokeWidth={width ? 4 : 2.6} strokeLinecap="round" strokeLinejoin="round" fill="none" /></Svg></View>;
 }
 
 /** Goomi's speech bubble. Short copy only. */
@@ -230,7 +234,7 @@ export function Pop({ children, delay = 0, style }: { children: ReactNode; delay
 }
 
 export const styles = StyleSheet.create({
-  chip: { flexDirection: 'row', alignItems: 'center', gap: 7, minHeight: 40, paddingHorizontal: 14, borderRadius: radius.pill, borderWidth: 1 },
+  chip: { flexDirection: 'row', alignItems: 'center', gap: 7, minHeight: 44, paddingHorizontal: 14, borderRadius: radius.pill, borderWidth: 1 },
   row: { minHeight: 60, flexDirection: 'row', alignItems: 'center', gap: 14, paddingHorizontal: 14, paddingVertical: 12, borderRadius: radius.row },
   rowIcon: { width: 34, height: 34, borderRadius: 11, borderCurve: 'continuous', alignItems: 'center', justifyContent: 'center' },
   modes: { flexDirection: 'row', padding: 4, borderRadius: 22, borderCurve: 'continuous' },
@@ -241,3 +245,12 @@ export const styles = StyleSheet.create({
   inlineAction: { marginTop: 14, minHeight: 46, paddingHorizontal: 22, borderRadius: radius.pill, alignItems: 'center', justifyContent: 'center' },
 });
 export const typeface = fonts;
+
+/** Frosted strip behind the status bar so scrolled content never collides with the clock or the Dynamic Island. */
+export function TopScrim({ theme }: { theme: Theme }) {
+  const insets = useSafeAreaInsets();
+  return <View pointerEvents="none" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: insets.top, overflow: 'hidden' }}>
+    <BlurView intensity={40} tint={theme.scheme === 'dark' ? 'dark' : 'light'} style={StyleSheet.absoluteFill} />
+    <View style={[StyleSheet.absoluteFill, { backgroundColor: theme.background, opacity: 0.72 }]} />
+  </View>;
+}
