@@ -3,13 +3,14 @@ import { BackHandler, ScrollView, StyleSheet, View } from 'react-native';
 import { Stack, router, useLocalSearchParams, type Href } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Button, CircleButton, Eyebrow, Icon, Tactile, Txt } from '../src/ui/core';
+import { Button, CircleButton, Eyebrow, Icon, Tactile, Title, Txt } from '../src/ui/core';
 import { Mascot } from '../src/ui/mascot';
 import { Prop } from '../src/ui/props';
 import { palette } from '../src/ui/theme';
 import { useGoomi } from '../src/state/store';
 import { loadBillingPlans, purchasePlan, restoreBillingPurchases, type BillingPlan, type BillingStatus } from '../src/services/billing';
 import { trackEvent } from '../src/services/analytics';
+import screenTime from '../modules/goomi-screen-time';
 
 const muted = '#B7B9B0';
 const benefits = [
@@ -110,12 +111,26 @@ export default function Paywall() {
     } else setMessage(result.error.message);
   }
 
+  /** Onboarding only: continue on the limited free plan. App moments are Plus, so any shields set up during onboarding come off. */
+  function skip() {
+    if (operation === 'purchase') return;
+    completeOnboarding();
+    void screenTime.getStatus().then((status) => status.enabled ? screenTime.disable() : status).catch(() => undefined);
+    router.replace('/(tabs)' as Href);
+  }
+
   function close() {
     if (operation === 'purchase') return;
     if (router.canGoBack()) router.back();
     else router.replace((onboardingComplete ? '/(tabs)' : '/onboarding') as Href);
   }
 
+  const annual = plans.find((item) => item.kind === 'annual');
+  const monthly = plans.find((item) => item.kind === 'monthly');
+  // Computed from the store's real prices; hidden when the currencies differ or the saving is negligible.
+  const rawSavings = annual && monthly && annual.package.product.currencyCode === monthly.package.product.currencyCode && monthly.package.product.price > 0
+    ? Math.round((1 - annual.package.product.price / (monthly.package.product.price * 12)) * 100) : null;
+  const savings = rawSavings !== null && rawSavings >= 5 ? rawSavings : null;
   const priceDisclosure = plan
     ? `${hasTrial ? `${plan.trial.durationLabel} free, then ` : ''}${plan.priceString} every ${periodLabel(plan.renewalPeriod)}. Renews automatically. Cancel in your store settings.`
     : 'Choose your plan when the store is ready. No payment has been made.';
@@ -125,13 +140,17 @@ export default function Paywall() {
     <StatusBar style="light" />
     <ScrollView contentInsetAdjustmentBehavior="never" showsVerticalScrollIndicator={false} contentContainerStyle={[s.content, { paddingTop: insets.top + 8 }]}>
       <View style={s.topBar}>
-        <CircleButton icon="close" onPress={close} dark label="Close Goomi Plus" />
+        {source === 'onboarding' ? <View style={{ width: 54 }} /> : <CircleButton icon="close" onPress={close} dark label="Close Goomi Plus" />}
         <Eyebrow color={palette.lime}>GOOMI PLUS</Eyebrow>
-        <Tactile disabled={!!operation} onPress={() => void restore()} label="Restore purchases" style={s.restore}>
-          <Txt size={12} weight="medium" color={muted}>{operation === 'restore' ? 'Restoring…' : 'Restore'}</Txt>
-        </Tactile>
+        {source === 'onboarding'
+          ? <Tactile disabled={!!operation} onPress={skip} label="Skip and continue with the free plan" style={s.restore}>
+              <Txt size={13} weight="semibold" color={muted}>Skip</Txt>
+            </Tactile>
+          : <Tactile disabled={!!operation} onPress={() => void restore()} label="Restore purchases" style={s.restore}>
+              <Txt size={12} weight="medium" color={muted}>{operation === 'restore' ? 'Restoring…' : 'Restore'}</Txt>
+            </Tactile>}
       </View>
-      <Txt weight="display" size={35} color={palette.ivory} style={s.title}>Invest in a{ '\n' }more curious you.</Txt>
+      <Title large color={palette.ivory} style={s.title}>Invest in a{ '\n' }more curious you.</Title>
       <View style={s.hero}>
         <Mascot pose={loading ? 'think' : 'wave'} size={196} motion={loading ? 'think' : 'breathe'} />
         <View style={s.note}><Txt weight="display" size={14} color={palette.lime}>Small moments.{ '\n' }A bigger you.</Txt></View>
@@ -146,7 +165,15 @@ export default function Paywall() {
         {plans.map((item) => {
           const selected = item.id === plan?.id;
           return <Tactile key={item.id} disabled={!!operation} label={`${item.kind === 'annual' ? 'Annual' : 'Monthly'} plan, ${item.priceString}, ${selected ? 'selected' : 'not selected'}`} onPress={() => { setSelectedId(item.id); setMessage(null); }} style={[s.plan, selected && s.selectedPlan]}>
-            <View style={s.planLeft}><View style={[s.radio, selected && { borderColor: palette.lime }]}>{selected && <View style={s.radioDot} />}</View><View><Txt weight="bold" color={palette.ivory} size={14}>{item.kind === 'annual' ? 'Yearly' : 'Monthly'}</Txt>{item.kind === 'annual' && <Txt size={10} color={selected ? palette.lime : muted}>A year of little discoveries</Txt>}</View></View>
+            <View style={s.planLeft}><View style={[s.radio, selected && { borderColor: palette.lime }]}>{selected && <View style={s.radioDot} />}</View><View style={{ gap: 3 }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+                <Txt weight="semibold" color={palette.ivory} size={15}>{item.kind === 'annual' ? 'Yearly' : 'Monthly'}</Txt>
+                {item.kind === 'annual' && savings !== null && <View style={s.savePill}><Txt size={10} weight="bold" color={palette.ink}>Save {savings}%</Txt></View>}
+              </View>
+              {item.trial.eligibility === 'eligible' && item.trial.durationLabel
+                ? <Txt size={11} weight="semibold" color={palette.lime}>{item.trial.durationLabel} free</Txt>
+                : item.kind === 'annual' && <Txt size={11} color={selected ? palette.lime : muted}>A year of little discoveries</Txt>}
+            </View></View>
             <View style={{ alignItems: 'flex-end' }}><Txt weight="bold" color={palette.ivory} size={16}>{item.priceString}<Txt size={11} color={muted}> /{item.kind === 'annual' ? 'yr' : 'mo'}</Txt></Txt>{item.kind === 'annual' && item.pricePerMonthString && <Txt size={10} color={muted}>{item.pricePerMonthString} / month equivalent</Txt>}</View>
           </Tactile>;
         })}
@@ -154,6 +181,11 @@ export default function Paywall() {
         <Txt color={palette.ivory} weight="semibold" size={16}>{loading ? 'Finding your little upgrade…' : 'Plans are taking a moment'}</Txt>
         <Txt color={muted} size={12} style={{ textAlign: 'center', marginTop: 6 }}>{loading ? 'Goomi is checking the store for your plans.' : 'Your curiosity is ready. The store is catching up.'}</Txt>
         {!loading && <Tactile onPress={() => void load()} label="Retry loading plans" style={s.retry}><Icon name="refresh" size={16} color={palette.lime} /><Txt size={12} color={palette.lime} weight="bold">Try again</Txt></Tactile>}
+      </View>}
+      {hasTrial && plan && <View style={s.timeline} accessibilityLabel={`Trial: free today, then ${plan.priceString} after ${plan.trial.durationLabel} unless you cancel`}>
+        <View style={s.timelineRow}><View style={[s.timelineDot, { backgroundColor: palette.lime }]} /><View style={{ flex: 1 }}><Txt size={13} weight="semibold" color={palette.ivory}>Today</Txt><Txt size={12} color={muted}>Full Goomi Plus, nothing charged.</Txt></View></View>
+        <View style={s.timelineLine} />
+        <View style={s.timelineRow}><View style={[s.timelineDot, { backgroundColor: palette.lavender }]} /><View style={{ flex: 1 }}><Txt size={13} weight="semibold" color={palette.ivory}>After {plan.trial.durationLabel}</Txt><Txt size={12} color={muted}>{plan.priceString} for the year, unless you cancel before in your App Store settings.</Txt></View></View>
       </View>}
       {plan?.introOffer && <Txt size={11} color={muted} style={s.disclosure}>Introductory offer: {plan.introOffer.priceString} per {plan.introOffer.durationLabel} for {plan.introOffer.cycles} billing {plan.introOffer.cycles === 1 ? 'period' : 'periods'}, then the regular price below.</Txt>}
       {message && <View accessibilityLiveRegion="polite" style={s.message}><Icon name="information-circle-outline" color={palette.lavender} size={18} /><Txt size={11} color="#D3CEC7" style={{ flex: 1 }}>{message}</Txt></View>}
@@ -178,7 +210,7 @@ const s = StyleSheet.create({
   content: { paddingHorizontal: 24, paddingBottom: 20, flexGrow: 1 },
   topBar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   restore: { minWidth: 54, minHeight: 44, alignItems: 'flex-end', justifyContent: 'center' },
-  title: { textAlign: 'center', lineHeight: 40, marginTop: 17 },
+  title: { textAlign: 'center', marginTop: 14 },
   hero: { alignItems: 'center', justifyContent: 'center', height: 214, marginTop: 4, marginBottom: 14 },
   heroGround: { position: 'absolute', width: 168, height: 20, bottom: 7, borderRadius: 100, backgroundColor: '#242A17' },
   note: { position: 'absolute', right: 1, top: 35, transform: [{ rotate: '9deg' }] },
@@ -186,6 +218,11 @@ const s = StyleSheet.create({
   benefit: { flexDirection: 'row', gap: 12, alignItems: 'center' },
   benefitIcon: { width: 29, height: 29, alignItems: 'center', justifyContent: 'center', borderRadius: 15, backgroundColor: '#252E18' },
   plans: { gap: 10 },
+  savePill: { backgroundColor: palette.lime, borderRadius: 999, paddingHorizontal: 7, paddingVertical: 2 },
+  timeline: { marginTop: 16, padding: 14, borderRadius: 18, borderCurve: 'continuous', backgroundColor: '#191B17', borderWidth: 1, borderColor: '#2E3129' },
+  timelineRow: { flexDirection: 'row', gap: 12, alignItems: 'flex-start' },
+  timelineDot: { width: 12, height: 12, borderRadius: 6, marginTop: 4 },
+  timelineLine: { width: 2, height: 14, backgroundColor: '#3A3E34', marginLeft: 5, marginVertical: 2 },
   plan: { minHeight: 72, padding: 15, borderRadius: 20, borderCurve: 'continuous', borderWidth: 1, borderColor: '#41443A', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 8, backgroundColor: '#191B17' },
   selectedPlan: { borderColor: palette.lime, backgroundColor: '#252C1B' },
   planLeft: { flexDirection: 'row', alignItems: 'center', gap: 10, flexShrink: 1 },

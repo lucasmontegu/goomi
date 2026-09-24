@@ -11,9 +11,29 @@ import { useGoomi } from '../state/store';
 
 export type IconName = ComponentProps<typeof Ionicons>['name'];
 export function Icon({ name, size = 22, color = palette.ink }: { name: IconName; size?: number; color?: string }) { return <Ionicons name={name} size={size} color={color} />; }
-export function Txt({ children, size = 15, color = palette.ink, weight = 'regular', style, lines, selectable = false }: { children: ReactNode; size?: number; color?: string; weight?: keyof typeof fonts; style?: StyleProp<TextStyle>; lines?: number; selectable?: boolean }) {
-  return <Text selectable={selectable} numberOfLines={lines} style={[{ fontFamily: fonts[weight], fontSize: size, lineHeight: size * 1.4, color }, style]}>{children}</Text>;
+export function Txt({ children, size = 15, color = palette.ink, weight = 'regular', style, lines, selectable = false, fit }: { children: ReactNode; size?: number; color?: string; weight?: keyof typeof fonts; style?: StyleProp<TextStyle>; lines?: number; selectable?: boolean; fit?: boolean }) {
+  // Large type already carries the hierarchy, so it grows less with Dynamic Type than body copy does.
+  const maxScale = size >= 24 ? 1.25 : size >= 18 ? 1.4 : 1.6;
+  return <Text selectable={selectable} numberOfLines={lines} adjustsFontSizeToFit={fit} minimumFontScale={fit ? 0.75 : undefined} maxFontSizeMultiplier={maxScale} style={[{ fontFamily: fonts[weight], fontSize: size, lineHeight: size * 1.4, color }, style]}>{children}</Text>;
 }
+
+/**
+ * Type scale. One Title per screen, in Balsamiq, like the brand board. Everything else is Plus Jakarta:
+ * section 17 semibold · card title 15–16 semibold · body 14–15 regular · caption 12 medium · metrics 22–24 bold.
+ */
+export const type = {
+  title: { size: 24, lineHeight: 29 },
+  titleLarge: { size: 27, lineHeight: 32 },
+  section: { size: 17, lineHeight: 23 },
+} as const;
+export function Title({ children, color = palette.ink, large, style, lines, fit }: { children: ReactNode; color?: string; large?: boolean; style?: StyleProp<TextStyle>; lines?: number; fit?: boolean }) {
+  const t = large ? type.titleLarge : type.title;
+  return <Txt weight="displayBold" size={t.size} color={color} lines={lines} fit={fit} style={[{ lineHeight: t.lineHeight, letterSpacing: -0.2 }, style]}>{children}</Txt>;
+}
+export function SectionHeading({ children, color = palette.ink, style }: { children: ReactNode; color?: string; style?: StyleProp<TextStyle> }) {
+  return <Txt weight="semibold" size={type.section.size} color={color} style={[{ lineHeight: type.section.lineHeight, letterSpacing: -0.2 }, style]}>{children}</Txt>;
+}
+
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 export function Tactile({ children, onPress, style, label, disabled, testID }: { children: ReactNode; onPress?: () => void; style?: StyleProp<ViewStyle>; label?: string; disabled?: boolean; testID?: string }) {
   const scale = useSharedValue(1); const reduce = useReducedMotion();

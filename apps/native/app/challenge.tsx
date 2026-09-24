@@ -1,14 +1,16 @@
 import { useCallback, useRef, useState } from 'react';
 import { Keyboard, Linking, Pressable, StyleSheet, View } from 'react-native';
 import { KeyboardAwareScrollView, KeyboardStickyView, type KeyboardAwareScrollViewRef } from 'react-native-keyboard-controller';
-import { router, useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams, type Href } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import * as Haptics from 'expo-haptics';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { screenTime } from '@/modules/goomi-screen-time';
 import { evaluateAnswer, getProgress, selectChallenges, STARTER_CHALLENGES, TOPICS, type Answer, type AnswerResult, type Challenge, type TopicId } from '@/src/domain';
+import { useBank } from '@/src/state/bank-store';
 import { useGoomi } from '@/src/state/store';
-import { Button, CircleButton, Eyebrow, Icon, ProgressLine, Reveal, Txt } from '@/src/ui/core';
+import { FREE_DAILY_DISCOVERIES, useHasAccess } from '@/src/state/runtime';
+import { Button, CircleButton, Eyebrow, Icon, ProgressLine, Reveal, Txt, Title } from '@/src/ui/core';
 import { ChallengeInteraction, NumberVisual } from '@/src/ui/challenge-interactions';
 import { Mascot, type Pose } from '@/src/ui/mascot';
 import { Prop, TOPIC_PROP, type PropName } from '@/src/ui/props';
@@ -31,10 +33,16 @@ export default function ChallengeScreen() {
   const answerChallenge = useGoomi((state) => state.answer);
   const setStep = useGoomi((state) => state.setStep);
   const [initialLearned] = useState(() => getProgress(useGoomi.getState().learning).thingsLearned);
+  const plus = useHasAccess();
+  // Free users get a few discoveries a day. Onboarding and app interruptions are never capped, so nobody gets locked out.
+  const [freeLeft] = useState(() => plus || isOnboarding || isInterruption ? Infinity : Math.max(0, FREE_DAILY_DISCOVERIES - getProgress(useGoomi.getState().learning).todayCompleted));
+  const limited = freeLeft === 0;
   const [queue] = useState(() => {
     if (isOnboarding) return [STARTER_CHALLENGES[0]!];
+    if (limited) return [];
     const { learning, profile, settings: currentSettings } = useGoomi.getState();
-    return selectChallenges(learning, profile, { now: Date.now(), limit: topicId ? 3 : 1, topicId: topicId as TopicId | undefined, mode: topicId === 'study' ? 'study' : topicId ? 'free' : currentSettings.mode, practice: Boolean(topicId) });
+    const wanted = topicId ? 3 : 1;
+    return selectChallenges(learning, profile, { now: Date.now(), limit: Math.min(wanted, freeLeft), topicId: topicId as TopicId | undefined, mode: topicId === 'study' ? 'study' : topicId ? 'free' : currentSettings.mode, practice: Boolean(topicId), bank: useBank.getState().bank.items });
   });
   const [index, setIndex] = useState(0);
   const [value, setValue] = useState<Answer>('');
@@ -101,17 +109,22 @@ export default function ChallengeScreen() {
   const category = TOPICS.find((topic) => topic.id === challenge?.topicId);
   const showHero = challenge && challenge.type !== 'micro-sudoku' && challenge.type !== 'matching' && challenge.type !== 'sequence' && challenge.type !== 'historical-order';
   const isNumber = challenge?.type === 'pattern' || challenge?.type === 'mental-math';
-  const header = complete ? queue.length ? 'A moment well spent' : 'All caught up' : isOnboarding ? 'Your first little discovery' : isInterruption ? 'A moment before your apps' : topicId ? 'A little curiosity break' : settings.mode === 'sleep' ? 'Easy does it' : settings.mode === 'work' ? 'Find your way back' : 'A little curiosity break';
+  const header = limited ? 'See you tomorrow' : complete ? queue.length ? 'A moment well spent' : 'All caught up' : isOnboarding ? 'Your first little discovery' : isInterruption ? 'A moment before your apps' : topicId ? 'A little curiosity break' : settings.mode === 'sleep' ? 'Easy does it' : settings.mode === 'work' ? 'Find your way back' : 'A little curiosity break';
 
   return <View style={[s.screen, { paddingTop: insets.top + 10 }]}>
     <StatusBar style="light" />
     <View style={s.header}><CircleButton dark icon="close" onPress={close} label="Close challenge" /><Txt size={11} color="#B5B8A9" weight="medium" style={{ flex: 1, textAlign: 'center' }}>{header}</Txt><View style={{ width: 44, alignItems: 'flex-end' }}><Icon name={settings.mode === 'sleep' ? 'moon-outline' : 'sparkles-outline'} color={palette.lime} size={21} /></View></View>
     {!complete && <View style={{ paddingHorizontal: 28, paddingTop: 12, gap: 9 }}><ProgressLine value={(index + (result ? 1 : 0.28)) / Math.max(queue.length, 1)} track="#30332B" height={4} /><View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Eyebrow color={category?.color ?? palette.lime}>{category?.name.toUpperCase() ?? 'GOOMI'}</Eyebrow><Txt size={10} color="#8F9482">{index + 1} / {queue.length}</Txt></View></View>}
     <KeyboardAwareScrollView ref={scroll} bottomOffset={170} style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1, paddingHorizontal: 28, paddingBottom: 24 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
-      {complete ? <Reveal style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: 22 }}>
+      {limited ? <Reveal style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: 22 }}>
+        <Mascot pose="sleep" size={220} motion="sleep" />
+        <Txt color={palette.lime} weight="display" size={18} style={{ marginTop: 12, transform: [{ rotate: '-3deg' }] }}>That’s today’s free moments.</Txt>
+        <Title color={palette.ivory} style={s.centerTitle}>{`${FREE_DAILY_DISCOVERIES} new discoveries tomorrow.`}</Title>
+        <Txt color="#A7AD9B" size={14} style={{ textAlign: 'center', maxWidth: 300 }}>With Goomi Plus you can keep going now: unlimited challenges, study mode and app moments.</Txt>
+      </Reveal> : complete ? <Reveal style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: 22 }}>
         <View style={s.heroMask}><Mascot pose={settings.mode === 'sleep' ? 'sleep' : queue.length ? 'celebrate' : 'think'} size={250} alive /></View>
         <Txt color={palette.lime} weight="display" size={20} style={{ marginTop: 15, transform: [{ rotate: '-4deg' }] }}>{queue.length ? settings.mode === 'sleep' ? 'A softer little moment.' : 'That moment added up.' : 'A little room to let it stick.'}</Txt>
-        <Txt color={palette.ivory} weight="bold" size={32} style={s.centerTitle}>{unlocked ? 'You’re good to go.' : !queue.length ? settings.mode === 'study' ? 'Your notes belong here.' : 'Good things take a little space.' : gradedAnswers ? newlyLearned ? `${newlyLearned} new ${newlyLearned === 1 ? 'thing' : 'things'} learned.` : 'A little more connected.' : settings.mode === 'sleep' ? 'Nothing else to do.' : 'Your next step is waiting.'}</Txt>
+        <Title color={palette.ivory} style={s.centerTitle}>{unlocked ? 'You’re good to go.' : !queue.length ? settings.mode === 'study' ? 'Your notes belong here.' : 'Good things take a little space.' : gradedAnswers ? newlyLearned ? `${newlyLearned} new ${newlyLearned === 1 ? 'thing' : 'things'} learned.` : 'A little more connected.' : settings.mode === 'sleep' ? 'Nothing else to do.' : 'Your next step is waiting.'}</Title>
         <Txt color="#A7AD9B" size={14} style={{ textAlign: 'center', maxWidth: 300 }}>{unlocked ? `Your selected apps are unlocked for a ${settings.unlockMinutes}-minute usage window. You can open them now.` : !queue.length ? settings.mode === 'study' ? 'Add a few notes to build your own private recall path.' : 'You’ve finished what’s ready. Come back when a memory is due for a fresh look.' : gradedAnswers ? `${gradedAnswers} ${gradedAnswers === 1 ? 'challenge' : 'challenges'} finished. ${correctAnswers} ${correctAnswers === 1 ? 'correct recall' : 'correct recalls'}. ${correctAnswers < gradedAnswers ? 'The tricky ones will come back gently.' : 'Goomi will bring these back when it’s time.'}` : settings.mode === 'sleep' ? 'Take this softer pace with you. No score to chase.' : 'Keep your one next step in mind. Start small.'}</Txt>
         {queue.length > 0 && gradedAnswers > 0 && <View style={s.donePill}><Icon name="checkmark" size={16} color={palette.lime} /><Txt color={palette.lime} size={11} weight="semibold">A clear ending. A little more in mind.</Txt></View>}
         {unlockError && <View accessibilityLiveRegion="polite" style={s.error}><Icon name="information-circle-outline" color={palette.lavender} /><Txt color="#D9D5E6" size={12} style={{ flex: 1 }}>{unlockError}</Txt></View>}
@@ -136,7 +149,10 @@ export default function ChallengeScreen() {
       </Reveal> : null}
     </KeyboardAwareScrollView>
     <KeyboardStickyView offset={{ opened: insets.bottom }} style={[s.footer, { paddingBottom: Math.max(16, insets.bottom + 8) }]}>
-      {complete ? <View style={{ gap: 8 }}>
+      {limited ? <View style={{ gap: 8 }}>
+        <Button title="See Goomi Plus" icon="arrow-forward" onPress={() => router.replace({ pathname: '/paywall', params: { source: 'home' } } as Href)} />
+        <Pressable onPress={close} style={{ minHeight: 42, justifyContent: 'center' }}><Txt color="#B5BCA9" size={12} style={{ textAlign: 'center' }}>Back home</Txt></Pressable>
+      </View> : complete ? <View style={{ gap: 8 }}>
         {isInterruption && queue.length > 0 && !unlocked ? <><Button title={unlocking ? 'Checking your unlock…' : unlockError ? 'Try unlocking again' : `Unlock your apps · ${settings.unlockMinutes} min`} onPress={() => void unlockApps()} disabled={unlocking} icon="lock-open-outline" /><Pressable onPress={close} style={{ minHeight: 42, justifyContent: 'center' }}><Txt color="#B5BCA9" size={12} style={{ textAlign: 'center' }}>Done for now</Txt></Pressable></> : <Button title={unlocked ? 'Done. Enjoy your moment.' : !queue.length && settings.mode === 'study' ? 'Add your notes' : 'Carry on with your day'} onPress={() => { if (!queue.length && settings.mode === 'study') router.replace('/add'); else close(); }} icon="arrow-forward" />}
       </View> : result ? <Button title={isOnboarding ? 'Keep this feeling' : index + 1 < queue.length ? 'One more little discovery' : settings.mode === 'sleep' ? 'Carry this calm with me' : 'A moment well spent'} onPress={next} icon="arrow-forward" /> : <><Button title={challenge?.type === 'reflection' || challenge?.type === 'breathing' ? challenge.actionLabel : 'Let’s see'} disabled={!ready} onPress={submit} icon={ready ? 'arrow-forward' : undefined} /><Txt color="#8E9581" size={10} style={{ textAlign: 'center', marginTop: 12 }}>{isInterruption ? `One small moment before a ${settings.unlockMinutes}-minute app window` : settings.mode === 'sleep' ? 'No score. Just a softer pause.' : 'A guess is welcome. Curiosity is the point.'}</Txt></>}
     </KeyboardStickyView>
@@ -146,7 +162,7 @@ export default function ChallengeScreen() {
 const s = StyleSheet.create({
   screen: { flex: 1, backgroundColor: palette.ink },
   header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 22, gap: 8 },
-  centerTitle: { textAlign: 'center', letterSpacing: -0.9, lineHeight: 39, marginTop: 20, marginBottom: 14 },
+  centerTitle: { textAlign: 'center', marginTop: 18, marginBottom: 12 },
   footer: { paddingHorizontal: 26, paddingTop: 14, backgroundColor: palette.ink },
   heroMask: { alignItems: 'center', justifyContent: 'center' },
   memoryPill: { flexDirection: 'row', alignItems: 'center', gap: 8, alignSelf: 'center', marginTop: 18, paddingLeft: 10, paddingRight: 16, paddingVertical: 8, borderRadius: 30, backgroundColor: '#C8B6FF26' },
@@ -176,9 +192,13 @@ function ChallengeHero({ challenge, size }: { challenge: Challenge; size: number
 function Prompt({ text }: { text: string }) {
   const [lead, ...rest] = text.split('\n\n');
   const body = rest.join('\n\n');
-  const size = (body || lead!).length > 130 ? 22 : 27;
+  const main = body || lead!;
+  // Short questions read like the brand board (Balsamiq). Long or quoted material stays in Jakarta for legibility.
+  const playful = !body && main.length <= 70;
   return <View style={{ gap: 10 }}>
-    {body ? <Txt color="#A7AD9B" size={15} weight="semibold" style={{ textAlign: 'center' }}>{lead}</Txt> : null}
-    <Txt color={palette.ivory} size={size} weight="bold" style={{ textAlign: 'center', letterSpacing: -0.5, lineHeight: size * 1.32 }}>{body || lead}</Txt>
+    {body ? <Txt color="#A7AD9B" size={15} weight="medium" style={{ textAlign: 'center' }}>{lead}</Txt> : null}
+    {playful
+      ? <Title color={palette.ivory} style={{ textAlign: 'center' }}>{main}</Title>
+      : <Txt color={palette.ivory} size={main.length > 130 ? 19 : 22} weight="semibold" style={{ textAlign: 'center', letterSpacing: -0.3, lineHeight: (main.length > 130 ? 19 : 22) * 1.35 }}>{main}</Txt>}
   </View>;
 }

@@ -1,4 +1,5 @@
 import { MODE_CONFIG, SLEEP_CHALLENGE, STARTER_CHALLENGES, TOPICS, WORK_CHALLENGE } from "./content";
+import { isPlayableOffline } from "./bank";
 import type { Answer, AnswerResult, Challenge, ConceptMemory, LearningState, Mode, Profile, Progress, TopicId } from "./types";
 
 export const DAY_MS = 86_400_000;
@@ -135,6 +136,8 @@ export type SelectionOptions = {
   excludeIds?: string[];
   /** Explicit practice permits familiar concepts before they are due. */
   practice?: boolean;
+  /** Synced bank content; only items playable offline are ever chosen. */
+  bank?: readonly Challenge[];
   seed?: number;
 };
 
@@ -147,7 +150,7 @@ export function selectChallenges(state: LearningState, profile: Profile, options
   if (mode === "work") return [WORK_CHALLENGE];
   if (mode === "sleep") return [SLEEP_CHALLENGE];
   const study = state.materials.filter((material) => material.status === "ready").flatMap((material) => material.challenges);
-  const pool = mode === "study" || options.topicId === "study" ? study : STARTER_CHALLENGES;
+  const pool = mode === "study" || options.topicId === "study" ? study : [...STARTER_CHALLENGES, ...(options.bank ?? []).filter(isPlayableOffline)];
   const seed = options.seed ?? hashString(`${dateKey(now)}:${state.history.length}`);
   const excluded = new Set(options.excludeIds ?? []);
   const eligible = pool.filter((challenge) => {

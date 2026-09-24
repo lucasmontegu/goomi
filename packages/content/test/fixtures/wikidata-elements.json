@@ -1,0 +1,2566 @@
+{
+ "bindings": [
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q556"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "H"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "1"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "238"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q560"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "He"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "2"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "208"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q568"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Li"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "3"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "194"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q569"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Be"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "4"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "182"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q618"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "B"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "5"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "173"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q623"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "C"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "6"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "218"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q627"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "N"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "7"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "205"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q629"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "O"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "8"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "234"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q650"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "F"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "9"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "175"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q654"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Ne"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "10"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "180"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q658"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Na"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "11"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "188"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q660"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Mg"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "12"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "177"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q663"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Al"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "13"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "210"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q670"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Si"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "14"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "177"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q674"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "P"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "15"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "175"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q677"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Fe"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "26"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "253"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q682"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "S"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "16"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "195"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q688"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Cl"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "17"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "175"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q696"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Ar"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "18"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "168"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q703"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "K"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "19"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "177"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q706"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Ca"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "20"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "183"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q713"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Sc"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "21"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "153"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q716"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Ti"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "22"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "167"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q722"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "V"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "23"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "158"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q725"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Cr"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "24"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "164"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q731"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Mn"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "25"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "161"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q740"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Co"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "27"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "163"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q744"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Ni"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "28"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "161"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q753"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Cu"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "29"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "229"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q758"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Zn"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "30"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "180"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q861"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Ga"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "31"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "158"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q867"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Ge"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "32"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "152"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q871"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "As"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "33"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "163"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q876"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Se"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "34"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "155"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q879"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Br"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "35"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "156"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q888"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Kr"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "36"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "159"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q895"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Rb"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "37"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "152"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q938"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Sr"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "38"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "153"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q941"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Y"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "39"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "146"
+   }
+  },
+  {
+   "el": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1038"
+   },
+   "symbol": {
+    "type": "literal",
+    "value": "Zr"
+   },
+   "num": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "40"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "144"
+   }
+  }
+ ],
+ "labels": [
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q556"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "hydrogen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q556"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "hidrógeno"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q556"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "hidrogênio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q556"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "hidrogénio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q568"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "litio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q568"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "lithium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q560"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "hélio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q560"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "hélio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q560"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "helio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q560"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "helium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q569"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "berílio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q569"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "berílio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q627"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "nitrogênio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q568"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "lítio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q618"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "boron"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q618"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "boro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q568"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "lítio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q569"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "beryllium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q569"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "berilio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q627"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "azoto"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q627"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "nitrógeno"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q650"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "flúor"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q650"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "fluorine"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q629"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "oxigênio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q629"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "oxigénio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q623"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "carbono"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q623"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "carbono"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q618"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "boro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q627"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "nitrogen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q623"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "carbono"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q623"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "carbon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q629"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "oxygen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q629"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "oxígeno"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q618"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "boro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q650"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "flúor"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q650"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "flúor"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q654"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "neon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q654"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "neón"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q660"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "magnésio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q654"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "néon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q658"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "sodio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q658"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "sodium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q663"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "aluminio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q654"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "neônio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q663"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "alumínio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q663"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "aluminium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q663"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "alumínio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q677"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "hierro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q660"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "magnesium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q658"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "sódio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q658"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "sódio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q660"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "magnesio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q670"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "silicio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q660"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "magnésio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q674"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "phosphorus"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q670"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "silicon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q674"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "fósforo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q670"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "silício"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q670"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "silício"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q682"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "enxofre"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q674"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "fósforo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q677"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "ferro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q674"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "fósforo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q677"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "iron"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q688"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "cloro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q688"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "cloro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q677"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "ferro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q682"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "sulfur"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q688"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "chlorine"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q696"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "argon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q688"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "cloro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q682"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "enxofre"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q682"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "azufre"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q706"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "calcium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q706"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "calcio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q696"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "árgon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q696"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "argônio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q706"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "cálcio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q703"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "potasio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q713"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "escândio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q716"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "titânio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q716"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "titanium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q703"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "potassium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q713"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "scandium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q706"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "cálcio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q703"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "potássio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q703"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "potássio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q696"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "argón"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q722"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "vanádio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q713"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "escandio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q722"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "vanadio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q716"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "titânio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q713"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "escândio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q722"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "vanadium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q731"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "manganês"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q740"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "cobalt"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q744"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "níquel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q725"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "cromo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q731"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "manganese"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q722"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "vanádio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q731"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "manganeso"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q716"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "titanio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q725"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "cromo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q744"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "níquel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q725"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "cromo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q725"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "chromium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q731"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "manganês"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q753"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "cobre"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q871"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "arsénio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q753"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "copper"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q740"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "cobalto"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q744"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "nickel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q753"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "cobre"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q753"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "cobre"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q744"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "níquel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q861"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "galio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q861"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "gallium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q758"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "zinc"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q861"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "gálio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q740"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "cobalto"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q867"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "germanio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q867"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "germanium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q758"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "zinco"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q740"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "cobalto"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q758"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "zinco"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q758"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "zinc"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q861"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "gálio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q888"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "crípton"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q867"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "germânio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q867"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "germânio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q876"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "selenio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q876"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "selenium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q876"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "selénio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q871"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "arsénico"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q871"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "arsenic"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q879"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "bromo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q888"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "krypton"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q879"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "bromine"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q879"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "bromo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q876"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "selênio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q879"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "bromo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q895"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "rubídio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q938"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "estroncio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q895"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "rubídio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q871"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "arsênio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q888"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "kriptón"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q895"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "rubidio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q888"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "criptônio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q938"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "estrôncio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q938"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "strontium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q941"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "ítrio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1038"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "zirconium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q938"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "estrôncio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q941"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "itrio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q895"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "rubidium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q941"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "yttrium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1038"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "circonio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1038"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "zircónio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q941"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "ítrio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1038"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "zircônio"
+   }
+  }
+ ]
+}

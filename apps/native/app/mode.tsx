@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { MODE_CONFIG, type Mode } from '@/src/domain';
 import { useGoomi } from '@/src/state/store';
 import { trackEvent } from '@/src/services/analytics';
-import { Icon, Txt } from '@/src/ui/core';
+import { Icon, Txt, Title } from '@/src/ui/core';
 import { MODE_ORDER } from '@/src/ui/kit';
 import { Prop, type PropName } from '@/src/ui/props';
 import { palette, radius, type Theme } from '@/src/ui/theme';
@@ -48,7 +48,7 @@ export default function ModeSheet() {
       contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 26, paddingBottom: insets.bottom + 24, gap: 18 }}
     >
       <View style={{ gap: 3, paddingHorizontal: 2 }}>
-        <Txt size={24} weight="bold" color={t.text} style={{ letterSpacing: -0.6, lineHeight: 30 }}>Pick a mode</Txt>
+        <Title color={t.text}>Pick a mode</Title>
         <Txt size={13} color={t.muted}>Goomi shapes its moments around what you’re up to.</Txt>
       </View>
 
@@ -78,7 +78,7 @@ function ModeRow({ mode, selected, onPress, theme: t }: { mode: Mode; selected: 
     </View>
     <View style={{ flex: 1, gap: 3 }}>
       <View style={styles.titleRow}>
-        <Txt size={16} weight="bold" color={t.text}>{config.title}</Txt>
+        <Txt size={16} weight="semibold" color={t.text}>{config.title}</Txt>
         <Txt size={12} weight="medium" color={t.muted}>· {config.description}</Txt>
       </View>
       <Txt size={12} color={t.muted} lines={2}>{detail.changes}</Txt>

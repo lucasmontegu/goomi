@@ -1,0 +1,8974 @@
+{
+ "bindings": [
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q155"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "387"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1500"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q174432"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q51"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "316"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1820"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q4349082|http://www.wikidata.org/entity/Q731890|http://www.wikidata.org/entity/Q715635|http://www.wikidata.org/entity/Q186203|http://www.wikidata.org/entity/Q76754"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q68"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "298"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1945"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q46633"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q828"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "267"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1492"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/.well-known/genid/fde5dbe634d55a5c981aa020f2ca2c34|http://www.wikidata.org/entity/Q7322"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q324"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "260"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1781"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q14277"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q332"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "251"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1846"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q155013|http://www.wikidata.org/entity/Q104154|http://www.wikidata.org/entity/Q76431|http://www.wikidata.org/entity/Q20015"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1420"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "246"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1884"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q378277"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q556"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "238"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1766"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q131733"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q629"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "234"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1771|1774"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q70538"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q339"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "223"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1930"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q190232"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q623"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "218"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1789"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q39607"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11035"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "218"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1876"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q318449|http://www.wikidata.org/entity/Q273314|http://www.wikidata.org/entity/Q77124|http://www.wikidata.org/entity/Q34286"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5372"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "217"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1891"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q188962"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q663"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "210"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1825"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q131761|http://www.wikidata.org/entity/Q44412"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11633"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "210"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1839"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q933545"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q560"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "208"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1868"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q950726|http://www.wikidata.org/entity/Q298581|http://www.wikidata.org/entity/Q127959"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q627"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "205"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1772"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q313067"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11442"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "205"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1885"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q1515344|http://www.wikidata.org/entity/Q77122"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11472"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "198"
+   },
+   "years": {
+    "type": "literal",
+    "value": "-140"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q229235"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q682"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "195"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1777"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q39607"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q568"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "194"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1817"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q313568"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q658"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "188"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1807"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q131761"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q323"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "184"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1931"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q12998"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q706"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "183"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1808"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q131761"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q569"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "182"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1798"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q585780|http://www.wikidata.org/entity/Q333438|http://www.wikidata.org/entity/Q58575"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q654"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "180"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1898"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q950726|http://www.wikidata.org/entity/Q380209"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q17517"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "180"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1973"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q319383"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q660"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "177"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1755"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q272512"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q670"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "177"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1823"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q151911"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q703"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "177"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1807"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q131761"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1098"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "176"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1789"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q903801"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5785"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "176"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1503"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q7322"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q650"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "175"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1810"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q102804|http://www.wikidata.org/entity/Q675"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q674"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "175"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1669"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q77306"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q688"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "175"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1774"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q70538"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2225"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "175"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1897"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q47285"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q618"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "173"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1808|1892"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q131761"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5994"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "172"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1700"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q301597"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q9158"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "172"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1971"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q92631"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q696"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "168"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1894"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q950726|http://www.wikidata.org/entity/Q83297"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q933"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "168"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1912|1911"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q926"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q716"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "167"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1791"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q58575"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q725"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "164"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1797"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q333438"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1734"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "164"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1895"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q313949"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q740"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "163"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1735"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q473225"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1103"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "163"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1811"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q468330"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2294"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "162"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1920"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q9123"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5505"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "162"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1858"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q125084"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q731"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "161"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1774"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q353490"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q744"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "161"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1751"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q468351"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q880"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "161"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1557"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q470306|http://www.wikidata.org/entity/Q441066"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q888"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "159"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1898"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q950726|http://www.wikidata.org/entity/Q380209"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1112"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "158"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1808|1772"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q131761"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q722"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "158"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1801"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q524465"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q861"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "158"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1875"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q366827"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q466"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "158"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1989"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q92749|http://www.wikidata.org/entity/Q80"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1128"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "157"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1898"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q37463|http://www.wikidata.org/entity/Q7186"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q671"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "156"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1939"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q241822"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q879"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "156"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1825"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q314306|http://www.wikidata.org/entity/Q65517"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q9739"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "156"
+   },
+   "years": {
+    "type": "literal",
+    "value": "-229"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q511107"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1133"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "155"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1899"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q7342248|http://www.wikidata.org/entity/Q65191|http://www.wikidata.org/entity/Q9123"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q876"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "155"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1817"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q353490|http://www.wikidata.org/entity/Q151911"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q6368"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "155"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1990"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q80"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q713"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "153"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1879"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q447875"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q938"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "153"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1787"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q902388"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1091"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "153"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1817"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q77309|http://www.wikidata.org/entity/Q69080"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q867"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "152"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1886"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q73523"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q895"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "152"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1861"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q71031|http://www.wikidata.org/entity/Q60052"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1106"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "152"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1898"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q950726|http://www.wikidata.org/entity/Q380209"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1108"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "152"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1860"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q71031|http://www.wikidata.org/entity/Q60052"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q743"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "150"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1783"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q728386|http://www.wikidata.org/entity/Q182745"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q877"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "149"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1803"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q377800"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1046"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "149"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1801"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q378065"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1102"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "149"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1941"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q1708246|http://www.wikidata.org/entity/Q472997|http://www.wikidata.org/entity/Q48973|http://www.wikidata.org/entity/Q19009"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11420"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "149"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1882"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q190141"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q979"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "148"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1898"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q37463|http://www.wikidata.org/entity/Q7186"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1089"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "148"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1803"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q312975"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q751"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "147"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1804"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q377800|http://www.wikidata.org/entity/Q312975"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1053"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "147"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1778"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q70538"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1119"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "146"
+   },
+   "years": {
+    "type": "literal",
+    "value": "1922"
+   },
+   "people": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q775969|http://www.wikidata.org/entity/Q76951"
+   },
+   "element": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+    "type": "literal",
+    "value": "true"
+   }
+  }
+ ],
+ "labels": [
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q51"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Antarctica"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q51"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Antártida"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q80"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Tim Berners-Lee"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q51"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Antártida"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q51"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Antártida"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q68"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "computer"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q68"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "computador"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q155"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Brasil"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q323"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Big Bang"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q80"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Tim Berners-Lee"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q80"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Tim Berners-Lee"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q68"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "computadora"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q155"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Brazil"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q323"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Big Bang"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q68"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "computador"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q155"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Brasil"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q155"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Brasil"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q323"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Big Bang"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q324"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Uranus"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q332"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Neptune"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q324"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Urano"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q324"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Urano"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q324"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Urano"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q332"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Neptuno"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q323"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Big Bang"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q332"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Neptuno"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q466"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "World Wide Web"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q332"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Netuno"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q556"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "hidrógeno"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q556"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "hydrogen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q339"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Plutão"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q556"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "hidrogênio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q339"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Plutão"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q556"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "hidrogénio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q339"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Pluto"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q339"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Plutón"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q568"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "litio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q569"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "berilio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q569"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "beryllium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q560"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "helium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q560"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "helio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q618"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "boro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q618"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "boron"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q560"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "hélio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q560"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "hélio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q568"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "lítio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q568"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "lithium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q568"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "lítio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q627"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "nitrogênio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q618"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "boro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q623"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "carbono"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q629"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "oxygen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q629"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "oxigénio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q629"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "oxigênio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q629"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "oxígeno"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q569"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "berílio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q569"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "berílio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q623"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "carbono"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q623"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "carbono"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q618"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "boro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q627"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "nitrogen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q627"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "nitrógeno"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q623"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "carbon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q650"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "flúor"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q650"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "flúor"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q627"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "azoto"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q654"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "neon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q660"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "magnésio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q660"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "magnésio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q658"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "sódio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q658"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "sódio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q654"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "neônio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q660"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "magnesium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q650"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "fluorine"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q654"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "néon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q663"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "aluminio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q663"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "alumínio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q660"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "magnesio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q650"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "flúor"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q663"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "alumínio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q654"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "neón"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q670"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "silicio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q670"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "silicon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q675"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "André-Marie Ampère"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q658"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "sodium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q663"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "aluminium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q658"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "sodio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q682"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "enxofre"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q671"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "francio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q670"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "silício"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q674"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "fósforo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q682"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "azufre"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q675"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "André-Marie Ampère"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q682"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "sulfur"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q688"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "chlorine"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q688"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "cloro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q670"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "silício"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q682"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "enxofre"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q674"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "fósforo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q688"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "cloro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q674"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "fósforo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q674"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "phosphorus"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q671"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "frâncio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q671"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "francium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q671"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "frâncio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q696"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "argón"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q688"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "cloro"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q696"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "argon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q696"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "argônio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q703"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "potasio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q696"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "árgon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q703"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "potassium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q703"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "potássio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q703"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "potássio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q706"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "calcio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q706"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "calcium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q716"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "titanio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q716"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "titanium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q713"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "escândio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q716"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "titânio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q716"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "titânio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q722"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "vanadio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q706"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "cálcio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q706"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "cálcio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q722"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "vanadium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q722"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "vanádio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q722"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "vanádio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q713"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "escandio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q713"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "scandium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q713"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "escândio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q731"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "manganês"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q725"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "chromium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q740"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "cobalt"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q731"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "manganês"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q725"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "cromo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q740"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "cobalto"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q740"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "cobalto"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q731"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "manganeso"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q725"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "cromo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q725"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "cromo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q731"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "manganese"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q740"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "cobalto"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q861"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "gallium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q861"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "galio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q861"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "gálio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q867"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "germanio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q861"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "gálio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q867"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "germanium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q744"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "níquel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q744"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "nickel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q744"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "níquel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q744"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "níquel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q828"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "América"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q828"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "América"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q828"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Americas"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q828"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "América"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q867"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "germânio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q867"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "germânio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q888"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "krypton"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q895"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "rubidio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q926"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Roald Amundsen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q926"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Roald Amundsen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q879"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "bromo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q880"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "platina"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q879"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "bromo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q880"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "platina"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q888"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "criptônio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q880"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "platino"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q895"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "rubidium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q895"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "rubídio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q926"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Roald Amundsen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q888"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "crípton"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q880"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "platinum"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q888"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "kriptón"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q933"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Polo Sul"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q895"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "rubídio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q926"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Roald Amundsen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q876"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "selenio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1098"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "uranium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q876"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "selenium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q876"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "selénio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q879"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "bromo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q879"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "bromine"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q876"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "selênio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q938"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "estrôncio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q938"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "estroncio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q938"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "strontium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q938"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "estrôncio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1091"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "cadmio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1091"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "cadmium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q933"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Polo Sul"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1091"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "cádmio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1098"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "urânio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1091"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "cádmio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1098"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "urânio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1103"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "iodine"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1098"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "uranio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q933"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Polo Sur"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q933"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "South Pole"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1103"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "iodo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1106"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "xenon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1103"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "yodo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1103"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "iodo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1106"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "xenón"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1108"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "cesio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1106"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "xenônio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1106"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "xenón"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1108"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "césio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1108"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "césio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1108"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "caesium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1133"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "radón"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1112"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "bario"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1128"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "rádio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1128"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "rádio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1112"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "bário"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1420"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "automóvil"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1128"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "radio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1734"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "volleyball"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1112"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "barium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1133"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "radon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1420"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "automóvel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1128"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "radium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1112"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "bário"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1420"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "car"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1133"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "radônio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2225"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "electron"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1133"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "radão"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1734"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "voleibol"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2225"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "electrón"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1420"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "automóvel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1734"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "voleibol"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2225"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "eletrão"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1734"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "voleibol"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2225"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "elétron"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5372"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "baloncesto"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5372"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "basketball"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5372"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "basquetebol"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5372"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "basquetebol"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2294"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "protão"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2294"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "protón"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2294"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "próton"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5505"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Lago Vitória"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2294"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "proton"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q6368"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "navegador web"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q6368"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "navegador"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5785"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Islas Caimán"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5785"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Cayman Islands"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5505"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Victoria"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q6368"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "web browser"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q6368"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "navegador web"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5505"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Lake Victoria"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5505"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Lago Vitória"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q7322"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Cristóvão Colombo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5785"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Ilhas Cayman"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5994"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "piano"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q9123"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Ernest Rutherford"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q7322"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Cristóbal Colón"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5785"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Ilhas Caimã"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5994"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "piano"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q7322"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Christopher Columbus"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q9123"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Ernest Rutherford"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q7322"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Cristóvão Colombo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5994"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "piano"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5994"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "piano"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11472"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "paper"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11442"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "bicycle"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11442"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "bicicleta"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11035"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "telefone"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q9158"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "email"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11472"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "papel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11472"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "papel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11035"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "teléfono"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11035"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "telefone"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q9158"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "e-mail"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q12998"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Georges Lemaître"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q12998"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Georges Lemaître"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q12998"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Georges Lemaître"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q9123"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Ernest Rutherford"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q9123"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Ernest Rutherford"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q9739"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "G/g"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11035"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "telephone"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11442"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "bicicleta"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q9158"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "e-mail"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q9158"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "correo electrónico"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11472"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "papel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q14277"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "William Herschel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q14277"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "William Herschel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11442"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "bicicleta"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11633"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "fotografia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q14277"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "William Herschel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q20015"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "John Couch Adams"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q20015"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "John Couch Adams"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q20015"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "John Couch Adams"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q20015"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "John Couch Adams"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q12998"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Georges Lemaître"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11633"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "fotografia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11633"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "fotografía"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q39607"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Antoine Lavoisier"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q39607"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Antoine Lavoisier"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q14277"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "William Herschel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11633"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "photography"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q44412"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Hans Christian Ørsted"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q47285"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Joseph John Thomson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q39607"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Antoine Lavoisier"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q39607"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Antoine Laurent de Lavoisier"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q17517"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "telemóvel"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q44412"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Hans Christian Ørsted"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q46633"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Charles Babbage"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q47285"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Joseph John Thomson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q17517"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "teléfono móvil"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q44412"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Hans Christian Ørsted"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q44412"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Hans Christian Ørsted"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q47285"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Joseph John Thomson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q47285"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "J. J. Thomson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q34286"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Alexander Graham Bell"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q76431"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Johann Gottfried Galle"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q76431"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Johann Gottfried Galle"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q58575"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Friedrich Wöhler"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q60052"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Gustav Kirchhoff"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q17517"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "mobile phone"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q58575"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Friedrich Wöhler"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q60052"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Gustav Kirchhoff"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q58575"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Friedrich Wöhler"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q60052"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Gustav Kirchhoff"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q58575"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Friedrich Wöhler"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q60052"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Gustav Kirchhoff"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q46633"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Charles Babbage"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q46633"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Charles Babbage"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q17517"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "telefone celular"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q46633"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Charles Babbage"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q70538"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Carl Wilhelm Scheele"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q71031"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Robert Bunsen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q71031"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Robert Bunsen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q92631"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Ray Tomlinson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q92749"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Robert Cailliau"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q65191"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Friedrich Ernst Dorn"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q65517"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Carl Jacob Löwig"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q69080"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Karl Samuel Leberecht Hermann"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q65517"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Carl Jacob Löwig"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q69080"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Karl Samuel Leberecht Hermann"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q76431"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Johann Gottfried Galle"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q76754"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Fabian Gottlieb von Bellingshausen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q102804"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Henri Moissan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q70538"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Carl Wilhelm Scheele"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77122"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Karl Drais"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77124"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Johann Philipp Reis"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q92631"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Ray Tomlinson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q92749"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Robert Cailliau"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q71031"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Robert Bunsen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q73523"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Clemens Winkler"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77124"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Philipp Reis"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77306"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Henning Brand"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77309"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Friedrich Stromeyer"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q65191"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Friedrich Ernst Dorn"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77124"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Philipp Reis"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77306"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Henning Brand"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77309"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Friedrich Strohmeyer"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q65191"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Friedrich Ernst Dorn"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q65517"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Carl Jacob Löwig"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q69080"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Karl Samuel Leberecht Hermann"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q71031"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Robert Bunsen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q73523"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Clemens Winkler"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77306"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Hennig Brand"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77309"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Friedrich Stromeyer"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77122"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Karl Drais"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77124"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Johann Philipp Reis"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q76431"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Johann Gottfried Galle"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q76754"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Fabian Gottlieb von Bellingshausen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q73523"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Clemens Winkler"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77306"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Hennig Brand"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77309"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Friedrich Stromeyer"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q65191"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Friedrich Ernst Dorn"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q73523"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Clemens Winkler"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q92631"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Ray Tomlinson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q92749"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Robert Cailliau"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q76754"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Fabian Gottlieb Thaddeus von Bellingshausen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77122"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Karl Drais"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q83297"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "John William Strutt"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q83297"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "John William Strutt"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q102804"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Henri Moissan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q102804"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Henri Moissan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q83297"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "John William Strutt"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q102804"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Henri Moissan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q70538"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Carl Wilhelm Scheele"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q83297"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Lord Rayleigh"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q65517"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Carl Jacob Löwig"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q69080"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Karl Samuel Leberecht Hermann"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q70538"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Carl Wilhelm Scheele"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q127959"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Joseph Norman Lockyer"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q131733"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Henry Cavendish"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q127959"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Norman Lockyer"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q104154"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Urbain Le Verrier"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q127959"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Norman Lockyer"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q131733"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Henry Cavendish"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q92631"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Raymond Tomlinson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q92749"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Robert Cailliau"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q76754"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Fabian Gottlieb von Bellingshausen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77122"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Karl Drais"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q155013"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Heinrich Louis d'Arrest"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q155013"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Heinrich Louis d'Arrest"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q151911"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Jöns Jacob Berzelius"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q155013"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Heinrich Louis d'Arrest"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q190232"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Clyde Tombaugh"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q125084"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "John Hanning Speke"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q131733"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Henry Cavendish"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q131761"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Humphry Davy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q190232"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Clyde Tombaugh"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q131761"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Humphry Davy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q127959"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Norman Lockyer"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q174432"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Pedro Álvares Cabral"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q190232"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Clyde Tombaugh"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q125084"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "John Hanning Speke"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q174432"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Pedro Álvares Cabral"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q131733"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Henry Cavendish"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q174432"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Pedro Álvares Cabral"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q125084"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "John Hanning Speke"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q174432"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Pedro Álvares Cabral"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q186203"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Mikhail Lazarev"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q188962"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "James Naismith"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q186203"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Mijaíl Lázarev"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q188962"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "James Naismith"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q186203"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Mikhail Lazarev"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q188962"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "James Naismith"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q186203"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Mikhail Lazarev"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q188962"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "James Naismith"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q190232"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Clyde Tombaugh"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q151911"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Jöns Jacob Berzelius"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q131761"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Humphry Davy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q229235"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Cai Lun"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q229235"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Cai Lun"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q229235"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Cai Lun"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q241822"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Marguerite Perey"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q229235"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Cai Lun"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q241822"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Marguerite Perey"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q131761"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Humphry Davy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q151911"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Jöns Jacob Berzelius"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q125084"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "John Hanning Speke"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q318449"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Elisha Gray"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q151911"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Jöns Jacob Berzelius"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q155013"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Heinrich Louis d'Arrest"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q314306"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Antoine-Jérôme Balard"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q318449"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Elisha Gray"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q318449"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Elisha Gray"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q318449"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Elisha Gray"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q319383"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Martin Cooper"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q319383"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Martin Cooper"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q273314"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Antonio Meucci"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q273314"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Antonio Meucci"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q298581"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Pierre Janssen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q273314"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Antonio Meucci"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q298581"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Pierre Janssen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q273314"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Antonio Meucci"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q298581"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Pierre Janssen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q333438"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Louis Nicolas Vauquelin"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q333438"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Louis Nicolas Vauquelin"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q333438"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Louis Nicolas Vauquelin"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q353490"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Johan Gottlieb Gahn"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q333438"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Louis Nicolas Vauquelin"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q353490"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Johan Gottlieb Gahn"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q313067"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Daniel Rutherford"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q313568"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Johan August Arfwedson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q313067"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Daniel Rutherford"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q313568"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Johann Arfvedson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q319383"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Martin Cooper"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q313568"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Johan August Arfwedson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q313949"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "William G. Morgan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q241822"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Marguerite Catherine Perey"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q272512"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Joseph Black"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q319383"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Martin Cooper"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q241822"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Marguerite Catherine Perey"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q272512"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Joseph Black"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q272512"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Joseph Black"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q272512"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Joseph Black"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q298581"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Jules Janssen"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q301597"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Bartolomeo Cristofori"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q378277"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Ferdinand Verbiest"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q380209"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Morris William Travers"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q441066"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Julius Caesar Scaliger"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q380209"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Morris Travers"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q441066"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Giulio Cesare Scaligero"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q470306"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Antonio de Ulloa"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q473225"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Georg Brandt"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q470306"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Antonio de Ulloa"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q473225"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Georg Brandt"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q468351"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Axel Fredrik Cronstedt"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q470306"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Antonio de Ulloa"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q447875"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Lars Fredrik Nilson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q468330"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Bernard Courtois"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q468351"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Axel Fredrik Cronstedt"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q380209"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Morris Travers"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q441066"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Julius Caesar Scaliger"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q447875"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Lars Fredrik Nilson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q468330"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Bernard Courtois"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q447875"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Lars Fredrik Nilson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q468330"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Bernard Courtois"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q313949"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "William G. Morgan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q314306"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Antoine Jérôme Balard"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q313949"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "William G. Morgan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q314306"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Antoine Jérôme Balard"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q301597"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Bartolomeo Cristofori"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q301597"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Bartolomeo Cristofori"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q301597"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Bartolomeo Cristofori"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q313067"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Daniel Rutherford"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q313067"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Daniel Rutherford"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q313568"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Johan August Arfwedson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q473225"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "George Brandt"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q524465"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Andrés Manuel del Río"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q585780"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Antoine Bussy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q473225"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "George Brandt"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q524465"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Andrés Manuel del Río"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q585780"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Antoine Bussy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q511107"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Espurio Carvilio Ruga"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q524465"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Andrés Manuel del Río Fernández"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q585780"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Antoine Bussy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q715635"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Nathaniel Palmer"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q366827"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Paul-Émile Lecoq de Boisbaudran"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q378277"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Ferdinand Verbiest"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q378277"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Ferdinand Verbiest"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q380209"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Morris William Travers"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q441066"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Julius Caesar Scaliger"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q366827"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Paul Emile Lecoq de Boisbaudran"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q378277"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Ferdinand Verbiest"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q313949"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "William George Morgan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q314306"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Antoine-Jérôme Balard"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q447875"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Lars Fredrik Nilson"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q468330"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Bernard Courtois"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q468351"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Axel Fredrik Cronstedt"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q353490"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Johan Gottlieb Gahn"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q366827"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Paul-Émile Lecoq de Boisbaudran"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q950726"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "William Ramsay"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q468351"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Axel Fredrik Cronstedt"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q470306"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Antonio de Ulloa"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q353490"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Johan Gottlieb Gahn"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q366827"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Paul-Émile Lecoq de Boisbaudran"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q511107"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Spurius Carvilius Ruga"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q524465"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Andrés Manuel del Río"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q585780"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Antoine Bussy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q715635"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Nathaniel Palmer"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q950726"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "William Ramsay"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q903801"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Eugène-Melchior Péligot"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q933545"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Thomas Wedgwood"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q950726"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "William Ramsay"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q933545"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Thomas Wedgwood"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q950726"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "William Ramsay"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q715635"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Nathaniel Palmer"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q731890"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Edward Bransfield"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q902388"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "William Cruickshank"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q731890"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Edward Bransfield"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q902388"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "William Cruickshank"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q715635"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Nathaniel Palmer"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q731890"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Edward Bransfield"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q902388"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "William Cruickshank"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1515344"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Kirkpatrick Macmillan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q7342248"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Robert Bowie Owens"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1515344"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Kirkpatrick Macmillan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q731890"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Edward Bransfield"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q902388"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "William Cruickshank"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q7342248"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Robert Bowie Owens"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1515344"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Kirkpatrick Macmillan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q7342248"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Robert Bowie Owens"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1515344"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Kirkpatrick Macmillan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q933545"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Thomas Wedgwood"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q933545"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Thomas Wedgwood"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q4349082"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "First Russian Antarctic expedition"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q7342248"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Robert Bowie Owens"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q743"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "tungsténio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q743"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "tungstênio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q751"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "osmio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q751"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "osmium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q743"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "wolframio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q743"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "tungsten"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q751"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "ósmio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q751"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "ósmio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q877"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "iridium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q877"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "iridio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1046"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "niobium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q979"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "polônio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1046"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "niobio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1053"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "molybdenum"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1046"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "nióbio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1046"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "nióbio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1053"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "molibdeno"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q877"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "irídio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q979"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "polonio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q979"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "polonium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q877"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "irídio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1102"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "plutônio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1119"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "hafnio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1053"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "molibdénio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1089"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "palladium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1119"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "hafnium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1053"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "molibdênio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1102"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "plutonio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q979"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "polónio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1102"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "plutonium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1089"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "paladio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11420"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "judo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1089"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "paládio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1119"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "háfnio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1089"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "paládio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1102"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "plutónio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11420"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "judo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q48973"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Glenn Theodore Seaborg"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11420"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "judô"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q19009"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Edwin Mattison McMillan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1119"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "háfnio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q19009"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Edwin Mattison McMillan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q48973"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Glenn T. Seaborg"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q11420"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "judo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q19009"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Edwin McMillan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q19009"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Edwin Mattison McMillan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q377800"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Smithson Tennant"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q378065"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Charles Hatchett"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q377800"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Smithson Tennant"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q378065"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Charles Hatchett"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q48973"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Glenn Theodore Seaborg"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q76951"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "George de Hevesy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q377800"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Smithson Tennant"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q378065"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Charles Hatchett"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q377800"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Smithson Tennant"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q378065"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Charles Hatchett"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q472997"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Arthur Wahl"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q48973"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Glenno Theodoro Seaborgo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q76951"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "George de Hevesy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q190141"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Jigoro Kano"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q312975"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "William Hyde Wollaston"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q190141"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Jigoro Kano"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q312975"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "William Hyde Wollaston"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q76951"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "George Hevesy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q312975"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "William Hyde Wollaston"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q312975"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "William Hyde Wollaston"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q76951"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "George de Hevesy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q472997"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Arthur Wahl"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q728386"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Juan José Delhuyar"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q775969"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Dirk Coster"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q472997"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Arthur Wahl"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q728386"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Juan José Delhuyar"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q775969"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Dirk Coster"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q472997"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Arthur Wahl"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q728386"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Juan José Delhuyar"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q775969"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Dirk Coster"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q728386"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Juan José Elhuyar"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q775969"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Dirk Coster"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1708246"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Joseph William Kennedy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1708246"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Joseph William Kennedy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1708246"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Joseph W. Kennedy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1708246"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Joseph W. Kennedy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q182745"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Fausto Delhuyar"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q182745"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Fausto Delhuyar"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q182745"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Fausto Delhuyar"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q190141"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Jigorō Kanō"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q182745"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Fausto Elhuyar"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q190141"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Kanō Jigorō"
+   }
+  }
+ ]
+}

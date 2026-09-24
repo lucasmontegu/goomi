@@ -47,11 +47,21 @@ export function useProgress(): Progress {
   return useMemo(() => getProgress(learning), [learning]);
 }
 
+/** Free (limited) users get a few discoveries a day; everything else is Goomi Plus. */
+export const FREE_DAILY_DISCOVERIES = 3;
+
 /** Plus access: an entitlement confirmed by the store, or a development-only preview. */
 export function useHasAccess(): boolean {
   const subscription = useGoomi((state) => state.settings.subscription);
   const devPreview = useGoomi((state) => state.devPreview);
   return (__DEV__ && devPreview) || subscription === 'active' || subscription === 'trial';
+}
+
+/** How many free discoveries are left today; Infinity for Plus. */
+export function useFreeRemaining(): number {
+  const plus = useHasAccess();
+  const progress = useProgress();
+  return plus ? Infinity : Math.max(0, FREE_DAILY_DISCOVERIES - progress.todayCompleted);
 }
 
 /**

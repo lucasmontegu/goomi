@@ -5,6 +5,7 @@ import { evlog, type EvlogVariables } from "evlog/hono";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 
+import { contentApp } from "./content";
 import { ENV } from "./env.server";
 import { auth } from "./services";
 
@@ -29,13 +30,16 @@ app.use(
   "/*",
   cors({
     origin: ENV.CORS_ORIGIN,
-    allowMethods: ["GET", "POST", "OPTIONS"],
-    allowHeaders: ["Content-Type", "Authorization"],
+    allowMethods: ["GET", "POST", "DELETE", "OPTIONS"],
+    allowHeaders: ["Content-Type", "Authorization", "x-goomi-install"],
     credentials: true,
   }),
 );
 
 app.on(["POST", "GET"], "/api/auth/*", async (c) => auth.handler(c.req.raw));
+
+// Content bank, AI study, RevenueCat webhook and cron routes (ADR-001).
+app.route("/", contentApp);
 
 app.get("/", (c) => {
   return c.text("OK");

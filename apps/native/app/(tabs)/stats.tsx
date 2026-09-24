@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { TOPICS, dateKey, getWeakConcepts } from '@/src/domain';
 import { useGoomi } from '@/src/state/store';
 import { useProgress } from '@/src/state/runtime';
-import { Icon, ProgressLine, Tactile, Txt } from '@/src/ui/core';
+import { Icon, ProgressLine, Tactile, Txt, Title } from '@/src/ui/core';
 import { Doodle, EmptyState, Figure, GrowthBars, Ring, Surface, WeekDots, TopScrim } from '@/src/ui/kit';
 import { Mascot } from '@/src/ui/mascot';
 import { Prop, TOPIC_PROP } from '@/src/ui/props';
@@ -35,9 +35,9 @@ export default function Stats() {
     <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingTop: insets.top + 16, paddingHorizontal: 20, paddingBottom: 48, gap: 18 }}>
       <View style={styles.header}>
         <View style={{ flex: 1, gap: 4 }}>
-          <Txt weight="display" size={18} color={t.muted}>{fresh ? 'Your story starts here.' : progress.streak > 1 ? 'You’re on a roll!' : 'Look at you go.'}</Txt>
+          <Title color={t.text}>{fresh ? 'Your story starts here.' : progress.streak > 1 ? 'You’re on a roll!' : 'Look at you go.'}</Title>
           <View style={[styles.row, { gap: 6 }]}>
-            <Txt size={56} weight="bold" color={t.text} style={{ letterSpacing: -2.5, lineHeight: 62, fontVariant: ['tabular-nums'] }}>{progress.streak}</Txt>
+            <Txt size={44} weight="bold" color={t.text} style={{ letterSpacing: -1.5, lineHeight: 50, fontVariant: ['tabular-nums'] }}>{progress.streak}</Txt>
             <Prop name="flame" size={46} />
           </View>
           <Txt size={13} weight="semibold" color={t.muted}>{progress.streak === 1 ? 'day in a row' : 'days in a row'}</Txt>
@@ -68,7 +68,7 @@ export default function Stats() {
             <Txt size={26} weight="bold" color={palette.ink} style={{ letterSpacing: -1, fontVariant: ['tabular-nums'] }}>{progress.retentionPercent === null ? '—' : `${progress.retentionPercent}%`}</Txt>
           </Ring>
           <View style={{ flex: 1, gap: 4 }}>
-            <Txt size={17} weight="bold" color={palette.ink}>Still remembered</Txt>
+            <Txt size={17} weight="semibold" color={palette.ink}>Still remembered</Txt>
             <Txt size={12} color="#3D4A12">{progress.retentionPercent === null
               ? 'Shows up after your first review, when Goomi checks what stuck.'
               : `Based on your recent reviews. ${progress.retentionPercent >= 70 ? 'That’s memory doing its thing.' : 'The tricky ones come back gently.'}`}</Txt>
@@ -85,7 +85,7 @@ export default function Stats() {
 
         <Surface theme={t} style={{ padding: 18, gap: 16 }}>
           <View style={[styles.row, { justifyContent: 'space-between' }]}>
-            <Txt size={16} weight="bold" color={t.text}>Knowledge over time</Txt>
+            <Txt size={16} weight="semibold" color={t.text}>Knowledge over time</Txt>
             <Txt size={12} color={t.muted}>last 7 days</Txt>
           </View>
           <GrowthBars values={progress.weeklyActivity.map((day) => day.count)} labels={days.map((day) => day.label.slice(0, 1))} theme={t} />
@@ -94,14 +94,14 @@ export default function Stats() {
         {progress.dueCount > 0 && <Tactile label="Review what’s due" onPress={start} style={[styles.due, { backgroundColor: palette.ink }]}>
           <Prop name="cards" size={52} />
           <View style={{ flex: 1 }}>
-            <Txt size={16} weight="bold" color={palette.ivory}>{plural(progress.dueCount, 'memory', 'memories')} ready for a check-in</Txt>
+            <Txt size={16} weight="semibold" color={palette.ivory}>{plural(progress.dueCount, 'memory', 'memories')} ready for a check-in</Txt>
             <Txt size={12} color="#A8AC9E">Recalling right before you’d forget is what makes it stick.</Txt>
           </View>
           <View style={styles.go}><Icon name="arrow-forward" size={18} color={palette.ink} /></View>
         </Tactile>}
 
         {growing.length > 0 && <View style={{ gap: 12 }}>
-          <Txt size={19} weight="bold" color={t.text}>Areas growing</Txt>
+          <Txt size={18} weight="semibold" color={t.text}>Areas growing</Txt>
           <Surface theme={t} style={{ padding: 16, gap: 16 }}>
             {growing.map((category) => {
               const topic = TOPICS.find((item) => item.id === category.topicId)!;

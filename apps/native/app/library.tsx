@@ -6,7 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { getWeakConcepts, type StudyMaterial } from '@/src/domain';
 import { useGoomi } from '@/src/state/store';
-import { Icon, Reveal, Tactile, Txt } from '@/src/ui/core';
+import { Icon, Reveal, Tactile, Txt, Title } from '@/src/ui/core';
 import { EmptyState, Surface } from '@/src/ui/kit';
 import { Mascot } from '@/src/ui/mascot';
 import { Prop } from '@/src/ui/props';
@@ -57,7 +57,7 @@ export default function Library() {
 
       <View style={styles.hero}>
         <View style={{ flex: 1, paddingBottom: 14 }}>
-          <Txt size={32} weight="bold" color={t.text} style={styles.title}>{'Your study\nlibrary'}</Txt>
+          <Title color={t.text} large>Your study library</Title>
           <Txt weight="display" size={16} color={t.muted} style={{ marginTop: 8, transform: [{ rotate: '-1.5deg' }] }}>
             {empty ? 'Bring me something to read.' : 'Your notes, in small bites.'}
           </Txt>
@@ -148,8 +148,8 @@ function ReviewQueue({ theme: t, due, fresh, total, onReview }: { theme: Theme; 
     <Txt size={12} weight="bold" color={t.text} style={{ letterSpacing: 1.2 }}>REVIEW QUEUE</Txt>
     <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 12, marginTop: 6 }}>
       <View style={{ flex: 1 }}>
-        {caughtUp ? <Txt size={24} weight="bold" color={t.text} style={{ letterSpacing: -0.6 }}>All caught up</Txt> : <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 8 }}>
-          <Txt size={48} weight="bold" color={t.text} style={styles.bigCount}>{due + fresh}</Txt>
+        {caughtUp ? <Txt size={22} weight="semibold" color={t.text} style={{ letterSpacing: -0.3 }}>All caught up</Txt> : <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 8 }}>
+          <Txt size={40} weight="bold" color={t.text} style={styles.bigCount}>{due + fresh}</Txt>
           <Txt size={14} weight="semibold" color={t.text}>ready</Txt>
         </View>}
         <Txt size={12} color={t.muted} style={{ fontVariant: ['tabular-nums'] }}>
@@ -163,7 +163,7 @@ function ReviewQueue({ theme: t, due, fresh, total, onReview }: { theme: Theme; 
 
 function SectionHead({ theme: t, title, count }: { theme: Theme; title: string; count: number }) {
   return <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 8, paddingHorizontal: 4 }}>
-    <Txt size={19} weight="bold" color={t.text} style={{ letterSpacing: -0.3 }}>{title}</Txt>
+    <Txt size={18} weight="semibold" color={t.text} style={{ letterSpacing: -0.3 }}>{title}</Txt>
     {count > 0 && <Txt size={13} weight="semibold" color={t.faint} style={{ fontVariant: ['tabular-nums'] }}>{count}</Txt>}
   </View>;
 }

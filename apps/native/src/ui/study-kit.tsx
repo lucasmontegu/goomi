@@ -56,6 +56,7 @@ const STATUS: Record<StudyMaterial['status'], { label: string; tone: 'lime' | 'l
   'no-concepts': { label: 'No definitions yet', tone: 'lavender' },
   'needs-extraction': { label: 'Needs text', tone: 'soft' },
   failed: { label: 'Couldn’t read', tone: 'warning' },
+  processing: { label: 'Preparing', tone: 'lavender' },
 };
 export function StatusBadge({ status, theme }: { status: StudyMaterial['status']; theme: Theme }) {
   const meta = STATUS[status];

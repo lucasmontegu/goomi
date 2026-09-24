@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 import { router, type Href } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Button, Txt } from '@/src/ui/core';
+import { Button, Txt, Title } from '@/src/ui/core';
 import { Doodle } from '@/src/ui/kit';
 import { Mascot } from '@/src/ui/mascot';
 import { useTheme } from '@/src/ui/use-theme';
@@ -16,7 +16,7 @@ export default function NotFound() {
         <Doodle kind="spark" size={34} color={t.text} style={{ position: 'absolute', right: -6, top: 10 }} />
       </View>
       <Txt weight="display" size={18} color={t.muted}>Hmm, where did that go?</Txt>
-      <Txt size={28} weight="bold" color={t.text} style={{ textAlign: 'center', letterSpacing: -0.9, lineHeight: 34 }}>This page wandered off</Txt>
+      <Title color={t.text} style={{ textAlign: 'center' }}>This page wandered off</Title>
       <Txt size={14} color={t.muted} style={{ textAlign: 'center', maxWidth: 290 }}>The link may be old, or it points somewhere Goomi doesn’t know yet.</Txt>
     </View>
     <Button title="Take me home" icon="arrow-forward" onPress={() => router.replace('/' as Href)} />

@@ -40,5 +40,15 @@
         "service": "web"
       }
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/jobs",
+      "schedule": "15 3 * * *"
+    },
+    {
+      "path": "/api/cron/bank",
+      "schedule": "0 4 * * *"
+    }
   ]
 }

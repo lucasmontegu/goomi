@@ -1,0 +1,3955 @@
+{
+ "bindings": [
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q114"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "KE"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "337"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "581309"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "48468138"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q3870#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q15"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q142"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "FR"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "428"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "643801"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "68605616"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q90#http://wikiba.se/ontology#PreferredRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q46"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1028"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "MA"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "334"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "446550"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "36828330"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q3551#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q15"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1033"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "NG"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "349"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "923768"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "211400708"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q3787#http://wikiba.se/ontology#PreferredRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q15"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "UY"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "324"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "176215"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "3444263"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q1335#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q18"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q79"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "EG"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "390"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "1010407.87"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "114535772"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q85#http://wikiba.se/ontology#PreferredRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q15"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q183"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "DE"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "405"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "357587.77"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "83577140"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q64#http://wikiba.se/ontology#NormalRank|http://www.wikidata.org/entity/Q64#http://wikiba.se/ontology#PreferredRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q46"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q17"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "JP"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "419"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "377972.28"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "123802000"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q1490#http://wikiba.se/ontology#PreferredRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q48"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q27"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "IE"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "342"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "69797"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "5149139"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q1761#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q46"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q29"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "ES"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "396"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "505990"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "48592909"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q2807#http://wikiba.se/ontology#PreferredRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q46"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q31"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "BE"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "383"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "30688"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "11825551"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q239#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q46"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q32"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "LU"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "335"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "2593.05"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "690959"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q1842#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q46"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q38"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "IT"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "409"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "302068"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "58850717"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q220#http://wikiba.se/ontology#PreferredRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q46"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q45"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "PT"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "371"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "92225"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "10347892"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q597#http://wikiba.se/ontology#PreferredRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q46"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q148"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "CN"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "399"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "9596961"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "1404890000"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q956#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q48"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q155"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "BR"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "387"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "8515767"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "214211951"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q2844#http://wikiba.se/ontology#PreferredRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q18"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q159"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "RU"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "421"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "17075400"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "146119928"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q649#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q46|http://www.wikidata.org/entity/Q48|http://www.wikidata.org/entity/Q5401"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q258"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "ZA"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "368"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "1221037"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "62027503"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q5465#http://wikiba.se/ontology#NormalRank|http://www.wikidata.org/entity/Q3926#http://wikiba.se/ontology#NormalRank|http://www.wikidata.org/entity/Q37701#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q15"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q298"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "CL"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "380"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "756102"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "19458000"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q2887#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q18"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q414"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "AR"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "372"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "2780400"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "47327407"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q1486#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q18"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q419"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "PE"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "333"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "1285216"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "34157732"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q2868#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q18"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q668"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "IN"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "403"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "3287263"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "1326093247"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q987#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q48"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q717"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "VE"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "344"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "912050"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "31250306"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q1533#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q18"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q730"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "SR"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "288"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "163270"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "563402"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q3001#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q18"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q733"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "PY"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "311"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "406756"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "6811297"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q2933#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q18"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q734"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "GY"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "286"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "214970"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "878674"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q10717#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q18"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q736"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "EC"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "315"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "257204.27"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "16938986"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q2900#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q18"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q739"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "CO"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "367"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "1141748"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "52321152"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q2841#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q18"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q750"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "BO"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "313"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "1098581"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "12244159"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q1491#http://wikiba.se/ontology#NormalRank|http://www.wikidata.org/entity/Q2907#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q18"
+   }
+  },
+  {
+   "country": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q29999"
+   },
+   "iso2": {
+    "type": "literal",
+    "value": "NL"
+   },
+   "sitelinks": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+    "type": "literal",
+    "value": "107"
+   },
+   "areaKm2": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "42201"
+   },
+   "population": {
+    "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+    "type": "literal",
+    "value": "17100715"
+   },
+   "capitals": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q727#http://wikiba.se/ontology#NormalRank"
+   },
+   "continents": {
+    "type": "literal",
+    "value": "http://www.wikidata.org/entity/Q46"
+   }
+  }
+ ],
+ "labels": [
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q15"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "África"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q15"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "África"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q17"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Japão"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q17"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Japan"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q15"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Africa"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q17"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Japão"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q17"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Japón"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q18"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "América do Sul"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q15"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "África"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q18"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "América del Sur"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q18"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "South America"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q27"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Irlanda"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q27"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Ireland"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q27"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Irlanda"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q27"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "República da Irlanda"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q18"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "América do Sul"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q29"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Espanha"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q29"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Spain"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q29"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Espanha"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q29"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "España"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q31"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Bélgica"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q31"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Bélgica"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q31"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Belgium"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q31"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Bélgica"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q32"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Luxemburgo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q32"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Luxembourg"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q38"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Itália"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q38"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Itália"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q38"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Italia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q32"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Luxemburgo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q38"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Italy"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q32"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Luxemburgo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q46"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Europe"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q45"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Portugal"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q46"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Europa"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q46"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Europa"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q46"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Europa"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q45"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Portugal"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q45"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Portugal"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q48"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Asia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q48"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Ásia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q48"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Asia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q45"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Portugal"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q48"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Ásia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q49"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "América del Norte"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q49"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "North America"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q49"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "América do Norte"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q49"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "América do Norte"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q64"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Berlin"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q64"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Berlim"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q64"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Berlín"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Uruguai"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Uruguai"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Uruguay"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q79"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Egypt"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q64"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Berlim"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q77"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Uruguay"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q79"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Egipto"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q79"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Egito"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q79"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Egito"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q90"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Paris"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q85"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Cairo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q85"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "El Cairo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q85"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Cairo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q85"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Cairo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q114"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Quénia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q114"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Quênia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q142"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Francia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q142"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "França"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q142"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "France"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q90"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Paris"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q142"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "França"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q90"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Paris"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q90"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "París"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q114"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Kenia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q114"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Kenya"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q148"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "China"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q155"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Brasil"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q148"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "República Popular da China"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q148"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "República Popular China"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q155"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Brazil"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q148"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "People's Republic of China"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q155"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Brasil"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q159"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Rússia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q159"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Rússia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q155"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Brasil"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q159"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Rusia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q159"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Russia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q183"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Alemania"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q183"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Germany"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q183"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Alemanha"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q220"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Rome"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q220"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Roma"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q220"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Roma"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q220"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Roma"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q183"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Alemanha"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q239"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Cidade de Bruxelas"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q258"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Sudáfrica"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q258"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "South Africa"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q239"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Brussels"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q239"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Bruselas"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q239"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Bruxelas"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q298"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Chile"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q298"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Chile"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q298"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Chile"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q298"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Chile"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q414"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Argentina"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q414"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Argentina"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q414"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Argentina"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q258"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "África do Sul"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q258"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "África do Sul"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q419"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Peru"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q419"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Peru"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q419"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Peru"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q419"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Perú"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q597"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Lisboa"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q597"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Lisboa"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q597"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Lisbon"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q597"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Lisboa"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q649"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Moscow"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q668"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "India"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q649"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Moscú"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q668"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Índia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q668"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Índia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q668"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "India"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q649"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Moscou"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q649"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Moscovo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q717"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Venezuela"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q717"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Venezuela"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q717"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Venezuela"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q717"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Venezuela"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q730"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Suriname"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q727"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Amsterdam"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q727"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Amesterdão"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q727"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Amsterdã"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q727"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Ámsterdam"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q730"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Suriname"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q734"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Guyana"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q733"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Paraguai"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q733"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Paraguay"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q733"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Paraguai"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q730"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Suriname"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q733"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Paraguay"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q730"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Surinam"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q736"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Equador"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q734"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Guiana"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q736"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Ecuador"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q739"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Colômbia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q750"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Bolivia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q734"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Guyana"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q734"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Guiana"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q750"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Bolívia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q750"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Bolivia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q736"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Ecuador"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q739"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Colombia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q739"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Colombia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q750"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Bolívia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q956"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Beijing"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q739"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Colômbia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q987"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Nova Deli"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1028"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Morocco"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1028"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Marruecos"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1033"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Nigeria"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1033"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Nigeria"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q956"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Pekín"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1028"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Marrocos"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1033"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Nigéria"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1033"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Nigéria"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q956"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Pequim"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q956"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Pequim"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1028"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Marrocos"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q987"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "New Delhi"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q987"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Nueva Delhi"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q987"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Nova Deli"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1335"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Montevideo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1335"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Montevideo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1486"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Buenos Aires"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1486"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Buenos Aires"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1486"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Buenos Aires"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1335"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Montevidéu"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1486"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Buenos Aires"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1335"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Montevidéu"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1491"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "La Paz"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1490"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Tóquio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1490"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Tokio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1490"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Tokyo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1491"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "La Paz"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1533"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Caracas"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1491"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "La Paz"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1490"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Tóquio"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1533"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Caracas"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1491"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "La Paz"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1533"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Caracas"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2841"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Bogotá"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2841"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Bogotá"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1533"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Caracas"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1761"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Dublín"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1761"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Dublin"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1842"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Luxembourg"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2807"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Madrid"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2807"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Madrid"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1842"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Luxemburgo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2807"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Madrid"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2807"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Madri"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2841"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Bogotá"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2868"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Lima"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2900"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Quito"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2868"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Lima"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2887"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Santiago de Chile"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2844"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Brasilia"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2844"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Brasília"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1761"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Dublin"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2844"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Brasília"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2844"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Brasília"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1761"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Dublin"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2841"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Bogotá"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q1842"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Luxemburgo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2887"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Santiago"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2868"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Lima"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2868"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Lima"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3001"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Paramaribo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2900"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Quito"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2907"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Sucre"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2907"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Sucre"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2887"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Santiago"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2933"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Asunción"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3001"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Paramaribo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2933"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Assunção"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2933"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Assunção"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2907"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Sucre"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2900"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Quito"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2900"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Quito"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2907"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Sucre"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2933"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Asunción"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3001"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Paramaribo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3787"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Abuya"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q2887"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Santiago"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3926"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Pretoria"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3926"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Pretoria"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3551"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Rabat"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3551"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Rabat"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3870"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Nairobi"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3787"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Abuja"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3001"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Paramaribo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3870"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Nairobi"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3551"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Rabat"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3870"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Nairóbi"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3870"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Nairóbi"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q10717"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Georgetown"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3926"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Pretória"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q10717"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Georgetown"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q3926"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Pretória"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q10717"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Georgetown"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5465"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Ciudad del Cabo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q37701"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Bloemfontein"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q37701"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Bloemfontein"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q37701"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Bloemfontein"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5465"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Cape Town"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q10717"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Georgetown"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5465"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Cidade do Cabo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q29999"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Kingdom of the Netherlands"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q29999"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Reino dos Países Baixos"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q29999"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Reino dos Países Baixos"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q29999"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Reino de los Países Bajos"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q37701"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Bloemfontein"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q5465"
+   },
+   "label": {
+    "xml:lang": "pt-br",
+    "type": "literal",
+    "value": "Cidade do Cabo"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q55643"
+   },
+   "label": {
+    "xml:lang": "pt",
+    "type": "literal",
+    "value": "Oceania"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q55643"
+   },
+   "label": {
+    "xml:lang": "es",
+    "type": "literal",
+    "value": "Oceanía"
+   }
+  },
+  {
+   "item": {
+    "type": "uri",
+    "value": "http://www.wikidata.org/entity/Q55643"
+   },
+   "label": {
+    "xml:lang": "en",
+    "type": "literal",
+    "value": "Oceania"
+   }
+  }
+ ]
+}

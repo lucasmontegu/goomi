@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { STARTER_CHALLENGES, TOPICS, topicPath, type TopicId } from '@/src/domain';
 import { useGoomi } from '@/src/state/store';
-import { Icon, ProgressLine, Tactile, Txt } from '@/src/ui/core';
+import { Icon, ProgressLine, Tactile, Txt, Title } from '@/src/ui/core';
 import { Chip, Doodle, Surface, TopScrim } from '@/src/ui/kit';
 import { Mascot } from '@/src/ui/mascot';
 import { Prop, TOPIC_PROP } from '@/src/ui/props';
@@ -45,10 +45,10 @@ export default function Explore() {
     <ScrollView keyboardShouldPersistTaps="handled" keyboardDismissMode="on-drag" showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingTop: insets.top + 14, paddingHorizontal: 20, paddingBottom: 48, gap: 22 }}>
       <View style={styles.header}>
         <View style={{ flex: 1 }}>
-          <Txt size={34} weight="bold" color={t.text} style={{ letterSpacing: -0.7, lineHeight: 38 }}>Explore</Txt>
+          <Title color={t.text} large>Explore</Title>
           <View style={{ alignSelf: 'flex-start' }}>
-            <Txt weight="display" size={26} color={t.text} style={{ lineHeight: 32 }}>a bigger you</Txt>
-            <Doodle kind="underline" size={22} width={150} color={palette.lime} style={{ position: 'absolute', bottom: -8, left: -6, zIndex: -1 }} />
+            <Title color={t.text} large>a bigger you</Title>
+            <Doodle kind="underline" size={22} width={196} color={palette.lime} style={{ position: 'absolute', bottom: -8, left: -6, zIndex: -1 }} />
           </View>
         </View>
         <Mascot pose="globe" size={112} motion="breathe" />
@@ -66,21 +66,21 @@ export default function Explore() {
       </ScrollView>
 
       {!needle && filter === 'all' && <Tactile label={`Continue ${featured.name}`} onPress={() => router.push(`/topic/${featured.id}` as Href)} style={[styles.feature, { backgroundColor: t.scheme === 'dark' ? t.lavenderSoft : '#EEE8FF' }]}>
-        <View style={{ flex: 1, gap: 6, zIndex: 1 }}>
+        <View style={{ flex: 1, gap: 6, zIndex: 1, maxWidth: '64%' }}>
           <Txt size={11} weight="bold" color={t.muted} style={{ letterSpacing: 1.2 }}>PICKED FOR YOU</Txt>
-          <Txt size={24} weight="bold" color={t.text} style={{ letterSpacing: -0.6, lineHeight: 29 }}>{featured.name}</Txt>
+          <Txt size={20} weight="semibold" color={t.text} style={{ letterSpacing: -0.3, lineHeight: 25 }}>{featured.name}</Txt>
           <Txt size={13} color={t.muted}>{featured.subtitle}</Txt>
           <View style={[styles.startPill, { backgroundColor: t.inverse }]}>
             <Txt size={13} weight="bold" color={t.onInverse}>{featuredPath.learned ? 'Continue' : 'Start'} · {plural(featuredPath.total - featuredPath.learned || featuredPath.total, 'discovery', 'discoveries')}</Txt>
           </View>
         </View>
         <View style={styles.featureArt}>
-          <Prop name={TOPIC_PROP[featured.id]} size={132} />
+          <Prop name={TOPIC_PROP[featured.id]} size={116} />
         </View>
       </Tactile>}
 
       <View style={{ gap: 4 }}>
-        <Txt size={19} weight="bold" color={t.text}>{filter === 'yours' ? 'Your interests' : filter === 'languages' ? 'Language packs' : filter === 'local' ? `Close to home · ${profile.country}` : 'All subjects'}</Txt>
+        <Txt size={18} weight="semibold" color={t.text}>{filter === 'yours' ? 'Your interests' : filter === 'languages' ? 'Language packs' : filter === 'local' ? `Close to home · ${profile.country}` : 'All subjects'}</Txt>
         <Txt size={12} color={t.muted}>{visible.length ? `${plural(visible.length, 'path')} · each one has a clear finish line` : 'Nothing matches that yet.'}</Txt>
       </View>
 
@@ -112,7 +112,7 @@ export default function Explore() {
         <Prop name="globe" size={64} />
         <View style={{ flex: 1, gap: 3 }}>
           <Txt size={11} weight="bold" color={t.muted} style={{ letterSpacing: 1.2 }}>CLOSE TO HOME</Txt>
-          <Txt size={16} weight="bold" color={t.text}>{profile.country}, a little closer</Txt>
+          <Txt size={16} weight="semibold" color={t.text}>{profile.country}, a little closer</Txt>
           <Txt size={12} color={t.muted}>{plural(local.length, 'discovery', 'discoveries')} shaped by where you’re from.</Txt>
         </View>
         <Tactile label="Show local topics" onPress={() => setFilter('local')} style={[styles.round, { backgroundColor: t.inverse }]}><Icon name="arrow-forward" size={18} color={t.onInverse} /></Tactile>
@@ -122,7 +122,7 @@ export default function Explore() {
         <View style={styles.row}>
           <Prop name="chat" size={48} />
           <View style={{ flex: 1 }}>
-            <Txt size={16} weight="bold" color={t.text}>Your language packs</Txt>
+            <Txt size={16} weight="semibold" color={t.text}>Your language packs</Txt>
             <Txt size={12} color={t.muted}>{profile.learningLanguages.length ? 'Short words and phrases, woven into your moments.' : 'Pick a language and Goomi will weave it in.'}</Txt>
           </View>
         </View>

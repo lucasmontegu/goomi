@@ -3,8 +3,9 @@ import { router, useLocalSearchParams, type Href } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { ConceptMemory } from '@/src/domain';
+import { deleteAIMaterial, refreshAIMaterial } from '@/src/services/content-sync';
 import { useGoomi } from '@/src/state/store';
-import { Icon, ProgressLine, Reveal, Txt } from '@/src/ui/core';
+import { Icon, ProgressLine, Reveal, Txt, Title } from '@/src/ui/core';
 import { EmptyState, ListGroup, ListRow, Notice, Surface } from '@/src/ui/kit';
 import { Mascot } from '@/src/ui/mascot';
 import { Prop } from '@/src/ui/props';
@@ -48,15 +49,26 @@ export default function Material() {
   const due = states.filter((state) => state === 'due').length;
   // "You are here": the first concept that isn't learned yet, or the first one due.
   const current = Math.max(0, states.findIndex((state) => state !== 'learned'));
-  const ready = material.status === 'ready' && concepts.length > 0;
+  // AI study materials carry checked questions instead of extracted definitions.
+  const ai = material.processingMethod === 'ai';
+  const questionConcepts = [...new Set(material.challenges.map((challenge) => challenge.conceptId))];
+  const aiLearned = questionConcepts.filter((conceptId) => memories[conceptId]?.firstLearnedAt != null).length;
+  const ready = ai ? material.status === 'ready' && material.challenges.length > 0 : material.status === 'ready' && concepts.length > 0;
 
+  async function removeAI() {
+    const result = await deleteAIMaterial(material!);
+    if (result.ok) back();
+    // The server copy must go too, so nothing is removed locally until it has.
+    else Alert.alert('Couldn’t remove it yet', 'Goomi couldn’t delete your notes from its server. Try again when you’re online.');
+  }
   function confirmRemove() {
     Alert.alert(
       `Remove “${material!.title}”?`,
-      'Its recall prompts leave your library. Progress you’ve already made stays in your stats.',
+      ai ? 'Its questions leave your library, and Goomi deletes your notes and everything made from them from its server. Progress you’ve already made stays in your stats.'
+        : 'Its recall prompts leave your library. Progress you’ve already made stays in your stats.',
       [
         { text: 'Keep it', style: 'cancel' },
-        { text: 'Remove', style: 'destructive', onPress: () => { removeMaterial(material!.id); back(); } },
+        { text: 'Remove', style: 'destructive', onPress: () => { if (ai) void removeAI(); else { removeMaterial(material!.id); back(); } } },
       ],
     );
   }
@@ -77,12 +89,28 @@ export default function Material() {
         </View>
         <View style={{ flex: 1, gap: 6, paddingTop: 6 }}>
           <Txt size={12} weight="bold" color={t.muted} style={{ letterSpacing: 0.8 }}>{`${KIND_LABEL[material.kind]} · ${shortDate(material.createdAt)}`.toUpperCase()}</Txt>
-          <Txt size={24} weight="bold" color={t.text} style={styles.title} lines={3} selectable>{material.title}</Txt>
+          <Title color={t.text} lines={3}>{material.title}</Title>
           <StatusBadge theme={t} status={material.status} />
         </View>
       </View>
 
-      {ready ? <Reveal delay={40}>
+      {ai && ready ? <Reveal delay={40}>
+        <Surface theme={t} style={styles.summary}>
+          <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 6 }}>
+            <Txt size={28} weight="bold" color={t.text} style={styles.figure}>{aiLearned}</Txt>
+            <Txt size={14} weight="semibold" color={t.muted} style={{ fontVariant: ['tabular-nums'] }}>of {plural(questionConcepts.length, 'idea')} learned</Txt>
+          </View>
+          <ProgressLine value={questionConcepts.length ? aiLearned / questionConcepts.length : 0} track={t.soft} height={8} />
+          <Txt size={12} color={t.muted}>{material.message}</Txt>
+        </Surface>
+      </Reveal> : ai ? <View style={{ gap: 12 }}>
+        <Notice
+          theme={t} tone={material.status === 'failed' ? 'warning' : 'lavender'} icon={material.status === 'failed' ? 'alert-circle-outline' : 'sparkles-outline'}
+          title={material.status === 'failed' ? 'Couldn’t prepare this one' : `Preparing with AI${material.progress?.step ? ` · step ${Math.min(4, Math.max(1, Math.ceil((material.progress.step / material.progress.total) * 4)))} of 4` : ''}`}
+          body={material.message}
+        />
+        {material.status === 'processing' && <PillButton theme={t} tone="soft" title="Check now" icon="refresh" onPress={() => void refreshAIMaterial(material)} />}
+      </View> : ready ? <Reveal delay={40}>
         <Surface theme={t} style={styles.summary}>
           <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 6 }}>
             <Txt size={28} weight="bold" color={t.text} style={styles.figure}>{learned}</Txt>
@@ -103,10 +131,23 @@ export default function Material() {
         <PillButton theme={t} tone="soft" title="Add or edit text" icon="create-outline" onPress={() => router.push({ pathname: '/compose', params: { source: 'text', materialId: material.id } } as unknown as Href)} />
       </View>}
 
-      {ready && <Reveal delay={90} style={{ marginTop: 32 }}>
+      {ai && ready && <Reveal delay={90} style={{ marginTop: 32 }}>
+        <View style={{ gap: 2, marginBottom: 14 }}>
+          <Txt size={18} weight="semibold" color={t.text} style={{ letterSpacing: -0.4 }}>Questions</Txt>
+          <Txt size={12} color={t.muted}>Each one checked against the passage it came from</Txt>
+        </View>
+        <Surface theme={t} style={{ paddingVertical: 4, paddingHorizontal: 16 }}>
+          {material.challenges.map((challenge, i) => <View key={challenge.id} style={[{ paddingVertical: 12, gap: 4 }, i < material.challenges.length - 1 && { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.line }]}>
+            <Txt size={15} weight="semibold" color={t.text} lines={3}>{challenge.prompt}</Txt>
+            {challenge.source?.excerpt ? <Txt size={12} color={t.muted} lines={3}>Your notes say: “{challenge.source.excerpt}”</Txt> : null}
+          </View>)}
+        </Surface>
+      </Reveal>}
+
+      {!ai && ready && <Reveal delay={90} style={{ marginTop: 32 }}>
         <View style={{ flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 14 }}>
           <View style={{ gap: 2 }}>
-            <Txt size={20} weight="bold" color={t.text} style={{ letterSpacing: -0.4 }}>Study path</Txt>
+            <Txt size={18} weight="semibold" color={t.text} style={{ letterSpacing: -0.4 }}>Study path</Txt>
             <Txt size={12} color={t.muted}>In the order they appear in your notes</Txt>
           </View>
           <Legend theme={t} />
@@ -123,7 +164,7 @@ export default function Material() {
       </Reveal>}
 
       <ListGroup theme={t} style={{ marginTop: 32 }}>
-        <ListRow theme={t} tone="danger" icon="trash-outline" title="Remove from Goomi" detail="Deletes this material from this phone" onPress={confirmRemove} last />
+        <ListRow theme={t} tone="danger" icon="trash-outline" title="Remove from Goomi" detail={ai ? 'Deletes it from this phone and Goomi’s server' : 'Deletes this material from this phone'} onPress={confirmRemove} last />
       </ListGroup>
     </ScrollView>
 
@@ -169,7 +210,7 @@ function PathNode({ theme: t, concept, index, state, current, first, last, linke
       {current && <View style={styles.hereRow}>
         <Txt size={11} weight="bold" color={t.accentText} style={{ letterSpacing: 0.8 }}>{state === 'due' ? 'DUE NOW' : 'UP NEXT'}</Txt>
       </View>}
-      <Txt size={16} weight="bold" color={state === 'new' && !current ? t.muted : t.text} style={{ letterSpacing: -0.2 }}>{concept.term}</Txt>
+      <Txt size={16} weight="semibold" color={state === 'new' && !current ? t.muted : t.text} style={{ letterSpacing: -0.2 }}>{concept.term}</Txt>
       <Txt size={13} color={t.muted} lines={current ? 4 : 2}>{concept.definition}</Txt>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2 }}>
         <Icon name="document-text-outline" size={12} color={t.faint} />

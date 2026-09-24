@@ -11,7 +11,8 @@ import { useGoomi } from '@/src/state/store';
 import { useRuntime } from '@/src/state/runtime';
 import { analyticsConfigured, setAnalyticsConsent as applyAnalyticsConsent, trackEvent } from '@/src/services/analytics';
 import { billingAvailability, getBillingStatus, restoreBillingPurchases, type BillingStatus } from '@/src/services/billing';
-import { CircleButton, Txt } from '@/src/ui/core';
+import { deleteAccount, signOut } from '@/src/services/auth';
+import { CircleButton, Txt, Title } from '@/src/ui/core';
 import { Beads, ListGroup, ListRow, Notice, modeMeta } from '@/src/ui/kit';
 import { Mascot } from '@/src/ui/mascot';
 import { plural } from '@/src/ui/copy';
@@ -77,6 +78,9 @@ function SettingsScreen() {
   const [restoring, setRestoring] = useState(false);
   const [restoreResult, setRestoreResult] = useState<RestoreResult>(null);
   const [resetting, setResetting] = useState(false);
+  const account = useGoomi((state) => state.account);
+  const [accountBusy, setAccountBusy] = useState<'sign-out' | 'delete' | null>(null);
+  const [accountResult, setAccountResult] = useState<(NonNullable<RestoreResult> & { manage?: boolean }) | null>(null);
 
   const availability = billingAvailability();
   const frequency = frequencyFor(settings.unlockMinutes, settings.intensity);
@@ -177,6 +181,49 @@ function SettingsScreen() {
     }
   }
 
+  function confirmSignOut() {
+    Alert.alert(
+      'Sign out of Goomi?',
+      'Your progress stays on this phone. To use Goomi Plus here again, sign back in or restore purchases.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        { text: 'Sign out', style: 'destructive', onPress: () => void performSignOut() },
+      ],
+    );
+  }
+
+  async function performSignOut() {
+    setAccountBusy('sign-out');
+    setAccountResult(null);
+    await signOut();
+    setAccountBusy(null);
+    setAccountResult({ tone: 'soft', title: 'Signed out', body: 'Your Goomi stays on this phone. Sign in anytime to save it again.' });
+  }
+
+  function confirmDeleteAccount() {
+    Alert.alert(
+      'Delete your Goomi account?',
+      'This permanently deletes your account and unlinks your Goomi Plus subscription from it. Your progress on this phone stays.\n\nDeleting your account doesn’t cancel an App Store subscription. To stop being charged, cancel it in your App Store subscriptions.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        { text: 'App Store subscriptions', onPress: () => void openManageSubscription() },
+        { text: 'Delete account', style: 'destructive', onPress: () => void performDeleteAccount() },
+      ],
+    );
+  }
+
+  async function performDeleteAccount() {
+    setAccountBusy('delete');
+    setAccountResult(null);
+    const result = await deleteAccount();
+    setAccountBusy(null);
+    if (result.ok) {
+      setAccountResult({ tone: 'soft', title: 'Your account was deleted', body: 'If you subscribed to Goomi Plus, cancel it in your App Store subscriptions to stop renewals.', manage: true });
+    } else if (!result.error.cancelled) {
+      setAccountResult({ tone: 'warning', title: 'Account not deleted', body: result.error.message });
+    }
+  }
+
   function confirmReset() {
     Alert.alert(
       'Reset Goomi on this phone?',
@@ -220,7 +267,7 @@ function SettingsScreen() {
         <CircleButton icon="arrow-back" label="Back" dark={dark} onPress={() => router.back()} />
         <View style={styles.hero}>
           <View style={{ flex: 1, gap: 6 }}>
-            <Txt size={32} weight="bold" color={t.text} style={styles.title}>Settings</Txt>
+            <Title color={t.text} large>Settings</Title>
             <Txt weight="display" size={16} color={t.muted} style={{ transform: [{ rotate: '-1.5deg' }] }}>Make Goomi fit your day.</Txt>
           </View>
           <Mascot pose="think" size={96} motion="breathe" />
@@ -335,6 +382,48 @@ function SettingsScreen() {
         />
         <ListRow theme={t} icon="shield-checkmark-outline" title="Privacy" detail="What stays on this phone, and what doesn’t" onPress={() => router.push('/legal?doc=privacy' as Href)} last />
       </ListGroup>
+
+      <View style={{ gap: 10 }}>
+        <ListGroup theme={t} title="Account">
+          {account ? <>
+            <ListRow theme={t} icon={account.provider === 'apple' ? 'logo-apple' : 'logo-google'} title={account.email ?? account.name ?? 'Signed in'} detail={`Signed in with ${account.provider === 'apple' ? 'Apple' : 'Google'}`} />
+            <ListRow
+              theme={t}
+              icon="log-out-outline"
+              title={accountBusy === 'sign-out' ? 'Signing out…' : 'Sign out'}
+              trailing={accountBusy === 'sign-out' ? <Beads /> : undefined}
+              onPress={accountBusy ? undefined : confirmSignOut}
+            />
+            <ListRow
+              theme={t}
+              icon="person-remove-outline"
+              tone="danger"
+              title={accountBusy === 'delete' ? 'Deleting account…' : 'Delete account'}
+              detail="Deletes your account and unlinks Goomi Plus from it"
+              trailing={accountBusy === 'delete' ? <Beads /> : undefined}
+              onPress={accountBusy ? undefined : confirmDeleteAccount}
+              last
+            />
+          </> : <ListRow
+            theme={t}
+            icon="person-circle-outline"
+            tone="accent"
+            title="Save your Goomi"
+            detail="Keep your profile and Plus with your account"
+            onPress={() => router.push('/account?source=profile' as Href)}
+            last
+          />}
+        </ListGroup>
+        {accountResult && <Notice
+          theme={t}
+          tone={accountResult.tone}
+          icon={accountResult.tone === 'warning' ? 'alert-circle-outline' : 'information-circle-outline'}
+          title={accountResult.title}
+          body={accountResult.body}
+          action={accountResult.manage ? 'App Store subscriptions' : undefined}
+          onAction={accountResult.manage ? () => void openManageSubscription() : undefined}
+        />}
+      </View>
 
       <View style={{ gap: 10 }}>
         <ListGroup theme={t} title="Subscription">

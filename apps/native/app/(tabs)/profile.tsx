@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { MODE_CONFIG } from '@/src/domain';
 import { useGoomi } from '@/src/state/store';
 import { useProgress, useRuntime } from '@/src/state/runtime';
-import { Icon, Tactile, Txt } from '@/src/ui/core';
+import { Icon, Tactile, Txt, Title } from '@/src/ui/core';
 import { Figure, ListGroup, ListRow, Notice, modeMeta, TopScrim } from '@/src/ui/kit';
 import { Mascot } from '@/src/ui/mascot';
 import { plural } from '@/src/ui/copy';
@@ -22,6 +22,7 @@ export default function Profile() {
   const settings = useGoomi((state) => state.settings);
   const learning = useGoomi((state) => state.learning);
   const devPreview = useGoomi((state) => state.devPreview);
+  const account = useGoomi((state) => state.account);
   const updateProfile = useGoomi((state) => state.updateProfile);
   const billing = useRuntime((state) => state.billingStatus);
   const progress = useProgress();
@@ -53,9 +54,10 @@ export default function Profile() {
               onEndEditing={(event) => { updateProfile({ name: event.nativeEvent.text.trim() }); setEditing(false); }}
               style={[styles.nameInput, { color: t.text, backgroundColor: t.soft }]} accessibilityLabel="Your name" />
           : <Tactile label="Edit your name" onPress={() => setEditing(true)} style={[styles.row, { gap: 6, minHeight: 44 }]}>
-              <Txt size={24} weight="bold" color={t.text} style={{ letterSpacing: -0.6 }}>{profile.name.trim() || 'Add your name'}</Txt>
+              <Title color={t.text} lines={1} fit>{profile.name.trim() || 'Add your name'}</Title>
               <Icon name="pencil" size={15} color={t.faint} />
             </Tactile>}
+        {account?.email && <Txt size={13} color={t.muted} lines={1} style={{ marginTop: -8 }}>{account.email}</Txt>}
         <View style={[styles.modeTag, { backgroundColor: t.soft }]}>
           <Icon name={mode.icon} size={14} color={t.text} />
           <Txt size={12} weight="semibold" color={t.text}>{MODE_CONFIG[settings.mode].title} mode · {MODE_CONFIG[settings.mode].description.toLowerCase()}</Txt>
@@ -75,6 +77,10 @@ export default function Profile() {
         action="Manage subscription" onAction={() => router.push('/settings' as Href)} />}
       {settings.subscription === 'expired' && <Notice theme={t} tone="lavender" icon="moon-outline" title="Your Plus has paused" body="Everything you learned is still here." action="Renew Goomi Plus" onAction={() => router.push({ pathname: '/paywall', params: { source: 'profile' } } as Href)} />}
       {permission === 'revoked' && <Notice theme={t} tone="warning" icon="hourglass-outline" title="Screen Time was turned off" body="Goomi can’t meet you before your apps until it’s reconnected." action="Reconnect" onAction={() => router.push('/screen-time' as Href)} />}
+
+      {!account && <ListGroup theme={t} title="ACCOUNT">
+        <ListRow theme={t} icon="person-circle-outline" title="Save your Goomi" detail="Keep your profile and Plus with your account" tone="accent" onPress={() => router.push('/account?source=profile' as Href)} last />
+      </ListGroup>}
 
       <ListGroup theme={t} title="YOUR GOOMI">
         <ListRow theme={t} icon={mode.icon} title="Mode" value={MODE_CONFIG[settings.mode].title} onPress={() => router.push('/mode' as Href)} />

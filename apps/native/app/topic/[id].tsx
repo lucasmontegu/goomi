@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { STARTER_CHALLENGES, TOPICS, topicPath, type TopicId } from '@/src/domain';
 import { useGoomi } from '@/src/state/store';
-import { Button, CircleButton, Icon, Tactile, Txt } from '@/src/ui/core';
+import { Button, CircleButton, Icon, Tactile, Txt, Title } from '@/src/ui/core';
 import { EmptyState } from '@/src/ui/kit';
 import { Mascot } from '@/src/ui/mascot';
 import { Prop, TOPIC_PROP } from '@/src/ui/props';
@@ -63,7 +63,7 @@ export default function TopicScreen() {
 
       <View style={styles.body}>
         <View style={{ gap: 6 }}>
-          <Txt size={32} weight="bold" color={t.text} style={{ letterSpacing: -0.6, lineHeight: 37 }}>{topic.name}</Txt>
+          <Title color={t.text} large>{topic.name}</Title>
           <Txt size={15} color={t.muted}>{topic.subtitle}</Txt>
         </View>
         <View style={styles.stats}>
@@ -72,7 +72,7 @@ export default function TopicScreen() {
           <Stat value={String(path.mastered)} label="mastered" theme={t} />
         </View>
 
-        <Txt size={19} weight="bold" color={t.text} style={{ marginTop: 8 }}>Your path</Txt>
+        <Txt size={18} weight="semibold" color={t.text} style={{ marginTop: 8 }}>Your path</Txt>
         {/* A path, not a list: nodes on a line, the next step raised. */}
         <View>
           {nodes.map((node, index) => {

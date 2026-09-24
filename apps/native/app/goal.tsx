@@ -3,7 +3,7 @@ import { router } from 'expo-router';
 import * as Haptics from 'expo-haptics';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useGoomi } from '@/src/state/store';
-import { Tactile, Txt } from '@/src/ui/core';
+import { Tactile, Txt, Title } from '@/src/ui/core';
 import { Doodle } from '@/src/ui/kit';
 import { Prop, type PropName } from '@/src/ui/props';
 import { palette, radius, type Theme } from '@/src/ui/theme';
@@ -46,7 +46,7 @@ export default function GoalSheet() {
     >
       <View style={styles.header}>
         <View style={{ flex: 1, gap: 3 }}>
-          <Txt size={24} weight="bold" color={t.text} style={{ letterSpacing: -0.6, lineHeight: 30 }}>Your daily goal</Txt>
+          <Title color={t.text}>Your daily goal</Title>
           <Txt size={13} color={t.muted}>How many discoveries feel right each day?</Txt>
         </View>
         <Tactile label="Done" onPress={() => router.back()} style={[styles.done, { backgroundColor: t.inverse }]}>
@@ -75,7 +75,7 @@ export default function GoalSheet() {
 
       <View style={{ gap: 12 }}>
         <View style={{ gap: 2 }}>
-          <Txt size={16} weight="bold" color={t.text}>What would you like to improve?</Txt>
+          <Txt size={16} weight="semibold" color={t.text}>What would you like to improve?</Txt>
           <Txt size={12} color={t.muted}>Pick as many as you like.</Txt>
         </View>
         <View style={styles.chips}>

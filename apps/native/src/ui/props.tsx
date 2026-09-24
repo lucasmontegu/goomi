@@ -8,11 +8,13 @@ import type { TopicId } from '../domain';
  */
 export type PropName =
   | 'globe' | 'planet' | 'atom' | 'leaf' | 'book' | 'bulb' | 'flame' | 'star' | 'heart' | 'moon'
-  | 'hourglass' | 'palette' | 'chat' | 'numbers' | 'puzzle' | 'target' | 'cards' | 'cloud' | 'laptop' | 'check' | 'lock' | 'bell' | 'doc' | 'camera' | 'photo' | 'pencil';
+  | 'hourglass' | 'palette' | 'chat' | 'numbers' | 'puzzle' | 'target' | 'cards' | 'cloud' | 'laptop' | 'check' | 'lock' | 'bell' | 'doc' | 'camera' | 'photo' | 'pencil'
+  | 'brain' | 'briefcase' | 'clapper' | 'column';
 
 export const TOPIC_PROP: Record<TopicId, PropName> = {
   geography: 'globe', space: 'planet', science: 'atom', history: 'hourglass', art: 'palette', languages: 'chat',
   memory: 'cards', math: 'numbers', logic: 'puzzle', nature: 'leaf', study: 'book', focus: 'target',
+  technology: 'laptop', psychology: 'brain', business: 'briefcase', popculture: 'clapper', philosophy: 'column',
 };
 
 /** A three-stop matte gradient: highlight, body, shade. */
@@ -215,6 +217,59 @@ const art: Record<PropName, () => ReactNode> = {
     <Defs><LinearGradient id="pn" x1="0" y1="0" x2="1" y2="0"><Stop offset="0" stopColor="#FFE27A" /><Stop offset="1" stopColor="#F2B63A" /></LinearGradient></Defs>
     <Floor w={26} />
     <G transform="rotate(45 50 50)"><Rect x="40" y="6" width="20" height="14" rx="5" fill="#FF8DA0" /><Rect x="40" y="18" width="20" height="5" fill="#C9CCD2" /><Rect x="40" y="23" width="20" height="46" fill="url(#pn)" /><Path d="M40 69h20L50 90z" fill="#F4E3C3" /><Path d="M46 82h8l-4 8z" fill="#2E3440" /></G>
+  </>,
+  brain: () => <>
+    <Defs><Clay id="brn" hi="#FFE6EE" mid="#F7A9C3" lo="#D96C92" /><Clay id="brnb" hi="#F7B8CD" mid="#E07C9F" lo="#B84F76" /></Defs>
+    <Floor w={30} />
+    {/* Stem and cerebellum sit behind the cerebrum so the silhouette reads as a brain in profile. */}
+    <Path d="M57 66c2 7 1 14-2 20h11c-2-6-2-13 0-20z" fill="url(#brnb)" />
+    <Ellipse cx="69" cy="70" rx="13" ry="8" fill="url(#brnb)" />
+    <Path d="M30 70C18 68 12 58 15 49 10 42 13 31 22 28 24 19 35 14 44 18 50 12 61 12 67 18 76 16 85 23 84 33 91 39 90 50 84 55 85 64 77 71 68 69 63 74 55 75 50 71 44 75 36 74 30 70z" fill="url(#brn)" />
+    <G fill="none" stroke="#C4577F" strokeWidth="2.4" strokeLinecap="round" opacity={0.45}>
+      <Path d="M24 40c6-3 11 2 17-1" /><Path d="M31 29c4 4 10 4 13 0" /><Path d="M50 22c-2 6 2 11 9 10" /><Path d="M68 25c-2 5 1 10 8 11" />
+      <Path d="M21 53c6 1 9-3 15-1s8 5 14 3" /><Path d="M47 42c5-3 11-2 14 2s9 5 14 2" /><Path d="M56 59c4 3 10 3 15 0" /><Path d="M34 62c4-2 8-1 11 2" />
+    </G>
+    <Shine cx={33} cy={27} rx={8} ry={4} o={0.55} />
+  </>,
+  briefcase: () => <>
+    <Defs><Clay id="bcs" hi="#FFE7CF" mid="#F4AE72" lo="#CC7A3E" /><Clay id="bcl" hi="#FFF6C4" mid="#FFD84A" lo="#E9A514" /></Defs>
+    <Floor w={36} />
+    <Path d="M38 33v-7c0-4 3-7 7-7h10c4 0 7 3 7 7v7" stroke="#B9692F" strokeWidth="6" fill="none" strokeLinecap="round" />
+    <Rect x="12" y="34" width="76" height="52" rx="13" fill="#C4773D" />
+    <Rect x="12" y="31" width="76" height="52" rx="13" fill="url(#bcs)" />
+    <Path d="M13 52c12 4 25 6 37 6s25-2 37-6" stroke="#B9692F" strokeWidth="2" fill="none" opacity={0.45} strokeLinecap="round" />
+    <Rect x="42" y="49" width="16" height="13" rx="4" fill="url(#bcl)" />
+    <Rect x="47" y="54" width="6" height="4" rx="2" fill="#B9692F" opacity={0.6} />
+    <Shine cx={26} cy={39} rx={8} ry={3.5} o={0.55} />
+  </>,
+  clapper: () => <>
+    <Defs><LinearGradient id="clb" x1="0" y1="0" x2="1" y2="1"><Stop offset="0" stopColor="#555A66" /><Stop offset="1" stopColor="#24272D" /></LinearGradient><LinearGradient id="cla" x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor="#FFFFFF" /><Stop offset="1" stopColor="#E1E3EA" /></LinearGradient></Defs>
+    <Floor w={34} />
+    <Rect x="14" y="44" width="72" height="42" rx="9" fill="url(#clb)" />
+    <Rect x="14" y="40" width="72" height="12" rx="4" fill="url(#cla)" />
+    <G fill="#2E3440"><Path d="M24 40h9l-6 12h-9z" /><Path d="M42 40h9l-6 12h-9z" /><Path d="M60 40h9l-6 12h-9z" /><Path d="M78 40h8v1l-5 11h-9z" /></G>
+    {/* The clapstick, lifted mid-take. */}
+    <G transform="rotate(-16 16 38)">
+      <Rect x="14" y="26" width="72" height="12" rx="4" fill="url(#cla)" />
+      <G fill="#2E3440"><Path d="M28 26h9l-6 12h-9z" /><Path d="M46 26h9l-6 12h-9z" /><Path d="M64 26h9l-6 12h-9z" /></G>
+    </G>
+    <Circle cx="17" cy="40" r="3.2" fill="#C9CCD2" />
+    <Rect x="22" y="60" width="26" height="5" rx="2.5" fill="#D9FF6B" /><Rect x="22" y="70" width="40" height="4" rx="2" fill="#8A8F99" /><Rect x="56" y="59" width="22" height="7" rx="3.5" fill="#C8B6FF" />
+    <Shine cx={24} cy={30} rx={6} ry={2} o={0.8} r={-16} />
+  </>,
+  column: () => <>
+    <Defs><LinearGradient id="colS" x1="0" y1="0" x2="1" y2="0"><Stop offset="0" stopColor="#FFFFFF" /><Stop offset="0.45" stopColor="#F4EFE6" /><Stop offset="1" stopColor="#CFC3AF" /></LinearGradient><Clay id="colC" hi="#FFFFFF" mid="#F1ECE2" lo="#D2C7B4" /><Clay id="colV" hi="#EFE9FF" mid="#C8B6FF" lo="#8E74E8" /></Defs>
+    <Floor w={32} />
+    <Rect x="20" y="80" width="60" height="9" rx="3.5" fill="url(#colC)" />
+    <Rect x="27" y="73" width="46" height="8" rx="3.5" fill="url(#colC)" />
+    <Rect x="33" y="30" width="34" height="44" fill="url(#colS)" />
+    <Path d="M39.5 33v37M46 33v37M52.5 33v37M59 33v37" stroke="#CDBFA8" strokeWidth="2" strokeLinecap="round" opacity={0.7} />
+    <Rect x="27" y="24" width="46" height="8" rx="3.5" fill="url(#colC)" />
+    <Rect x="21" y="16" width="58" height="8" rx="3.5" fill="url(#colC)" />
+    <Circle cx="27" cy="29" r="7" fill="url(#colV)" /><Circle cx="73" cy="29" r="7" fill="url(#colV)" />
+    <Path d="M27 29m-2.5 0a2.5 2.5 0 1 0 5 0 4 4 0 1 0 -8 0" stroke="#7A61D6" strokeWidth="1.6" fill="none" strokeLinecap="round" />
+    <Path d="M73 29m2.5 0a2.5 2.5 0 1 1 -5 0 4 4 0 1 1 8 0" stroke="#7A61D6" strokeWidth="1.6" fill="none" strokeLinecap="round" />
+    <Shine cx={37} cy={50} rx={2.4} ry={14} o={0.7} r={0} />
   </>,
 };
 

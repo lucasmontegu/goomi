@@ -2,7 +2,7 @@ import { Linking, ScrollView, StyleSheet, View } from 'react-native';
 import { router, useLocalSearchParams, type Href } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { CircleButton, Icon, Reveal, Tactile, Txt } from '@/src/ui/core';
+import { CircleButton, Icon, Reveal, Tactile, Txt, Title } from '@/src/ui/core';
 import { Doodle, Surface } from '@/src/ui/kit';
 import { Mascot, type Pose } from '@/src/ui/mascot';
 import { palette, radius, type Theme } from '@/src/ui/theme';
@@ -33,14 +33,35 @@ const DOCS: Record<Doc, Document> = {
       {
         heading: 'What stays on this phone',
         body: [
-          'Your progress, answers, interests, goals and settings are saved on this device in Goomi’s local storage. Goomi doesn’t send them to a Goomi server, and this version has no sign-in.',
+          'Your progress, answers, interests, goals and settings are saved on this device in Goomi’s local storage. Goomi doesn’t send them to a Goomi server, and they don’t sync between devices yet.',
+          'Signing in is optional. If you continue with Apple or Google, Goomi’s server stores your account (a user ID, your name and email as the provider shares them) so your Goomi Plus subscription can follow you to a new phone. Apple’s “Hide My Email” is respected. You can delete your account in Settings, which also deletes your study materials on the server.',
         ],
       },
       {
         heading: 'Your study materials',
         body: [
-          'Text you paste and the PDFs, slides and photos you add are processed on your iPhone. Goomi reads them with Apple’s PDFKit and on-device Vision text recognition.',
-          'The extracted text and the concepts Goomi finds are saved with the rest of your learning data on this phone.',
+          'Text you paste and the PDFs, slides and photos you add are first read on your iPhone, with Apple’s PDFKit and on-device Vision text recognition.',
+          'If you choose “Keep it on this phone”, the extracted text and the concepts Goomi finds are saved with the rest of your learning data on this phone, and nothing is uploaded.',
+        ],
+      },
+      {
+        heading: 'AI study (Goomi Plus, only when you choose it)',
+        body: [
+          'When you choose “Make it smarter with AI” for a material, Goomi sends that material’s text to Goomi’s server, plus images of any pages it couldn’t read on your phone. Nothing is sent unless you agree on that screen, each time.',
+        ],
+        bullets: [
+          'The text is processed by AI models from Alibaba Cloud (Qwen) and Google (Gemini) through Vercel AI Gateway, routed only to providers with zero-data-retention agreements: they don’t store it or use it to train models.',
+          'Page images are read once and never stored.',
+          'Goomi’s database (Neon, in the United States) stores the text, the passages it’s split into, and the questions made from them, so each question can show “your notes say…”. Once ready, the questions are also saved on this phone and work offline.',
+          'Removing the material in Goomi deletes all of it from the server. Deleting your Goomi account deletes all your materials.',
+          'Goomi records how much AI processing each account uses, to keep monthly limits fair. Your notes aren’t used for anything else.',
+        ],
+      },
+      {
+        heading: 'New challenges',
+        body: [
+          'Goomi downloads new challenges in the background, built from open collections such as Wikidata and the Art Institute of Chicago. Each challenge shows its source.',
+          'To keep daily limits fair, Goomi sends a random ID created for this install, not linked to you. When you’re signed in, it uses your account instead. Your answers and progress are never sent.',
         ],
       },
       {
@@ -188,7 +209,7 @@ export default function Legal() {
         <Surface theme={t} tone={content.tone} style={styles.hero}>
           <View style={{ flex: 1, gap: 8, paddingVertical: 4 }}>
             <Txt size={11} weight="bold" color={t.muted} style={{ letterSpacing: 1.6 }}>{content.eyebrow}</Txt>
-            <View accessible accessibilityRole="header"><Txt size={26} weight="bold" color={t.text} style={styles.title}>{content.title}</Txt></View>
+            <View accessible accessibilityRole="header"><Title color={t.text}>{content.title}</Title></View>
             <Txt size={14} color={t.muted} style={{ lineHeight: 21 }}>{content.lead}</Txt>
           </View>
           <View style={styles.heroArt}>

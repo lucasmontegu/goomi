@@ -9,7 +9,7 @@ import { MODE_CONFIG, type Mode, type Profile, type TopicId } from '@/src/domain
 import { useGoomi } from '@/src/state/store';
 import { useProgress, useRuntime } from '@/src/state/runtime';
 import { trackEvent } from '@/src/services/analytics';
-import { Button, CircleButton, Eyebrow, Icon, Reveal, Tactile, Txt } from '@/src/ui/core';
+import { Button, CircleButton, Eyebrow, Icon, Reveal, Tactile, Title, Txt } from '@/src/ui/core';
 import { Doodle, Notice } from '@/src/ui/kit';
 import { Mascot, type Pose } from '@/src/ui/mascot';
 import { Prop, TOPIC_PROP, type PropName } from '@/src/ui/props';
@@ -48,9 +48,10 @@ const MOMENTS: Moment[] = [
 const LAST = MOMENTS.length - 1;
 
 const INTERESTS: { id: TopicId; title: string }[] = [
-  { id: 'history', title: 'History' }, { id: 'geography', title: 'Geography' }, { id: 'science', title: 'Science' }, { id: 'art', title: 'Art' },
+  { id: 'history', title: 'World history' }, { id: 'geography', title: 'Geography' }, { id: 'science', title: 'Science' }, { id: 'art', title: 'Art' },
   { id: 'languages', title: 'Languages' }, { id: 'space', title: 'Space' }, { id: 'nature', title: 'Nature' }, { id: 'logic', title: 'Logic' },
-  { id: 'memory', title: 'Memory' }, { id: 'math', title: 'Numbers' },
+  { id: 'memory', title: 'Memory' }, { id: 'math', title: 'Numbers' }, { id: 'technology', title: 'Technology' }, { id: 'psychology', title: 'Psychology' },
+  { id: 'business', title: 'Business' }, { id: 'popculture', title: 'Pop culture' }, { id: 'philosophy', title: 'Philosophy' },
 ];
 const COUNTRIES = ['Argentina', 'Brazil', 'Chile', 'Colombia', 'Mexico', 'Peru', 'Uruguay', 'Spain', 'United States', 'Canada', 'United Kingdom', 'Ireland', 'France', 'Germany', 'Italy', 'Portugal', 'Netherlands', 'India', 'Japan', 'Australia'];
 const LANGUAGES = ['English', 'Spanish', 'Portuguese', 'French', 'German', 'Italian', 'Japanese'];
@@ -117,7 +118,8 @@ export default function Onboarding() {
     if (step === 19) { router.push({ pathname: '/challenge', params: { onboarding: 'true' } } as Href); return; }
     if (step === LAST) {
       trackEvent('onboarding_completed', { interestCount: profile.interests.length, mode: settings.mode });
-      router.push({ pathname: '/paywall', params: { source: 'onboarding' } } as Href);
+      // Account first (optional, “Maybe later” allowed), then the paywall.
+      router.push({ pathname: '/account', params: { source: 'onboarding' } } as Href);
       return;
     }
     go(step + 1);
@@ -147,7 +149,7 @@ export default function Onboarding() {
         {step === 0 ? <Splash compact={compact} /> : <>
           <View style={[styles.copy, moment.kind === 'choice' && { paddingRight: 96 }]}>
             {moment.eyebrow ? <Eyebrow>{moment.eyebrow}</Eyebrow> : null}
-            <Txt size={moment.kind === 'choice' ? 29 : 33} weight="bold" color={palette.ink} style={[styles.title, { lineHeight: moment.kind === 'choice' ? 35 : 39 }]}>{moment.title}</Txt>
+            <Title color={palette.ink} large={moment.kind === 'story'}>{moment.kind === 'choice' ? moment.title.replace(/\n/g, ' ') : moment.title}</Title>
             {moment.body ? <Txt size={15} color="#6F7366" style={{ lineHeight: 22 }}>{moment.body}</Txt> : null}
           </View>
           {moment.kind === 'choice' && <View style={styles.peek} pointerEvents="none"><Mascot pose={moment.pose} size={104} motion="peek" /></View>}
@@ -341,7 +343,6 @@ const styles = StyleSheet.create({
   fill: { height: 6, borderRadius: 3, backgroundColor: palette.lime },
   skip: { minWidth: 44, minHeight: 44, alignItems: 'flex-end', justifyContent: 'center' },
   copy: { gap: 12, paddingTop: 18 },
-  title: { letterSpacing: -0.6 },
   peek: { position: 'absolute', right: -8, top: 20 },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
   tile: { width: '48.4%', minHeight: 58, flexDirection: 'row', alignItems: 'center', gap: 10, paddingHorizontal: 12, borderRadius: radius.row, borderCurve: 'continuous', backgroundColor: '#FFFFFF', borderWidth: 1.5, borderColor: '#ECEEE6' },

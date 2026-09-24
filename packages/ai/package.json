@@ -1,0 +1,23 @@
+{
+  "name": "@goomi/ai",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@goomi/content": "workspace:*",
+    "@goomi/db": "workspace:*",
+    "ai": "^7",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@goomi/config": "workspace:*",
+    "@types/bun": "catalog:",
+    "typescript": "^6.0.3"
+  }
+}

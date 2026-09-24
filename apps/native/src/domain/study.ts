@@ -21,7 +21,9 @@ export function extractStudyMaterial(title: string, text: string, now = Date.now
       const match = cleaned.match(/^([\p{L}\p{N}][\p{L}\p{N}\s()'’\-]{1,64}?)\s+(?:is|are|means|refers to)\s+(.{12,400})[.!?]?$/iu)
         ?? cleaned.match(/^([\p{L}\p{N}][\p{L}\p{N}\s()'’\-]{1,64}?)\s*:\s*(.{12,400})[.!?]?$/u);
       if (!match) continue;
-      const term = match[1]!.trim();
+      const written = match[1]!.trim();
+      // "An atom is …" → the concept is "atom"; the article is accepted but not required.
+      const term = written.replace(/^(a|an|the|el|la|los|las|un|una|o|os|as|um|uma)\s+/i, '').trim() || written;
       const definition = match[2]!.trim().replace(/[.!?]+$/, "");
       if (/^(it|this|that|these|those|they|he|she|we|you|there|what|which|who)$/i.test(term)) continue;
       const key = term.toLocaleLowerCase("en");
@@ -32,7 +34,7 @@ export function extractStudyMaterial(title: string, text: string, now = Date.now
       const challenge: Challenge = {
         id: `${id}-recall`, conceptId: id, topicId: "study", type: "fill-blank",
         title: cleanTitle, prompt: `From your notes, which term matches this definition?\n\n“${definition}”`,
-        acceptedAnswers: [term], answerLabel: term,
+        acceptedAnswers: term === written ? [term] : [term, written], answerLabel: term,
         explanation: `Your notes say: “${cleaned}”`,
         memoryTip: "Recall the idea, then check it against your original notes.",
         difficulty: "curious", durationSeconds: 30, visual: "words",

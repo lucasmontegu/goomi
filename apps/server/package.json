@@ -12,8 +12,11 @@
     "auth:generate": "varlock run -- bun x auth@latest generate --config src/services.ts --output ../../packages/db/prisma/schema/auth.prisma --yes"
   },
   "dependencies": {
+    "@goomi/ai": "workspace:*",
     "@goomi/auth": "workspace:*",
+    "@goomi/content": "workspace:*",
     "@goomi/db": "workspace:*",
+    "@vercel/functions": "^3.9.9",
     "better-auth": "catalog:",
     "evlog": "catalog:",
     "hono": "^4.13.7",

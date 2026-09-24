@@ -3,8 +3,14 @@ import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 import { DEFAULT_PROFILE, DEFAULT_SETTINGS, createInitialLearningState, recordAnswer, type Answer, type Challenge, type LearningState, type Profile, type Settings, type StudyMaterial } from '../domain';
 
+/** Minimal, non-secret account identity. Session tokens live in SecureStore (Better Auth), never here. */
+export type Account = { id: string; name: string | null; email: string | null; provider: 'apple' | 'google' };
+
 type Store = {
   hydrated: boolean;
+  account: Account | null;
+  setAccount: (account: Account) => void;
+  clearAccount: () => void;
   onboardingStep: number;
   profile: Profile;
   settings: Settings;
@@ -26,6 +32,9 @@ type Store = {
 export const useGoomi = create<Store>()(persist((set) => ({
   hydrated: false, onboardingStep: 0, profile: { ...DEFAULT_PROFILE }, settings: { ...DEFAULT_SETTINGS }, learning: createInitialLearningState(), analyticsConsent: false,
   devPreview: false,
+  account: null,
+  setAccount: (account) => set({ account }),
+  clearAccount: () => set({ account: null }),
   // Development-only, never persisted: lets the simulator reach the app without a store entitlement.
   setDevPreview: (value) => set((state) => ({ devPreview: __DEV__ && value, profile: __DEV__ && value ? { ...state.profile, onboardingComplete: true } : state.profile })),
   updateProfile: (patch) => set((state) => ({ profile: { ...state.profile, ...patch } })),

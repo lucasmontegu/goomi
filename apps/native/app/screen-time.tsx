@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import screenTime, { type ScreenTimeStatus } from '@/modules/goomi-screen-time';
 import { useGoomi } from '@/src/state/store';
 import { useRuntime } from '@/src/state/runtime';
-import { Header, Icon, Reveal, Txt, type IconName } from '@/src/ui/core';
+import { Header, Icon, Reveal, Txt, type IconName, Title } from '@/src/ui/core';
 import { GoomiLoader, ListGroup, ListRow, Notice, Surface } from '@/src/ui/kit';
 import { Mascot, type Motion, type Pose } from '@/src/ui/mascot';
 import { Prop } from '@/src/ui/props';
@@ -200,7 +200,7 @@ export default function ScreenTimeCenter() {
                 <View style={[styles.propWell, { backgroundColor: t.lavenderSoft }]}><Prop name="puzzle" size={40} /></View>
                 <View style={{ flex: 1, gap: 2 }}>
                   <Txt size={12} weight="semibold" color={t.muted}>Your picks</Txt>
-                  <Txt size={17} weight="bold" color={t.text}>{selectionLabel(status)}</Txt>
+                  <Txt size={17} weight="semibold" color={t.text}>{selectionLabel(status)}</Txt>
                 </View>
               </View>
               <PillButton theme={t} tone="soft" title="Change apps" icon="apps-outline" busy={busy === 'picker'} busyLabel="Opening the picker…" disabled={!!busy && busy !== 'picker'} onPress={() => void choose()} />
@@ -319,7 +319,7 @@ function Hero({ phase, status, budget, theme: t }: { phase: Exclude<Phase, 'chec
       <View style={[styles.dot, { backgroundColor: text.dot }]} />
       <Txt size={12} weight="bold" color={t.text}>{text.pill}</Txt>
     </View>
-    <Txt size={25} weight="bold" color={t.text} style={styles.title}>{text.title}</Txt>
+    <Title color={t.text} style={{ textAlign: 'center' }}>{text.title}</Title>
     <Txt size={14} color={t.muted} style={styles.body}>{text.body}</Txt>
   </View>;
 }

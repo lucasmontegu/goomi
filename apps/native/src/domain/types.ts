@@ -1,86 +1,13 @@
 export type Mode = "free" | "study" | "work" | "sleep";
-export type TopicId = "geography" | "history" | "science" | "art" | "languages" | "memory" | "math" | "logic" | "nature" | "space" | "study" | "focus";
-export type Difficulty = "gentle" | "curious" | "deep";
-export type Choice = { id: string; label: string };
-export type Source = { title: string; url?: string; excerpt?: string; materialId?: string; paragraph?: number };
-export type ChallengeBase = {
-  id: string;
-  conceptId: string;
-  topicId: TopicId;
-  title: string;
-  prompt: string;
-  explanation: string;
-  memoryTip: string;
-  difficulty: Difficulty;
-  durationSeconds: number;
-  source?: Source;
-  relatedConceptIds?: string[];
-  /** Media keys are resolved by the native presentation layer, never fetched during an interruption. */
-  visual?: "globe" | "planet" | "sunflower" | "shapes" | "numbers" | "words" | "moon" | "focus" | "leaf";
-  language?: string;
-  country?: string;
-};
-export type ChoiceChallenge = ChallengeBase & {
-  type: "multiple-choice" | "true-false" | "geography" | "vocabulary" | "translation" | "mental-math" | "logic" | "pattern" | "art-identification" | "spaced-recall" | "study-question";
-  choices: Choice[];
-  correctChoiceId: string;
-};
-export type ImageChallenge = ChallengeBase & {
-  type: "image-identification";
-  imageAsset: string;
-  imageDescription: string;
-  choices: Choice[];
-  correctChoiceId: string;
-};
-export type TextChallenge = ChallengeBase & {
-  type: "fill-blank";
-  acceptedAnswers: string[];
-  answerLabel: string;
-};
-export type MemoryChallenge = ChallengeBase & {
-  type: "memory";
-  preview: string[];
-  previewSeconds: number;
-  choices: Choice[];
-  correctChoiceId: string;
-};
-export type SequenceChallenge = ChallengeBase & {
-  type: "sequence" | "historical-order";
-  items: Choice[];
-  correctOrder: string[];
-};
-export type MatchingChallenge = ChallengeBase & {
-  type: "matching";
-  pairs: { left: Choice; right: Choice }[];
-};
-export type SudokuChallenge = ChallengeBase & {
-  type: "micro-sudoku";
-  /** Row-major 4×4 grid; 0 denotes the one missing cell. */
-  grid: number[];
-  choices: Choice[];
-  correctChoiceId: string;
-};
-export type AudioChallenge = ChallengeBase & {
-  type: "listening";
-  audioAsset: string;
-  transcript: string;
-  choices: Choice[];
-  correctChoiceId: string;
-};
-export type PronunciationChallenge = ChallengeBase & {
-  type: "pronunciation";
-  phrase: string;
-  phoneticHint: string;
-  audioAsset: string;
-  /** Requires a real speech assessor. Unassessed recordings cannot count as correct answers. */
-  assessment: "speech-service-required";
-};
-export type ReflectionChallenge = ChallengeBase & {
-  type: "reflection" | "breathing";
-  actionLabel: string;
-  seconds?: number;
-};
-export type Challenge = ChoiceChallenge | ImageChallenge | TextChallenge | MemoryChallenge | SequenceChallenge | MatchingChallenge | SudokuChallenge | AudioChallenge | PronunciationChallenge | ReflectionChallenge;
+/**
+ * Challenge contracts are shared with the server (content bank, AI study) and validated with zod
+ * there and on sync; see packages/content/src/schema.ts.
+ */
+export type {
+  AudioChallenge, Challenge, ChallengeBase, ChallengeOrigin, Choice, ChoiceChallenge, Difficulty, ImageChallenge, MatchingChallenge,
+  MemoryChallenge, PronunciationChallenge, ReflectionChallenge, SequenceChallenge, Source, SudokuChallenge, TextChallenge, TopicId,
+} from "@goomi/content";
+import type { Challenge, Difficulty, TopicId } from "@goomi/content";
 export type Answer = string | string[] | Record<string, string>;
 export type AnswerResult = { correct: boolean; graded: boolean; answerLabel: string; explanation: string };
 
@@ -141,8 +68,13 @@ export type StudyMaterial = {
   kind: "text" | "pdf" | "image" | "slides";
   createdAt: number;
   text: string;
-  status: "ready" | "no-concepts" | "needs-extraction" | "failed";
-  processingMethod: "local-extractive";
+  /** "processing" = sent for AI study and not ready yet (see remoteId/progress). */
+  status: "ready" | "no-concepts" | "needs-extraction" | "failed" | "processing";
+  processingMethod: "local-extractive" | "ai";
+  /** Server material id for AI study. */
+  remoteId?: string;
+  /** Last known server progress while processing. */
+  progress?: { stage: string; step: number; total: number };
   concepts: { id: string; term: string; definition: string; paragraph: number }[];
   challenges: Challenge[];
   message: string;

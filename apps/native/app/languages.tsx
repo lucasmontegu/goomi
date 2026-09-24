@@ -2,7 +2,7 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useGoomi } from '@/src/state/store';
-import { Icon, Tactile, Txt, type IconName } from '@/src/ui/core';
+import { Icon, Tactile, Txt, type IconName, Title } from '@/src/ui/core';
 import { Doodle, Notice } from '@/src/ui/kit';
 import { Mascot } from '@/src/ui/mascot';
 import { PillButton } from '@/src/ui/study-kit';
@@ -39,9 +39,9 @@ export default function Languages() {
     >
       <View style={styles.hero}>
         <View style={{ flex: 1 }}>
-          <Txt weight="displayBold" size={26} color={t.text} style={{ lineHeight: 31, transform: [{ rotate: '-1.5deg' }] }}>
-            {'Which languages\nare calling you?'}
-          </Txt>
+          <Title color={t.text} style={{ transform: [{ rotate: '-1.5deg' }] }}>
+            Which languages are calling you?
+          </Title>
           <Txt size={13} color={t.muted} style={{ marginTop: 8 }}>
             Pick any. Goomi mixes them into your moments.
           </Txt>
