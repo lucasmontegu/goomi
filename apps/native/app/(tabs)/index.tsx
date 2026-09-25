@@ -2,7 +2,7 @@ import { ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { router, type Href } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { MODE_CONFIG, TOPICS, continuePaths, type Mode } from '@/src/domain';
+import { MODE_CONFIG, TOPICS, conceptCount, continuePaths, type Mode } from '@/src/domain';
 import { useGoomi } from '@/src/state/store';
 import { FREE_DAILY_DISCOVERIES, useFreeRemaining, useHasAccess, useProgress, useRuntime } from '@/src/state/runtime';
 import { trackEvent } from '@/src/services/analytics';
@@ -111,7 +111,7 @@ export default function Home() {
             <Prop name="book" size={58} />
             <View style={{ flex: 1, gap: 3 }}>
               <Txt size={16} weight="semibold" color={t.text}>{readyMaterials.length ? 'Your study library' : 'Bring your notes'}</Txt>
-              <Txt size={12} color={t.muted}>{readyMaterials.length ? `${plural(readyMaterials.length, 'set')} of notes · ${plural(readyMaterials.reduce((sum, material) => sum + material.concepts.length, 0), 'concept')}` : 'PDFs, slides, photos or pasted text become recall moments.'}</Txt>
+              <Txt size={12} color={t.muted}>{readyMaterials.length ? `${plural(readyMaterials.length, 'set')} of notes · ${plural(readyMaterials.reduce((sum, material) => sum + conceptCount(material), 0), 'concept')}` : 'PDFs, slides, photos or pasted text become recall moments.'}</Txt>
             </View>
             <Icon name="chevron-forward" size={18} color={t.muted} />
           </Tactile>

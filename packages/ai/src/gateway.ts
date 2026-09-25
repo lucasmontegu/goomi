@@ -35,6 +35,12 @@ export type StructuredCall<T> = {
   maxOutputTokens?: number;
 };
 
+/**
+ * Upper bound per model call, so a hung provider can't hold a request or a job step open until the
+ * function is killed (the job lease is 90 s; a longer step can be claimed twice).
+ */
+export const CALL_TIMEOUT_MS = 75_000;
+
 /** One structured-output call: reasoning off, bounded output, usage and cost always recorded. */
 export async function generateStructured<T>(call: StructuredCall<T>, context: AiContext): Promise<T> {
   const started = performance.now();
@@ -46,6 +52,7 @@ export async function generateStructured<T>(call: StructuredCall<T>, context: Ai
     temperature: 0.2,
     maxOutputTokens: call.maxOutputTokens ?? 4_000,
     maxRetries: 2,
+    timeout: { totalMs: CALL_TIMEOUT_MS },
     providerOptions: gatewayOptions(context, call.purpose),
   };
   const result = call.messages ? await generateText({ ...base, messages: call.messages }) : await generateText({ ...base, prompt: call.prompt ?? "" });
@@ -78,7 +85,7 @@ export async function embedTexts(values: readonly string[], options: { model: Em
   if (!values.length) return [];
   const started = performance.now();
   const result = await embedMany({
-    model: options.model, values: [...values], maxParallelCalls: 4, maxRetries: 2,
+    model: options.model, values: [...values], maxParallelCalls: 4, maxRetries: 2, abortSignal: AbortSignal.timeout(CALL_TIMEOUT_MS),
     providerOptions: gatewayOptions(context, options.purpose),
   });
   await context.record({

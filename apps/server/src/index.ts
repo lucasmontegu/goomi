@@ -6,6 +6,7 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 
 import { contentApp } from "./content";
+import { errorBody, errorResponse } from "./content/http";
 import { ENV } from "./env.server";
 import { auth } from "./services";
 
@@ -44,5 +45,9 @@ app.route("/", contentApp);
 app.get("/", (c) => {
   return c.text("OK");
 });
+
+// Same `{ error: { code, message } }` contract as the routes (API_ERRORS); internals never reach the client.
+app.notFound((c) => c.json(errorBody("not_found", "Not found."), 404));
+app.onError(errorResponse);
 
 export default app;

@@ -22,12 +22,17 @@ export const isMastered = (memory: ConceptMemory) => memory.consecutiveCorrect >
 
 export type IndexedConcept = StudyConcept & { materialId: string; materialTitle: string };
 
-/** conceptId → the concept and the material it came from, for ready materials only. */
+/** conceptId → the concept and the material it came from, for ready materials only (on-device and AI study). */
 export function indexConcepts(learning: LearningState): Map<string, IndexedConcept> {
   const index = new Map<string, IndexedConcept>();
   for (const material of learning.materials) {
     if (material.status !== 'ready') continue;
     for (const concept of material.concepts) index.set(concept.id, { ...concept, materialId: material.id, materialTitle: material.title });
+    // AI study carries checked questions, not definitions: the first question stands in for its concept.
+    for (const challenge of material.challenges) {
+      if (index.has(challenge.conceptId)) continue;
+      index.set(challenge.conceptId, { id: challenge.conceptId, term: challenge.prompt, definition: challenge.explanation, paragraph: 0, materialId: material.id, materialTitle: material.title });
+    }
   }
   return index;
 }

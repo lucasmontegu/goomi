@@ -158,3 +158,41 @@ const stripAttribution = (payload: unknown) => {
   const { attribution: _attribution, ...rest } = payload as Record<string, unknown>;
   return rest;
 };
+
+// ─── Inventory (a report: which fetcher/template to write next — nothing is enqueued from it) ──
+export type InventoryRow = {
+  topicId: string; lang: string; difficulty: string; type: string;
+  published: number; retired: number;
+  /** Published locales by enrichment state: a model's note, the template's text kept, or not tried yet. */
+  enriched: number; template: number; pending: number;
+};
+
+/** Bank locales grouped by topic × language × difficulty × type. `itemIds` narrows it (tests). */
+export async function getBankInventory(db: Database, filter: { itemIds?: readonly string[] } = {}): Promise<InventoryRow[]> {
+  const ids = filter.itemIds ? [...filter.itemIds] : null;
+  return db.$queryRaw<InventoryRow[]>`
+    SELECT i."topicId", l."lang", i."difficulty", i."type",
+      count(*) FILTER (WHERE l."status" = 'published')::int AS "published",
+      count(*) FILTER (WHERE l."status" = 'retired')::int AS "retired",
+      count(*) FILTER (WHERE l."status" = 'published' AND l."enrichedBy" IS NOT NULL AND l."enrichedBy" <> 'template')::int AS "enriched",
+      count(*) FILTER (WHERE l."status" = 'published' AND l."enrichedBy" = 'template')::int AS "template",
+      count(*) FILTER (WHERE l."status" = 'published' AND l."enrichedBy" IS NULL)::int AS "pending"
+    FROM "bank_item_locale" l JOIN "bank_item" i ON i."id" = l."itemId"
+    WHERE (${ids}::text[] IS NULL OR l."itemId" = ANY(${ids}::text[]))
+    GROUP BY i."topicId", l."lang", i."difficulty", i."type"
+    ORDER BY i."topicId", l."lang", i."difficulty", i."type"`;
+}
+
+export type InventoryTotals = Record<string, { published: number; enriched: number; pending: number }>;
+
+/** Per-topic totals of an inventory report. */
+export const summarizeInventory = (rows: readonly InventoryRow[]): InventoryTotals => {
+  const totals: InventoryTotals = {};
+  for (const row of rows) {
+    const topic = (totals[row.topicId] ??= { published: 0, enriched: 0, pending: 0 });
+    topic.published += row.published;
+    topic.enriched += row.enriched;
+    topic.pending += row.pending;
+  }
+  return totals;
+};

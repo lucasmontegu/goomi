@@ -1,80 +1,71 @@
-import * as Network from 'expo-network';
-import { useEffect } from 'react';
-import { AppState } from 'react-native';
-import { STUDY_AI_CONSENT_VERSION, challengeSchema, type Challenge } from '@goomi/content';
-import { authClient } from '@/lib/auth-client';
-import { aiMaterial, bankLangFor, type BankLang, type RemoteMaterial, type StudyMaterial } from '../domain';
-import { ENV } from '../env';
+import { queryOptions, useMutation, useQueries, useQuery } from '@tanstack/react-query';
+import { API, STUDY_AI_CONSENT_VERSION, STUDY_STAGES, STUDY_UPLOAD_LIMITS, type BankResponse, type CreateMaterialRequest } from '@goomi/content';
+import { aiMaterial, bankLangFor, goneMaterial, type BankLang, type StudyMaterial } from '../domain';
 import { useBank } from '../state/bank-store';
 import { useGoomi } from '../state/store';
+import { ApiRequestError, apiConfigured, apiRequest, isFinalError } from './api';
 import { localizeMedia, repairMedia } from './media-cache';
+import { queryClient } from './query-client';
+
+export { ApiRequestError, type ApiError, type ApiErrorKind } from './api';
 
 /**
- * Background content sync (ADR-001 §11). Everything here runs outside interruptions: it fills the
- * local bank and study library ahead of time, and every failure simply leaves the cache as it was.
+ * Background content sync (ADR-001 §11), driven by TanStack Query. Everything here runs outside
+ * interruptions: it fills the local bank and study library ahead of time, and every failure simply
+ * leaves the persisted cache as it was.
  */
-export type ApiError = { status: number; code: string; message: string };
-export type ApiResult<T> = { ok: true; value: T } | { ok: false; error: ApiError };
-
 const BANK_SYNC_INTERVAL_MS = 6 * 60 * 60 * 1000;
 const MAX_PAGES_PER_SYNC = 4;
-const serverUrl = () => ENV.EXPO_PUBLIC_SERVER_URL?.replace(/\/$/, '');
+const MATERIAL_POLL_MS = 4000;
 /** Whether this build can reach Goomi's server at all (AI study still needs Plus + sign-in). */
-export const aiStudyConfigured = () => Boolean(serverUrl());
+export const aiStudyConfigured = apiConfigured;
 
-async function request<T>(path: string, init: RequestInit = {}): Promise<ApiResult<T>> {
-  const base = serverUrl();
-  if (!base) return { ok: false, error: { status: 0, code: 'study.disabled', message: 'Goomi’s server isn’t configured in this build.' } };
-  const cookie = await authClient.getCookie().catch(() => '');
-  const headers: Record<string, string> = { Accept: 'application/json', 'x-goomi-install': useBank.getState().installId, ...(init.headers as Record<string, string> | undefined) };
-  if (cookie) headers.Cookie = cookie;
-  try {
-    const response = await fetch(`${base}${path}`, { ...init, headers, credentials: 'omit' });
-    if (response.status === 204) return { ok: true, value: undefined as T };
-    const body = await response.json().catch(() => null) as ({ error?: { code?: string; message?: string } } & T) | null;
-    if (!response.ok) return { ok: false, error: { status: response.status, code: body?.error?.code ?? 'error', message: body?.error?.message ?? 'Something went wrong. Try again later.' } };
-    return { ok: true, value: body as T };
-  } catch {
-    // A failed fetch with a working connection means Goomi's server is down or unreachable, not that the phone is offline.
-    const online = await Network.getNetworkStateAsync().then((state) => state.isInternetReachable !== false && state.isConnected !== false).catch(() => false);
-    return online
-      ? { ok: false, error: { status: 0, code: 'unreachable', message: 'Goomi’s server didn’t answer. Try again in a bit, or keep this one on your phone.' } }
-      : { ok: false, error: { status: 0, code: 'offline', message: 'Connect to the internet and try again, or keep this one on your phone.' } };
-  }
-}
+export const contentKeys = {
+  bank: (lang: BankLang) => ['bank', lang] as const,
+  material: (remoteId: string) => ['material', remoteId] as const,
+};
 
-/** Drops anything that doesn't match the shared contract instead of trusting the network. */
-const validChallenges = (items: unknown[]): Challenge[] => items.flatMap((item) => {
-  const parsed = challengeSchema.safeParse(item);
-  return parsed.success ? [parsed.data] : [];
-});
-
-type BankResponse = { items: unknown[]; retired: string[]; cursor: string; hasMore: boolean; quota: { remainingToday: number } };
-
+// ─── Bank ──────────────────────────────────────────────────────────────────────────────────────
 /** Pulls new bank content for the user's language, downloads its images, and caches it. */
-export async function syncBank(options: { force?: boolean } = {}): Promise<{ added: number } | null> {
+export async function syncBank(options: { force?: boolean; signal?: AbortSignal } = {}): Promise<{ added: number }> {
   const { profile, learning } = useGoomi.getState();
   const store = useBank.getState();
   const lang: BankLang = bankLangFor(profile.nativeLanguage);
+  // The last sync time is persisted, so a cold start doesn't refetch what the device already has.
   const fresh = store.bank.lang === lang && Date.now() - store.bank.syncedAt < BANK_SYNC_INTERVAL_MS;
-  if (fresh && !options.force) return null;
+  if (fresh && !options.force) return { added: 0 };
   let cursor = store.bank.lang === lang ? store.bank.cursor : null;
   let added = 0;
   for (let page = 0; page < MAX_PAGES_PER_SYNC; page++) {
     // No topic filter: the engine weights interests, and the wildcard mix needs other topics too.
-    const query = new URLSearchParams({ lang, limit: '50', ...(cursor ? { cursor } : {}) });
-    const result = await request<BankResponse>(`/v1/bank?${query}`);
-    if (!result.ok) break;
-    const items = await localizeMedia(validChallenges(result.value.items));
-    useBank.getState().applyPage({ lang, items, retired: result.value.retired, cursor: result.value.cursor }, learning.memories);
+    let result: BankResponse;
+    try {
+      result = await apiRequest(API.bank, { query: { lang, limit: 50, cursor: cursor ?? undefined }, signal: options.signal });
+    } catch (error) {
+      // Pages already applied stay; only a failure before any progress is reported.
+      if (page === 0) throw error;
+      break;
+    }
+    const items = await localizeMedia(result.items);
+    useBank.getState().applyPage({ lang, items, retired: result.retired, cursor: result.cursor }, learning.memories);
     added += items.length;
-    cursor = result.value.cursor;
-    if (!result.value.hasMore || result.value.quota.remainingToday <= 0) break;
+    cursor = result.cursor;
+    if (!result.hasMore || result.quota.remainingToday <= 0) break;
   }
   // Images that failed to download last time (offline) get another chance.
   const repaired = await repairMedia(useBank.getState().bank.items);
   if (repaired) useBank.setState((state) => ({ bank: { ...state.bank, items: repaired } }));
   return { added };
+}
+
+function useBankSync(enabled: boolean) {
+  const lang = useGoomi((state) => bankLangFor(state.profile.nativeLanguage));
+  return useQuery({
+    queryKey: contentKeys.bank(lang),
+    queryFn: ({ signal }) => syncBank({ signal }),
+    enabled,
+    staleTime: BANK_SYNC_INTERVAL_MS,
+  });
 }
 
 // ─── AI study (Plus) ───────────────────────────────────────────────────────────────────────────
@@ -89,70 +80,103 @@ export type UploadInput = {
 /**
  * Uploads text (plus low-text page images), starts processing, and saves a "processing" entry to
  * the library right away so closing the screen never loses the work. Requires consent first.
+ * Safe to retry: the server answers a repeated upload with what's still missing (images, /start).
  */
-export async function sendForAIStudy(input: UploadInput): Promise<ApiResult<StudyMaterial>> {
-  const created = await request<{ id: string; status: RemoteMaterial['status']; duplicate?: boolean }>('/v1/materials', {
-    method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ title: input.title, kind: input.kind, consentVersion: STUDY_AI_CONSENT_VERSION, pages: input.pages, ocrPages: input.ocrImages.map((image) => image.n) }),
-  });
-  if (!created.ok) return created;
-  const remoteId = created.value.id;
-  if (!created.value.duplicate) {
-    for (let start = 0; start < input.ocrImages.length; start += 10) {
+async function sendForAIStudy(input: UploadInput): Promise<StudyMaterial> {
+  const request: CreateMaterialRequest = {
+    title: input.title.slice(0, STUDY_UPLOAD_LIMITS.maxTitleChars), kind: input.kind, consentVersion: STUDY_AI_CONSENT_VERSION,
+    pages: input.pages, ocrPages: input.ocrImages.map((image) => image.n),
+  };
+  const created = await apiRequest(API.createMaterial, { body: request });
+  const params = { id: created.id };
+  if (!created.started) {
+    const missing = new Set(created.ocrPages);
+    const images = input.ocrImages.filter((image) => missing.has(image.n));
+    for (let start = 0; start < images.length; start += STUDY_UPLOAD_LIMITS.maxImagesPerRequest) {
       const form = new FormData();
-      for (const image of input.ocrImages.slice(start, start + 10)) {
+      for (const image of images.slice(start, start + STUDY_UPLOAD_LIMITS.maxImagesPerRequest)) {
         form.append('n', String(image.n));
         form.append('image', { uri: image.uri, name: `page-${image.n}.jpg`, type: 'image/jpeg' } as unknown as Blob);
       }
-      const read = await request<{ pages: { n: number; chars: number }[] }>(`/v1/materials/${remoteId}/pages`, { method: 'POST', body: form });
-      if (!read.ok) return read;
+      await apiRequest(API.addMaterialPages, { params, body: form });
     }
-    const started = await request<{ status: string }>(`/v1/materials/${remoteId}/start`, { method: 'POST' });
-    if (!started.ok) return started;
+    await apiRequest(API.startMaterial, { params });
   }
+  // The same notes already in the library stay as they are.
+  const existing = useGoomi.getState().learning.materials.find((item) => item.remoteId === created.id);
+  if (existing && existing.status !== 'failed') return existing;
   const local = aiMaterial(
-    { id: remoteId, title: input.title, status: 'processing', lang: null, error: null, progress: { stage: 'queued', step: 0, total: 7 } },
-    { id: `ai-${remoteId}`, kind: input.kind, createdAt: Date.now(), text: input.pages.map((page) => page.text).join('\n\n').slice(0, 100_000) },
+    { id: created.id, title: request.title, status: 'processing', lang: null, error: null, progress: { stage: 'queued', step: 0, total: STUDY_STAGES.length } },
+    { id: `ai-${created.id}`, kind: input.kind, createdAt: Date.now(), text: input.pages.map((page) => page.text).join('\n\n').slice(0, STUDY_UPLOAD_LIMITS.maxCharsPerDocument) },
   );
   useGoomi.getState().addMaterial(local);
-  return { ok: true, value: local };
+  return local;
 }
 
-/** Polls one AI material and stores its questions on the device when ready. */
-export async function refreshAIMaterial(material: StudyMaterial): Promise<ApiResult<StudyMaterial>> {
-  if (!material.remoteId) return { ok: false, error: { status: 0, code: 'invalid', message: 'Not an AI material.' } };
-  const result = await request<Omit<RemoteMaterial, 'challenges'> & { challenges?: unknown[] }>(`/v1/materials/${material.remoteId}`);
-  if (!result.ok) return result;
-  const remote: RemoteMaterial = { ...result.value, challenges: result.value.challenges ? validChallenges(result.value.challenges) : undefined };
-  const updated = aiMaterial(remote, material);
-  const current = useGoomi.getState().learning.materials.find((item) => item.id === material.id);
-  if (current) useGoomi.setState((state) => ({ learning: { ...state.learning, materials: state.learning.materials.map((item) => (item.id === material.id ? updated : item)) } }));
-  return { ok: true, value: updated };
+/** Reads one AI material from the server and stores its questions on the device when ready. */
+async function refreshAIMaterial(materialId: string, signal?: AbortSignal): Promise<StudyMaterial> {
+  const current = useGoomi.getState().learning.materials.find((item) => item.id === materialId);
+  // Removed on this device while a poll was scheduled: a final answer, so polling stops.
+  if (!current?.remoteId) throw new ApiRequestError(410, 'material.not_found', 'This material was removed.');
+  let updated: StudyMaterial;
+  try {
+    updated = aiMaterial(await apiRequest(API.getMaterial, { params: { id: current.remoteId }, signal }), current);
+  } catch (error) {
+    if (!(error instanceof ApiRequestError && error.code === 'material.not_found')) throw error;
+    updated = goneMaterial(current);
+  }
+  // No-op if the user removed it while the request was in flight.
+  useGoomi.getState().updateMaterial(updated);
+  return updated;
 }
 
 /** Deletes the server copy (text, chunks, questions) before removing the local entry. */
-export async function deleteAIMaterial(material: StudyMaterial): Promise<ApiResult<null>> {
+async function deleteAIMaterial(material: StudyMaterial): Promise<void> {
   if (material.remoteId) {
-    const result = await request<null>(`/v1/materials/${material.remoteId}`, { method: 'DELETE' });
-    if (!result.ok && result.error.status !== 404) return result;
+    try {
+      await apiRequest(API.deleteMaterial, { params: { id: material.remoteId } });
+    } catch (error) {
+      // Already gone on the server is fine; anything else keeps the local copy.
+      if (!(error instanceof ApiRequestError && error.status === 404)) throw error;
+    }
   }
   useGoomi.getState().removeMaterial(material.id);
-  return { ok: true, value: null };
 }
 
-async function resumeProcessing() {
-  const pending = useGoomi.getState().learning.materials.filter((material) => material.processingMethod === 'ai' && material.status === 'processing');
-  for (const material of pending) await refreshAIMaterial(material);
+const materialQuery = (material: Pick<StudyMaterial, 'id' | 'remoteId'>, poll: boolean) => queryOptions({
+  queryKey: contentKeys.material(material.remoteId ?? ''),
+  queryFn: ({ signal }) => refreshAIMaterial(material.id, signal),
+  enabled: Boolean(material.remoteId) && apiConfigured(),
+  // Keeps polling through transient failures (offline, 5xx); stops once it settles or the server says no.
+  refetchInterval: poll ? (query) => (isFinalError(query.state.error) ? false : !query.state.data || query.state.data.status === 'processing' ? MATERIAL_POLL_MS : false) : false,
+});
+
+/** Server status of one AI material; with `poll`, follows it every few seconds until it settles. */
+export function useMaterialStatus(material: StudyMaterial | null, options: { poll?: boolean } = {}) {
+  return useQuery(materialQuery(material ?? { id: '', remoteId: undefined }, Boolean(options.poll)));
 }
 
-/** Mount once near the root: syncs on launch and whenever Goomi returns to the foreground. */
+export function useUploadMaterial() {
+  return useMutation({
+    mutationFn: sendForAIStudy,
+    onSuccess: (material) => { if (material.remoteId) queryClient.setQueryData(contentKeys.material(material.remoteId), material); },
+  });
+}
+
+export function useDeleteMaterial() {
+  return useMutation({
+    mutationFn: deleteAIMaterial,
+    onSuccess: (_, material) => { if (material.remoteId) queryClient.removeQueries({ queryKey: contentKeys.material(material.remoteId) }); },
+  });
+}
+
+/** Mount once near the root: syncs the bank and in-flight AI materials on launch and on every return to the foreground. */
 export function useContentSync() {
+  // Both persisted stores must have loaded: the sync cursor and install id live in the bank store.
   const hydrated = useGoomi((state) => state.hydrated);
-  useEffect(() => {
-    if (!hydrated || !serverUrl()) return;
-    const run = () => { void syncBank().catch(() => undefined); void resumeProcessing().catch(() => undefined); };
-    run();
-    const subscription = AppState.addEventListener('change', (state) => { if (state === 'active') run(); });
-    return () => subscription.remove();
-  }, [hydrated]);
+  const bankHydrated = useBank((state) => state.hydrated);
+  const enabled = hydrated && bankHydrated && apiConfigured();
+  const pending = useGoomi((state) => state.learning.materials).filter((material) => material.processingMethod === 'ai' && material.status === 'processing');
+  useBankSync(enabled);
+  useQueries({ queries: enabled ? pending.map((material) => materialQuery(material, false)) : [] });
 }

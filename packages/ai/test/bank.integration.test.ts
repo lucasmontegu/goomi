@@ -2,7 +2,7 @@
 import { afterAll, describe, expect, setDefaultTimeout, test } from "bun:test";
 import { buildBank, challengeSchema, type Fact } from "@goomi/content";
 import { createPrismaClient } from "@goomi/db";
-import { enrichPending, listBankChanges, publishDrafts, storeFacts } from "../src/bank";
+import { enrichPending, getBankInventory, listBankChanges, publishDrafts, storeFacts, summarizeInventory } from "../src/bank";
 import { collectUsage } from "../src/usage";
 import { countryFacts } from "../../content/test/helpers";
 import { scriptedModel } from "./mocks";
@@ -41,6 +41,14 @@ run("content bank (integration)", () => {
     expect([...page1.items, ...page2.items].map((c) => c.id).sort()).toEqual(ids.map((id) => `${id}:es`).sort());
     for (const item of [...page1.items, ...page2.items]) expect(challengeSchema.safeParse(item).success && item.locale === "es").toBe(true);
     expect((await listBankChanges(db, { lang: "es", cursor: page2.cursor, limit: 10 })).items.filter((item) => ids.some((id) => item.id.startsWith(id)))).toHaveLength(0);
+  });
+
+  test("inventory counts locales by topic × lang × difficulty × type and enrichment state", async () => {
+    const rows = await getBankInventory(db, { itemIds: ids });
+    expect([...new Set(rows.map((row) => row.lang))].sort()).toEqual(["en", "es", "pt-BR"]);
+    expect(rows.every((row) => row.topicId === "geography" && row.type === drafts[0]!.type && row.retired === 0 && row.enriched === 0)).toBe(true);
+    for (const lang of ["en", "es", "pt-BR"]) expect(rows.filter((row) => row.lang === lang).reduce((sum, row) => sum + row.published, 0)).toBe(drafts.length);
+    expect(summarizeInventory(rows)).toEqual({ geography: { published: drafts.length * 3, enriched: 0, pending: drafts.length * 3 } });
   });
 
   test("grounded enrichment is accepted; made-up numbers fall back to the template", async () => {

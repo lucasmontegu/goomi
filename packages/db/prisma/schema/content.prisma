@@ -240,7 +240,7 @@ model StudyChallenge {
 
 model Job {
   id             String    @id @default(cuid())
-  /// material.process | bank.fetch | bank.build | bank.enrich
+  /// material.process | bank.refresh (global, no material or user)
   kind           String
   materialId     String?
   userId         String?
