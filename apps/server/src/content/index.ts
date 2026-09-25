@@ -1,5 +1,6 @@
-import { DEFAULT_STUDY_MODELS } from "@goomi/ai";
+import { DEFAULT_STUDY_MODELS, type FactFetchers } from "@goomi/ai";
 import { fetchArtworkFacts } from "@goomi/content/fetchers/aic";
+import type { FetchContext } from "@goomi/content/fetchers/http";
 import { fetchCountryFacts, fetchElementFacts, fetchInventionFacts } from "@goomi/content/fetchers/wikidata";
 import { waitUntil } from "@vercel/functions";
 import { ENV } from "../env.server";
@@ -10,6 +11,14 @@ import { createContentApp } from "./routes";
 /** BETTER_AUTH_URL is `${VERCEL_ORIGIN}/api/auth` on Vercel, so its origin is this deployment. */
 const origin = new URL(ENV.BETTER_AUTH_URL).origin;
 const production = process.env.VERCEL_ENV === "production";
+
+/** One key per source: each is fetched and stored as its own resumable unit of `bank.refresh`. */
+const openDataFetchers = (context: FetchContext): FactFetchers => ({
+  "wikidata.countries": () => fetchCountryFacts(context),
+  "wikidata.elements": () => fetchElementFacts(context),
+  "wikidata.inventions": () => fetchInventionFacts(context),
+  "aic.artworks": () => fetchArtworkFacts(context),
+});
 
 /** Production wiring of the content routes (ADR-001); tests build their own deps. */
 export const contentApp = createContentApp({
@@ -32,11 +41,5 @@ export const contentApp = createContentApp({
   kick: process.env.VERCEL && ENV.JOBS_SECRET
     ? async (jobId) => { waitUntil(fetch(`${origin}/api/internal/jobs/${jobId}/run`, { method: "POST", headers: { Authorization: `Bearer ${ENV.JOBS_SECRET}` } })); }
     : undefined,
-  fetchFacts: ENV.CONTENT_USER_AGENT
-    ? async () => {
-      const context = { userAgent: ENV.CONTENT_USER_AGENT! };
-      const [countries, elements, inventions, artworks] = await Promise.all([fetchCountryFacts(context), fetchElementFacts(context), fetchInventionFacts(context), fetchArtworkFacts(context)]);
-      return [...countries, ...elements, ...inventions, ...artworks];
-    }
-    : undefined,
+  fetchers: ENV.CONTENT_USER_AGENT ? openDataFetchers({ userAgent: ENV.CONTENT_USER_AGENT }) : undefined,
 });

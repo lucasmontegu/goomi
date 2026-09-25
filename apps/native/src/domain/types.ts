@@ -7,7 +7,7 @@ export type {
   AudioChallenge, Challenge, ChallengeBase, ChallengeOrigin, Choice, ChoiceChallenge, Difficulty, ImageChallenge, MatchingChallenge,
   MemoryChallenge, PronunciationChallenge, ReflectionChallenge, SequenceChallenge, Source, SudokuChallenge, TextChallenge, TopicId,
 } from "@goomi/content";
-import type { Challenge, Difficulty, TopicId } from "@goomi/content";
+import type { Challenge, Difficulty, MaterialKind, MaterialProgress, TopicId } from "@goomi/content";
 export type Answer = string | string[] | Record<string, string>;
 export type AnswerResult = { correct: boolean; graded: boolean; answerLabel: string; explanation: string };
 
@@ -65,7 +65,7 @@ export type AnswerEvent = {
 export type StudyMaterial = {
   id: string;
   title: string;
-  kind: "text" | "pdf" | "image" | "slides";
+  kind: MaterialKind;
   createdAt: number;
   text: string;
   /** "processing" = sent for AI study and not ready yet (see remoteId/progress). */
@@ -74,7 +74,7 @@ export type StudyMaterial = {
   /** Server material id for AI study. */
   remoteId?: string;
   /** Last known server progress while processing. */
-  progress?: { stage: string; step: number; total: number };
+  progress?: MaterialProgress;
   concepts: { id: string; term: string; definition: string; paragraph: number }[];
   challenges: Challenge[];
   message: string;

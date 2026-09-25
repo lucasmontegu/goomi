@@ -4,7 +4,7 @@ import * as Network from 'expo-network';
 import { router, type Href } from 'expo-router';
 import { create } from 'zustand';
 import screenTime, { type ScreenTimeStatus } from '@/modules/goomi-screen-time';
-import { getProgress, type Progress } from '../domain';
+import { getProgress, subscriptionFor, type Progress } from '../domain';
 import { billingAvailability, getBillingStatus, subscribeToBillingStatus, type BillingStatus } from '../services/billing';
 import { initializeAnalytics, trackEvent } from '../services/analytics';
 import { useGoomi } from './store';
@@ -64,6 +64,14 @@ export function useFreeRemaining(): number {
   return plus ? Infinity : Math.max(0, FREE_DAILY_DISCOVERIES - progress.todayCompleted);
 }
 
+/** The one place a confirmed store answer reaches app state (runtime status + persisted subscription). */
+export function applyBillingStatus(status: BillingStatus) {
+  useRuntime.setState({ billingStatus: status, billing: 'checked' });
+  const { settings, updateSettings } = useGoomi.getState();
+  const next = subscriptionFor(status, settings.subscription);
+  if (next !== settings.subscription) updateSettings({ subscription: next });
+}
+
 /**
  * Reconciles native state whenever Goomi comes to the foreground:
  * Screen Time permission (detects revocation), pending shield challenges, connectivity, and entitlement.
@@ -73,22 +81,15 @@ export function useAppLifecycle() {
   useEffect(() => {
     let alive = true;
     let unsubscribeBilling = () => {};
-    const { analyticsConsent, updateSettings } = useGoomi.getState();
+    const { analyticsConsent } = useGoomi.getState();
     void initializeAnalytics(analyticsConsent);
 
-    const applyBilling = (status: BillingStatus) => {
-      const { hasPlus, isTrial } = status;
-      useRuntime.setState({ billingStatus: status });
-      const current = useGoomi.getState().settings.subscription;
-      const next = hasPlus ? (isTrial ? 'trial' : 'active') : current === 'not-configured' ? 'not-configured' : 'expired';
-      if (next !== current) updateSettings({ subscription: next });
-    };
     async function checkBilling() {
       if (!billingAvailability().available) { useRuntime.setState({ billing: 'unavailable' }); return; }
       const result = await getBillingStatus();
       if (!alive) return;
       // Offline or store errors keep the last confirmed state; RevenueCat caches customer info itself.
-      if (result.ok) { applyBilling(result.value); useRuntime.setState({ billing: 'checked' }); }
+      if (result.ok) applyBillingStatus(result.value);
     }
     async function checkNative() {
       try {
@@ -108,7 +109,7 @@ export function useAppLifecycle() {
 
     void checkNative();
     void checkBilling();
-    void subscribeToBillingStatus(applyBilling).then((unsubscribe) => {
+    void subscribeToBillingStatus(applyBillingStatus).then((unsubscribe) => {
       if (alive) unsubscribeBilling = unsubscribe; else unsubscribe();
     });
     const networkSubscription = Network.addNetworkStateListener((state) => {

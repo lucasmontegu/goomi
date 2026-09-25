@@ -2,8 +2,8 @@ import { Alert, ScrollView, StyleSheet, View } from 'react-native';
 import { router, useLocalSearchParams, type Href } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import type { ConceptMemory } from '@/src/domain';
-import { deleteAIMaterial, refreshAIMaterial } from '@/src/services/content-sync';
+import { STUDY_PHASES, studyPhase, type ConceptMemory } from '@/src/domain';
+import { useDeleteMaterial, useMaterialStatus } from '@/src/services/content-sync';
 import { useGoomi } from '@/src/state/store';
 import { Icon, ProgressLine, Reveal, Txt, Title } from '@/src/ui/core';
 import { EmptyState, ListGroup, ListRow, Notice, Surface } from '@/src/ui/kit';
@@ -26,6 +26,9 @@ export default function Material() {
   const material = useGoomi((state) => state.learning.materials.find((item) => item.id === id));
   const memories = useGoomi((state) => state.learning.memories);
   const removeMaterial = useGoomi((state) => state.removeMaterial);
+  const remove = useDeleteMaterial();
+  // Only in-flight AI materials ask the server; ready ones already live on the device.
+  const status = useMaterialStatus(material?.processingMethod === 'ai' && material.status === 'processing' ? material : null);
   const back = () => (router.canGoBack() ? router.back() : router.replace('/library' as Href));
 
   if (!material) {
@@ -56,10 +59,13 @@ export default function Material() {
   const ready = ai ? material.status === 'ready' && material.challenges.length > 0 : material.status === 'ready' && concepts.length > 0;
 
   async function removeAI() {
-    const result = await deleteAIMaterial(material!);
-    if (result.ok) back();
-    // The server copy must go too, so nothing is removed locally until it has.
-    else Alert.alert('Couldn’t remove it yet', 'Goomi couldn’t delete your notes from its server. Try again when you’re online.');
+    try {
+      await remove.mutateAsync(material!);
+      back();
+    } catch {
+      // The server copy must go too, so nothing is removed locally until it has.
+      Alert.alert('Couldn’t remove it yet', 'Goomi couldn’t delete your notes from its server. Try again when you’re online.');
+    }
   }
   function confirmRemove() {
     Alert.alert(
@@ -106,10 +112,10 @@ export default function Material() {
       </Reveal> : ai ? <View style={{ gap: 12 }}>
         <Notice
           theme={t} tone={material.status === 'failed' ? 'warning' : 'lavender'} icon={material.status === 'failed' ? 'alert-circle-outline' : 'sparkles-outline'}
-          title={material.status === 'failed' ? 'Couldn’t prepare this one' : `Preparing with AI${material.progress?.step ? ` · step ${Math.min(4, Math.max(1, Math.ceil((material.progress.step / material.progress.total) * 4)))} of 4` : ''}`}
+          title={material.status === 'failed' ? 'Couldn’t prepare this one' : `Preparing with AI${material.progress?.step ? ` · step ${studyPhase(material.progress) + 1} of ${STUDY_PHASES.length}` : ''}`}
           body={material.message}
         />
-        {material.status === 'processing' && <PillButton theme={t} tone="soft" title="Check now" icon="refresh" onPress={() => void refreshAIMaterial(material)} />}
+        {material.status === 'processing' && <PillButton theme={t} tone="soft" title="Check now" icon="refresh" onPress={() => void status.refetch()} />}
       </View> : ready ? <Reveal delay={40}>
         <Surface theme={t} style={styles.summary}>
           <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 6 }}>

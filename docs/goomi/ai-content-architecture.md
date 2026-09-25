@@ -242,7 +242,13 @@ cache offline in the store; eligible for interruption selection
   2. the job re-invokes itself for the next stage, protected by `JOBS_SECRET`;
   3. the app's own status poll re-kicks a job whose lease has expired, which covers Hobby's once-a-day cron limit;
   4. a Vercel Cron sweeper (`/api/cron/jobs`, protected by `CRON_SECRET`).
-- **Nightly jobs:** `/api/cron/bank` runs fetch, template, enrich and publish.
+- **Nightly jobs:** `/api/cron/bank` only enqueues one `bank.refresh` job (idempotency key `bank.refresh:<day>`, never alongside another active refresh) and returns 202. The job runs through the same kind-dispatched runner as study jobs:
+  - **fetch:** one unit per open-data source, only when facts are older than 6 days.
+  - **build:** one atomic unit. Templates run over all facts and publish; retirement needs the complete draft set, so this unit is never batched.
+  - **enrich:** batches of 20, at most 300 per run, stopping at the global bank AI cap (`LIMITS.bank`, $5/month, `ai_usage` with no user and a `bank.*` purpose).
+  - The sweeper claims study jobs before bank jobs.
+  - Bank jobs have no app poll, so a failed self-kick waits for the daily `/cron/jobs` (≤ ~24 h on Hobby).
+  - See `content-factory-plan.md`.
 - **Later:** revisit Workflow after a spike that proves a Nitro build of `apps/server` on Vercel (Q11). The stage functions are written as pure `(ctx) => Promise<void>` so they can move to `"use step"` unchanged.
 
 ## 8. Part 4 — Guardrails
@@ -285,6 +291,20 @@ cache offline in the store; eligible for interruption selection
 - **Delete:** `DELETE /v1/materials/:id` hard-deletes the material and cascades to sections, chunks, material-only concepts and edges, challenges and jobs. Account deletion cascades from `User`.
 - **Consent:** a sheet shown at upload names what leaves the device (the text, plus low-text page images when needed), who processes it (Goomi's server and AI providers through Vercel AI Gateway, with zero data retention) and how to delete it. The server stores `consentVersion` and `consentedAt` on `Material` and rejects uploads without them. **"Keep it on this phone"** remains available and uses the existing local extractor.
 - **Copy to update:** the privacy section in `legal.tsx`, the compose hints ("Goomi reads it on this phone…" becomes accurate for both paths), and `material/[id]` provenance, which says AI-generated and validated against your notes.
+
+### 8.5 API contracts and database access
+
+- **One contract, both sides.** `packages/content/src/api.ts` holds the `API` route table: method, path, query, body and response schema, and success status for every `/v1` route the app calls. It also holds `API_ERRORS` (error code → HTTP status), `STUDY_STAGES` and `MATERIAL_ERRORS`.
+  - The server registers each handler from its route (`on(app, API.x, handler)` in `apps/server/src/content/http.ts`). Params, query and body are parsed before the handler runs. Every response goes through its schema, so unknown keys are stripped.
+  - Handlers never pick a status: they `refuse(code, message)`, and one error handler maps the code to its status.
+  - The app calls routes by name (`apiRequest(API.x, { params, query, body })`) and parses every response before touching local state. Invalid challenges are dropped, not trusted.
+  - Codes, stages and material errors stay plain strings on the wire, so an older app tolerates new ones. The app's headline map is typed over every code, so a new code fails the type-check until it has copy.
+- **Resumable upload.** Uploading the same text again answers with the same material plus what is still missing (`started`, and the `ocrPages` whose images haven't been read). `/start` is idempotent. A retry after a failed `/pages` or `/start` therefore finishes instead of stranding a queued row. A material the server no longer has (a poll gets `material.not_found`) settles as failed on the device.
+- **Quotas in one module.** `createAllowance` (`apps/server/src/content/limits.ts`) owns every quota, rate limit and spend cap. Takes return a ticket to give back when nothing was stored. The runner's hard spend stop and the bank budget read from it too.
+- **Server-side guards:** per-route body limits (1 MB JSON, ~15.5 MB for page images, 64 KB webhook) checked while the body streams; route ids validated; quotas are reserved atomically (check-and-take, refunded on failure), so concurrent uploads can't overrun them; a global `onError` returns `{ error: { code: "internal" } }` and never leaks internals.
+- **Entitlement cache:** an active `goomi_pro` is trusted for 6 h (the webhook refreshes it on change). "Not Plus" is cached for only 5 min, so a purchase works even when its webhook is late.
+- **AI SDK:** calls run only on the server (`packages/ai`, AI SDK 7 through AI Gateway model strings). Each call has a 75 s timeout.
+- **Row-level security (deny by default).** Only the server connects to Postgres, as the owner role (`neondb_owner`, BYPASSRLS), and every user query is scoped by `userId` in code. RLS is enabled on every table with no policies, so any other role (a leaked read-only credential, the Neon Data API's roles if it is ever switched on) sees nothing. Per-user policies (`"userId" = current_setting('app.user_id')`) would need the server to connect as a non-owner role and set the user inside a transaction on every request; deferred until a second client talks to the database directly. `packages/db/test/db.integration.test.ts` fails if a table ships without RLS.
 
 ## 9. Cost estimate
 
@@ -493,7 +513,7 @@ model RateLimitBucket { key String; windowStart DateTime; count Int @default(0);
 
 ## 11. Native changes (offline-first, minimal)
 
-- **`src/services/content-sync.ts`:** `syncBank()` runs on foreground at most once every N minutes, over wifi or cellular; `pollMaterial(id)`; `uploadMaterial(...)`. It uses `authClient.getCookie()` (async in Better Auth 1.7) when signed in, and an install id otherwise. Responses are parsed with `@goomi/content` zod schemas, and anything invalid is dropped.
+- **`src/services/content-sync.ts`:** all server reads and writes go through TanStack Query (`src/services/query-client.ts`: app foreground = focus, `expo-network` = online). Bank sync is a query (6 h stale time, plus the persisted `syncedAt`), material status is a polled query, upload and delete are mutations. Persisted zustand stores stay the offline source of truth. `syncBank()` runs on foreground at most once every N minutes, over wifi or cellular; `pollMaterial(id)`; `uploadMaterial(...)`. It uses `authClient.getCookie()` (async in Better Auth 1.7) when signed in, and an install id otherwise. Responses are parsed with `@goomi/content` zod schemas, and anything invalid is dropped.
 - **Store:**
   - a new `bank: { items: Challenge[], cursor, updatedAt }` slice, capped at 500 items and evicted least-recently-seen first, never evicting items with memories that are due;
   - `selectChallenges` gets the bank items as a larger pool (a small change to `engine.ts`, with tests);
@@ -584,7 +604,7 @@ model RateLimitBucket { key String; windowStart DateTime; count Int @default(0);
   - `GET /v1/bank` (install id or session; free 30 new items a day, Plus 200; rate limits per subject and per IP)
   - `GET|POST /v1/materials`, `POST /v1/materials/:id/pages` (OCR fallback, ≤10 JPEG/PNG under 1.5 MB, never stored), `POST /v1/materials/:id/start`, `GET /v1/materials/:id` (the poll also re-kicks stalled jobs), `DELETE /v1/materials/:id`
   - `POST /v1/webhooks/revenuecat` (constant-time auth, dedupe, sandbox ignored in production, used only as a refresh trigger)
-  - `GET /cron/jobs`, `GET /cron/bank`, `POST /internal/jobs/:id/run`
+  - `GET /cron/jobs`, `GET /cron/bank` (enqueues `bank.refresh`), `POST /internal/jobs/:id/run`, `GET /internal/bank/inventory` (`JOBS_SECRET`)
   - The entitlement check reads RevenueCat v2 `customers/{id}` `active_entitlements` against the internal id `entl481993caba` (`goomi_pro`). The cache lasts 6 h and fails closed.
   - `vercel.json` has **daily** crons (Hobby).
   - New env vars are in `apps/server/.env.schema`. Everything is optional, and `STUDY_AI_ENABLED=false` by default.
@@ -624,11 +644,35 @@ model RateLimitBucket { key String; windowStart DateTime; count Int @default(0);
 - **Still not verified:** the AI happy path end to end, because no server is deployed.
 - **Privacy copy is tied to config:** it states that processing uses zero-data-retention providers. If `AI_DOCUMENT_PRIVACY` is ever set to `no-training`, update that copy and bump `STUDY_AI_CONSENT_VERSION` (`packages/content/src/schema.ts`).
 
+### P5 — Durable bank jobs (done 2026-09-24)
+- **Jobs (`packages/ai/src/jobs.ts`):** `runJob(db, job, initial, step, options)` is the kind-agnostic loop:
+  - It checkpoints and extends the lease after every unit, pauses when the budget is spent, and backs off at 30/60/120 s.
+  - An `onFailed` hook carries kind-specific side effects; `runMaterialJob` uses it to fail the material.
+  - `claimJob` orders `material.process` first.
+- **Runner (`apps/server/src/content/runner.ts`):** dispatches on `job.kind`.
+  - `material.process` behaves as before (cancel if the material was deleted, per-user spend stop).
+  - `bank.refresh` runs `bankRefreshStep` (`packages/ai/src/bank-refresh.ts`).
+  - Unknown kinds fail with `unknown kind: <kind>`.
+  - Global jobs run with `materialId = null` and `userId = null`; their AI usage is recorded with `jobId`.
+- **Inventory (`bank.ts`):** `getBankInventory` returns published, retired, enriched, template and pending counts by topic × lang × difficulty × type. `summarizeInventory` gives per-topic totals, which the job also stores in its final `progress.inventory`. It is a report only: nothing is enqueued from it. Targets and gaps wait until there is a lever (bounded AI generation or demand signals).
+- **Verified on `dev-ai-content`:**
+  - `packages/ai`: 35 pass. The new tests cover:
+    - a global job pausing and resuming one unit per invocation;
+    - retries without a material;
+    - study-first claiming;
+    - enqueue dedupe;
+    - `bank.refresh` resuming unit by unit with exactly one AI generation per enriched row;
+    - an unchanged rebuild leaving `seq` untouched;
+    - the budget cap stopping enrichment with 0 AI calls;
+    - inventory counts.
+  - `apps/server`: 9 pass (cron enqueue + drain, inventory endpoint auth, unknown kind).
+  - `check-types`: 8/8.
+
 ## Go-live checklist (needs you — nothing below was done)
 1. **Vercel plan:** request-level ZDR needs **Pro** (see Q1). Until then, keep `STUDY_AI_ENABLED=false`, or accept `no-training` and change the copy.
 2. **AI Gateway:** on Vercel, OIDC works without a key. Locally, set `AI_GATEWAY_API_KEY`. Then run one live smoke test (Qwen structured output, `reasoning: "none"`, embedding size, cost fields) and a 10-document eval before enabling (Q8, Q10).
 3. **RevenueCat:** create a v2 secret key with `customer_information:customers:read` and put it in `REVENUECAT_SECRET_KEY`. Add a webhook to `https://<domain>/api/v1/webhooks/revenuecat` with an Authorization value, and set the same value in `REVENUECAT_WEBHOOK_AUTH`.
 4. **Secrets:** `CRON_SECRET` (Vercel sends it to crons automatically), `JOBS_SECRET` (32+ characters), and `CONTENT_USER_AGENT` with a real contact (Wikimedia policy).
-5. **Database:** `bun run --cwd packages/db prisma migrate deploy` against production. This applies 2 migrations and enables pgvector.
-6. **Seed the bank:** call `GET /api/cron/bank` once with the cron secret. It fetches Wikidata and AIC facts and publishes about 800 localized items.
+5. **Database:** `bun run --cwd packages/db prisma migrate deploy` against production. This applies 3 migrations, enables pgvector and turns on deny-by-default RLS (§8.5). The production branch is behind: as of 2026-09-24 it only has the auth and early bank tables.
+6. **Seed the bank:** call `GET /api/cron/bank` once with the cron secret. It enqueues a `bank.refresh` job that fetches Wikidata and AIC facts and publishes about 800 localized items. Follow it with `GET /api/internal/bank/inventory` (Bearer `JOBS_SECRET`).
 7. **Dev branch:** keep `dev-ai-content` for integration tests, or delete it in Neon when you're done.

@@ -9,7 +9,7 @@
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.goomi",
+      "bundleIdentifier": "com.lumlabs.goomi",
       "usesAppleSignIn": true,
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
@@ -25,7 +25,7 @@
         "monochromeImage": "./assets/goomi/android-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.goomi"
+      "package": "com.lumlabs.goomi"
     },
     "web": {
       "bundler": "metro",
@@ -73,6 +73,60 @@
       "typedRoutes": true,
       "reactCompiler": true
     },
-    "backgroundColor": "#FAFAF8"
+    "backgroundColor": "#FAFAF8",
+    "owner": "lumlabs",
+    "runtimeVersion": {
+      "policy": "fingerprint"
+    },
+    "extra": {
+      "googleSignInNative": false,
+      "router": {},
+      "eas": {
+        "build": {
+          "experimental": {
+            "ios": {
+              "appExtensions": [
+                {
+                  "targetName": "GoomiActivityMonitor",
+                  "bundleIdentifier": "com.lumlabs.goomi.GoomiActivityMonitor",
+                  "entitlements": {
+                    "com.apple.developer.family-controls": true,
+                    "com.apple.security.application-groups": [
+                      "group.com.lumlabs.goomi.screentime"
+                    ]
+                  }
+                },
+                {
+                  "targetName": "GoomiShieldAction",
+                  "bundleIdentifier": "com.lumlabs.goomi.GoomiShieldAction",
+                  "entitlements": {
+                    "com.apple.developer.family-controls": true,
+                    "com.apple.security.application-groups": [
+                      "group.com.lumlabs.goomi.screentime"
+                    ]
+                  }
+                },
+                {
+                  "targetName": "GoomiShieldConfiguration",
+                  "bundleIdentifier": "com.lumlabs.goomi.GoomiShieldConfiguration",
+                  "entitlements": {
+                    "com.apple.developer.family-controls": true,
+                    "com.apple.security.application-groups": [
+                      "group.com.lumlabs.goomi.screentime"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "projectId": "dbb1cf0e-c9d4-42ed-bcaf-36d737b85c60"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/dbb1cf0e-c9d4-42ed-bcaf-36d737b85c60",
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 0
+    }
   }
 }

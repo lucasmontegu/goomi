@@ -6,10 +6,10 @@ import * as ImagePicker from 'expo-image-picker';
 import { KeyboardAwareScrollView, KeyboardStickyView } from 'react-native-keyboard-controller';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { studyExtraction } from '@/modules/goomi-study';
-import { extractStudyMaterial, type StudyMaterial } from '@/src/domain';
+import { STUDY_PHASES, extractStudyMaterial, studyPhase, type StudyMaterial } from '@/src/domain';
 import { useGoomi } from '@/src/state/store';
 import { trackEvent } from '@/src/services/analytics';
-import { aiStudyConfigured, refreshAIMaterial, sendForAIStudy, type ApiError } from '@/src/services/content-sync';
+import { ApiRequestError, aiStudyConfigured, useMaterialStatus, useUploadMaterial, type ApiError, type ApiErrorKind } from '@/src/services/content-sync';
 import { Icon, Reveal, Txt, Title } from '@/src/ui/core';
 import { Beads, Bubble, Notice, Pop, Surface } from '@/src/ui/kit';
 import { Mascot, type Pose } from '@/src/ui/mascot';
@@ -71,6 +71,7 @@ export default function Compose() {
 
   const mounted = useRef(true);
   const busy = useRef(false);
+  const upload = useUploadMaterial();
   const picked = useRef<Picked | null>(null);
   const draft = useRef({ title: existing?.title ?? '', text: existing?.text ?? '' });
   const [editorKey, setEditorKey] = useState(0);
@@ -148,15 +149,14 @@ export default function Compose() {
         else for (const n of pending.lowText) ocrImages.push(...(await studyExtraction.renderPages(file.uris[n - 1]!, 'image', [1])).map((page) => ({ ...page, n })));
       }
       show({ name: 'sending', detail: 'Sending your notes to Goomi' });
-      const result = await sendForAIStudy({ title: pending.title, kind: pending.kind, pages: pending.pages, ocrImages });
-      if (!result.ok) { show({ name: 'ai-error', error: result.error, pending }); return; }
+      const material = await upload.mutateAsync({ title: pending.title, kind: pending.kind, pages: pending.pages, ocrImages });
       const previous = replacing.current;
-      if (previous && previous.id !== result.value.id) removeMaterial(previous.id);
-      replacing.current = { id: result.value.id, kind: pending.kind };
+      if (previous && previous.id !== material.id) removeMaterial(previous.id);
+      replacing.current = { id: material.id, kind: pending.kind };
       trackEvent('study_material_added', { format: pending.kind });
-      show({ name: 'ai-processing', material: result.value });
-    } catch {
-      show({ name: 'ai-error', error: { status: 0, code: 'read', message: 'Goomi couldn’t prepare those pages. Nothing was sent.' }, pending });
+      show({ name: 'ai-processing', material });
+    } catch (error) {
+      show({ name: 'ai-error', error: error instanceof ApiRequestError ? error : { status: 0, code: 'read', message: 'Goomi couldn’t prepare those pages. Nothing was sent.' }, pending });
     } finally {
       busy.current = false;
     }
@@ -310,19 +310,13 @@ export default function Compose() {
 
   // While this screen is open, follow the server's real progress. Closing keeps it going in the library.
   const polling = phase.name === 'ai-processing' ? phase.material : null;
+  const remote = useMaterialStatus(polling, { poll: true }).data;
   useEffect(() => {
-    if (!polling) return;
-    let stopped = false;
-    const tick = async () => {
-      const result = await refreshAIMaterial(polling);
-      if (stopped || !result.ok) return;
-      if (result.value.status === 'ready') { trackEvent('study_processing_completed', { conceptCount: result.value.challenges.length }); show({ name: 'ai-ready', material: result.value }); }
-      else if (result.value.status === 'failed') show({ name: 'ai-error', error: { status: 0, code: 'processing', message: result.value.message }, pending: null });
-      else show({ name: 'ai-processing', material: result.value });
-    };
-    const timer = setInterval(() => void tick(), 4000);
-    return () => { stopped = true; clearInterval(timer); };
-  }, [polling?.id, show]);
+    if (!polling || !remote || remote.id !== polling.id || remote === polling) return;
+    if (remote.status === 'ready') { trackEvent('study_processing_completed', { conceptCount: remote.challenges.length }); show({ name: 'ai-ready', material: remote }); }
+    else if (remote.status === 'failed') show({ name: 'ai-error', error: { status: 0, code: 'processing', message: remote.message }, pending: null });
+    else show({ name: 'ai-processing', material: remote });
+  }, [remote, polling, show]);
 
   const close = () => router.back();
   const processing = phase.name === 'processing' || phase.name === 'sending' || phase.name === 'ai-processing';
@@ -352,11 +346,11 @@ export default function Compose() {
       {phase.name === 'processing' && <Processing theme={t} step={phase.step} detail={phase.detail} />}
       {phase.name === 'choose' && <ChooseState theme={t} pending={phase.pending} onAI={() => void prepareWithAI(phase.pending)} onLocal={() => keepOnPhone(phase.pending)} />}
       {phase.name === 'sending' && <Processing theme={t} step={0} detail={phase.detail} steps={AI_STEPS} lines={AI_LINES} privacy="Sent securely. Not kept by the AI providers." />}
-      {phase.name === 'ai-processing' && <Processing theme={t} step={aiStep(phase.material.progress?.stage)} detail={AI_DETAIL[aiStep(phase.material.progress?.stage)]!} steps={AI_STEPS} lines={AI_LINES} privacy="You can close this. Goomi keeps going and lets your library know." />}
+      {phase.name === 'ai-processing' && <Processing theme={t} step={studyPhase(phase.material.progress)} detail={AI_DETAIL[studyPhase(phase.material.progress)]!} steps={AI_STEPS} lines={AI_LINES} privacy="You can close this. Goomi keeps going and lets your library know." />}
       {phase.name === 'ai-ready' && <AiReady theme={t} material={phase.material} />}
       {phase.name === 'ai-error' && <Situation
         theme={t} pose="think" prop={SOURCE_META[source].prop}
-        headline={AI_ERROR_HEADLINE[phase.error.code] ?? 'That didn’t go to plan.'}
+        headline={AI_ERROR_HEADLINE[phase.error.code as ApiErrorKind] ?? AI_ERROR_FALLBACK}
         body={phase.error.message}
         primary={phase.pending ? { title: 'Keep it on this phone instead', onPress: () => keepOnPhone(phase.pending!) } : { title: 'See your library', onPress: () => router.replace('/library' as Href) }}
         secondary={phase.error.code === 'auth.required' ? { title: 'Sign in', onPress: () => router.push('/account' as Href) } : { title: 'Not now', onPress: close }}
@@ -432,22 +426,36 @@ function StartState({ theme: t, source, cancelled, onPick, onPaste }: { theme: T
 
 const STEPS = ['Reading', 'Finding definitions', 'Building recall prompts'];
 const LINES = ['Reading along with you…', 'Ooh, found some good bits.', 'Turning them into questions.'];
-const AI_STEPS = ['Reading your notes', 'Finding the key ideas', 'Writing questions', 'Checking them against your notes'];
+const AI_STEPS = [...STUDY_PHASES];
 const AI_LINES = ['Reading along with you…', 'Connecting the big ideas.', 'Writing some tricky ones.', 'Double-checking every answer.'];
 const AI_DETAIL = ['Pages and paragraphs', 'Ideas that link across your notes', 'Apply it, compare it, put it in order', 'Every answer must match your notes'];
-/** Server stages → the four steps the user sees. */
-const aiStep = (stage?: string) => (stage === 'extract' || stage === 'link' ? 1 : stage === 'generate' ? 2 : stage === 'judge' || stage === 'publish' ? 3 : 0);
-const AI_ERROR_HEADLINE: Record<string, string> = {
+const AI_ERROR_FALLBACK = 'That didn’t go to plan.';
+/** Every code the server or the device can raise; adding a code to the contract fails the type-check until it has a headline. */
+const AI_ERROR_HEADLINE: Record<ApiErrorKind, string> = {
   'auth.required': 'Sign in to use AI study.',
-  'study.disabled': 'AI study isn’t available yet.',
+  'identity.required': AI_ERROR_FALLBACK,
   'plus.required': 'AI study is part of Goomi Plus.',
+  'study.disabled': 'AI study isn’t available yet.',
+  'consent.required': 'One quick check first.',
+  rate_limited: 'Goomi needs a breather.',
   'quota.documents': 'That’s this month’s documents.',
   'quota.pages': 'That’s this month’s pages.',
   'quota.ocr': 'That’s this month’s closer reads.',
   'quota.spend': 'That’s this month’s AI study.',
   'quota.concurrent': 'Two are already cooking.',
+  'material.not_found': 'That one’s gone.',
+  'material.no_text': 'Not enough to read.',
+  'material.too_large': 'That one’s too big.',
+  'material.started': 'Already on it.',
+  invalid: AI_ERROR_FALLBACK,
+  unauthorized: AI_ERROR_FALLBACK,
+  unavailable: 'Goomi’s server is taking a break.',
+  not_found: AI_ERROR_FALLBACK,
+  internal: 'Goomi’s server is taking a break.',
   offline: 'You’re offline.',
   unreachable: 'Goomi’s server is taking a break.',
+  invalid_response: 'Time for an update.',
+  unknown: AI_ERROR_FALLBACK,
 };
 /** Goomi reads along. Each step advances when the real work does. */
 function Processing({ theme: t, step, detail, steps = STEPS, lines = LINES, privacy = 'Processed on this phone. Nothing is uploaded.' }: { theme: Theme; step: number; detail: string; steps?: string[]; lines?: string[]; privacy?: string }) {
