@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "bunVersion": "1.x",
+  "installCommand": "cd ../.. && bun install",
+  "buildCommand": "NEXT_PUBLIC_SERVER_URL=https://api.goomi.app bun run build"
+}

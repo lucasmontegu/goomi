@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "hono",
+  "bunVersion": "1.x",
+  "installCommand": "cd ../.. && bun install",
+  "buildCommand": "cd ../../packages/db && DATABASE_URL=\"${DATABASE_URL:-postgresql://build:build@localhost:5432/build}\" bunx prisma generate",
+  "crons": [
+    { "path": "/cron/jobs", "schedule": "15 3 * * *" },
+    { "path": "/cron/bank", "schedule": "0 4 * * *" }
+  ]
+}
