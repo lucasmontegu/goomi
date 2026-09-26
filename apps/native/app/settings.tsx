@@ -6,9 +6,9 @@ import Constants from 'expo-constants';
 import * as Notifications from 'expo-notifications';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import screenTime from '@/modules/goomi-screen-time';
-import { MODE_CONFIG } from '@/src/domain';
+import { MODE_CONFIG, hasPlusSubscription } from '@/src/domain';
 import { useGoomi } from '@/src/state/store';
-import { useRuntime } from '@/src/state/runtime';
+import { applyBillingStatus, useRuntime } from '@/src/state/runtime';
 import { analyticsConfigured, setAnalyticsConsent as applyAnalyticsConsent, trackEvent } from '@/src/services/analytics';
 import { billingAvailability, getBillingStatus, restoreBillingPurchases, type BillingStatus } from '@/src/services/billing';
 import { deleteAccount, signOut } from '@/src/services/auth';
@@ -171,12 +171,10 @@ function SettingsScreen() {
     }
     setBilling(result.value);
     trackEvent('purchases_restored', { active: result.value.hasPlus });
+    applyBillingStatus(result.value);
     if (result.value.hasPlus) {
-      updateSettings({ subscription: result.value.isTrial ? 'trial' : 'active' });
       setRestoreResult({ tone: 'lime', title: 'Goomi Plus is back', body: 'Your subscription was restored on this phone.' });
     } else {
-      const current = useGoomi.getState().settings.subscription;
-      if (current !== 'not-configured') updateSettings({ subscription: 'expired' });
       setRestoreResult({ tone: 'soft', title: 'Nothing to restore', body: 'There’s no active Goomi Plus subscription on this Apple ID.' });
     }
   }
@@ -253,7 +251,7 @@ function SettingsScreen() {
     : 'Paused';
 
   const subscription = subscriptionSummary(settings.subscription, billing);
-  const hasPlus = settings.subscription === 'active' || settings.subscription === 'trial';
+  const hasPlus = hasPlusSubscription(settings.subscription);
   const languages = profile.learningLanguages.length ? profile.learningLanguages.join(', ') : 'None yet';
 
   return <View style={{ flex: 1, backgroundColor: t.background }}>

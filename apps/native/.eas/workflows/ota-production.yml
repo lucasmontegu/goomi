@@ -1,0 +1,53 @@
+# OTA updates for TestFlight / App Store builds (channel "production").
+#
+# Runs on every push to main that touches the app, or manually:
+#   eas workflow:run .eas/workflows/ota-production.yml
+#
+# The update is published for the current fingerprint (runtimeVersion policy "fingerprint").
+# A binary only receives it when its native code matches, so a change that needs a new
+# native build lands on no one until a new TestFlight build ships (bun run testflight).
+name: OTA · production
+
+on:
+  push:
+    branches: ['main']
+    paths:
+      - 'apps/native/**'
+      - 'packages/content/**'
+      - 'bun.lock'
+      - '!**/*.md'
+      - '!apps/native/store.config.json'
+  workflow_dispatch: {}
+
+concurrency:
+  cancel_in_progress: false
+  group: ${{ workflow.filename }}-${{ github.ref }}
+
+jobs:
+  fingerprint:
+    name: Fingerprint (production)
+    type: fingerprint
+    environment: production
+
+  publish:
+    name: Publish to 20% of production
+    needs: [fingerprint]
+    type: update
+    environment: production
+    params:
+      channel: production
+      platform: ios
+      rollout_percentage: 20
+
+  approve:
+    name: Roll out to everyone?
+    needs: [publish]
+    type: require-approval
+
+  rollout:
+    name: Roll out to 100%
+    needs: [publish, approve]
+    type: update-rollout
+    params:
+      update_group_id: ${{ needs.publish.outputs.first_update_group_id }}
+      rollout_percentage: 100

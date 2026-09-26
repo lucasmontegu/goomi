@@ -4,7 +4,7 @@ import { router, type Href } from 'expo-router';
 import * as Haptics from 'expo-haptics';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { getWeakConcepts, type StudyMaterial } from '@/src/domain';
+import { conceptCount, getWeakConcepts, type StudyMaterial } from '@/src/domain';
 import { useGoomi } from '@/src/state/store';
 import { Icon, Reveal, Tactile, Txt, Title } from '@/src/ui/core';
 import { EmptyState, Surface } from '@/src/ui/kit';
@@ -169,7 +169,7 @@ function SectionHead({ theme: t, title, count }: { theme: Theme; title: string; 
 }
 
 function MaterialRow({ theme: t, material }: { theme: Theme; material: StudyMaterial }) {
-  const detail = `${KIND_LABEL[material.kind]} · ${material.status === 'ready' ? plural(material.concepts.length, 'concept') : 'no prompts yet'} · ${shortDate(material.createdAt)}`;
+  const detail = `${KIND_LABEL[material.kind]} · ${material.status === 'ready' ? plural(conceptCount(material), 'concept') : 'no prompts yet'} · ${shortDate(material.createdAt)}`;
   return <Pressable
     accessibilityRole="button" accessibilityLabel={`${material.title}. ${detail}`}
     onPress={() => { void Haptics.selectionAsync(); router.push(`/material/${material.id}` as Href); }}

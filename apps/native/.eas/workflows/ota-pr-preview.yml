@@ -1,0 +1,29 @@
+# Preview every app PR as an OTA update on its own branch ("pr-<number>").
+# Open it from a development build (bun run build:ios:dev) with the QR in the PR comment.
+name: OTA · PR preview
+
+on:
+  pull_request:
+    branches: ['main']
+    paths:
+      - 'apps/native/**'
+      - 'packages/content/**'
+      - 'bun.lock'
+
+concurrency:
+  cancel_in_progress: true
+  group: ${{ workflow.filename }}-${{ github.ref }}
+
+jobs:
+  publish:
+    name: Publish PR preview
+    type: update
+    environment: preview
+    params:
+      branch: pr-${{ github.event.pull_request.number }}
+      platform: ios
+
+  comment:
+    name: Comment on PR
+    needs: [publish]
+    type: github-comment

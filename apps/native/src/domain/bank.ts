@@ -1,8 +1,9 @@
-import type { Challenge, ConceptMemory, StudyMaterial } from "./types";
+import type { ApiLang } from "@goomi/content";
+import type { Challenge, ConceptMemory } from "./types";
 
 /** Server content cached on the device. Selection only ever reads this local copy. */
 export type BankState = { lang: BankLang | null; cursor: string | null; items: Challenge[]; syncedAt: number };
-export type BankLang = "en" | "es" | "pt-BR";
+export type BankLang = ApiLang;
 export type BankPage = { lang: BankLang; items: Challenge[]; retired: string[]; cursor: string };
 
 export const EMPTY_BANK: BankState = { lang: null, cursor: null, items: [], syncedAt: 0 };
@@ -42,29 +43,3 @@ export function applyBankPage(bank: BankState, page: BankPage, memories: Record<
   }
   return { lang: page.lang, cursor: page.cursor, items, syncedAt: now };
 }
-
-export type RemoteMaterial = {
-  id: string; title: string; status: "queued" | "processing" | "ready" | "failed"; lang: string | null; error: string | null;
-  progress: { stage: string; step: number; total: number }; challenges?: Challenge[];
-};
-
-/** The local library entry for an AI-processed material; its questions live on the device once ready. */
-export function aiMaterial(remote: RemoteMaterial, previous: Pick<StudyMaterial, "id" | "kind" | "createdAt" | "text">): StudyMaterial {
-  const ready = remote.status === "ready" && (remote.challenges?.length ?? 0) > 0;
-  const failed = remote.status === "failed" || (remote.status === "ready" && !ready);
-  const count = remote.challenges?.length ?? 0;
-  return {
-    ...previous, title: remote.title, remoteId: remote.id, processingMethod: "ai",
-    status: ready ? "ready" : failed ? "failed" : "processing",
-    progress: remote.progress, concepts: [], challenges: ready ? remote.challenges! : [],
-    message: ready ? `${count} ${count === 1 ? "question" : "questions"} from your notes, each checked against the passage it came from.`
-      : failed ? AI_ERRORS[remote.error ?? ""] ?? AI_ERRORS.processing_failed!
-      : "Goomi is preparing questions from your notes. You can close this; it keeps going.",
-  };
-}
-
-const AI_ERRORS: Record<string, string> = {
-  no_questions: "Goomi couldn’t find enough to ask about in this one. Notes with explanations and definitions work best.",
-  processing_failed: "Something went wrong while preparing this one. Nothing else was affected. Try again later.",
-  "quota.spend": "You’ve reached this month’s AI study allowance. Your other materials still work.",
-};

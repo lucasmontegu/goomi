@@ -90,4 +90,13 @@ run("pgvector on Neon (integration)", () => {
     expect(() => toVectorLiteral([1, 2, 3])).toThrow(RangeError);
     expect(() => toVectorLiteral(new Array(EMBEDDING_DIMENSIONS).fill(Number.NaN))).toThrow(RangeError);
   });
+
+  test("every app table has row-level security on and no grants to PUBLIC (deny by default)", async () => {
+    const tables = await db.$queryRaw<{ name: string; rls: boolean; publicSelect: boolean }[]>`
+      SELECT c.relname AS "name", c.relrowsecurity AS "rls", has_table_privilege('public', c.oid, 'SELECT') AS "publicSelect"
+      FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace
+      WHERE n.nspname = 'public' AND c.relkind = 'r' AND c.relname <> '_prisma_migrations'`;
+    expect(tables.length).toBeGreaterThan(20);
+    expect(tables.filter((table) => !table.rls || table.publicSelect).map((table) => table.name)).toEqual([]);
+  });
 });

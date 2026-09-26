@@ -1,5 +1,5 @@
 import { EMBEDDING_DIMENSIONS, Prisma, nearestChunks, nearestConcepts, setChunkEmbeddings, setConceptEmbedding, type Database } from "@goomi/db";
-import { normalizeLabel, type Challenge } from "@goomi/content";
+import { STUDY_STAGES, normalizeLabel, type Challenge, type MaterialErrorCode, type StudyStage } from "@goomi/content";
 import { embedTexts, generateStructured, queryInstruction, type EmbeddingRef, type ModelRef } from "../gateway";
 import { MODELS } from "../models";
 import type { AiContext } from "../usage";
@@ -9,8 +9,8 @@ import { planQuestions, selectBalanced, type GroundedClaim, type PlannedTask } f
 import { EXTRACT_SYSTEM, extractPrompt, generatePrompt, generateSystem, judgePrompt, judgeSystem, OCR_SYSTEM, renderChunks, type StudyLang } from "./prompts";
 import { candidateSchema, extractionSchema, judgeSchema, ocrSchema, type Verdict } from "./schemas";
 
-export const STAGES = ["structure", "embed", "extract", "link", "generate", "judge", "publish"] as const;
-export type Stage = (typeof STAGES)[number];
+/** The stage list is part of the app contract (`progress.step` counts it). */
+type Stage = StudyStage;
 
 export type StudyModels = { extract: ModelRef; generate: ModelRef; judge: ModelRef; ocr: ModelRef; embed: EmbeddingRef };
 export const DEFAULT_STUDY_MODELS: StudyModels = { extract: MODELS.extract, generate: MODELS.generate, judge: MODELS.judge, ocr: MODELS.ocr, embed: MODELS.embed };
@@ -243,7 +243,7 @@ async function publish(materialId: string, progress: StudyProgress, deps: StudyD
     deps.db.studyChallenge.updateMany({ where: { materialId, accepted: true, id: { notIn: [...keep] } }, data: { accepted: false } }),
     deps.db.material.update({
       where: { id: materialId },
-      data: keep.size ? { status: "ready", error: null } : { status: "failed", error: "no_questions" },
+      data: keep.size ? { status: "ready", error: null } : { status: "failed", error: "no_questions" satisfies MaterialErrorCode },
     }),
   ]);
   return { progress: { ...progress, counts: { ...progress.counts, accepted: keep.size } }, done: true };
@@ -255,7 +255,7 @@ const STAGE_FN: Record<Stage, (materialId: string, progress: StudyProgress, deps
 export async function runStudyStep(materialId: string, progress: StudyProgress, deps: StudyDeps): Promise<{ progress: StudyProgress; finished: boolean }> {
   const result = await STAGE_FN[progress.stage](materialId, progress, deps);
   if (!result.done) return { progress: result.progress, finished: false };
-  const next = STAGES[STAGES.indexOf(progress.stage) + 1];
+  const next = STUDY_STAGES[STUDY_STAGES.indexOf(progress.stage) + 1];
   return next ? { progress: { ...result.progress, stage: next }, finished: false } : { progress: result.progress, finished: true };
 }
 

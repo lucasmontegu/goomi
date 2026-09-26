@@ -24,6 +24,8 @@ type Store = {
   completeOnboarding: () => void;
   answer: (challenge: Challenge, answer: Answer) => void;
   addMaterial: (material: StudyMaterial) => void;
+  /** Replaces a material in place; no-op when it was removed meanwhile. */
+  updateMaterial: (material: StudyMaterial) => void;
   removeMaterial: (id: string) => void;
   saveTopic: (id: Profile['interests'][number]) => void;
   setAnalyticsConsent: (value: boolean) => void;
@@ -43,6 +45,7 @@ export const useGoomi = create<Store>()(persist((set) => ({
   completeOnboarding: () => set((state) => ({ profile: { ...state.profile, onboardingComplete: true } })),
   answer: (challenge, answer) => set((state) => ({ learning: recordAnswer(state.learning, challenge, answer, Date.now()) })),
   addMaterial: (material) => set((state) => ({ learning: { ...state.learning, materials: [material, ...state.learning.materials.filter((m) => m.id !== material.id)] } })),
+  updateMaterial: (material) => set((state) => ({ learning: { ...state.learning, materials: state.learning.materials.map((m) => (m.id === material.id ? material : m)) } })),
   removeMaterial: (id) => set((state) => ({ learning: { ...state.learning, materials: state.learning.materials.filter((m) => m.id !== id) } })),
   saveTopic: (id) => set((state) => ({ learning: { ...state.learning, savedTopicIds: state.learning.savedTopicIds.includes(id) ? state.learning.savedTopicIds.filter((topic) => topic !== id) : [...state.learning.savedTopicIds, id] } })),
   setAnalyticsConsent: (analyticsConsent) => set({ analyticsConsent }),

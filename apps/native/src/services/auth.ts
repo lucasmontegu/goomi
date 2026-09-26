@@ -2,8 +2,8 @@ import Constants from 'expo-constants';
 import { Platform } from 'react-native';
 import { authClient } from '@/lib/auth-client';
 import { useGoomi, type Account } from '../state/store';
-import { useRuntime } from '../state/runtime';
-import { setBillingUser, type BillingStatus } from './billing';
+import { applyBillingStatus } from '../state/runtime';
+import { setBillingUser } from './billing';
 
 /**
  * Sign in with Apple / Google through native id tokens, verified by Better Auth on the server
@@ -180,16 +180,8 @@ async function completeSignIn(provider: AuthProvider, idToken: IdTokenPayload): 
   // Tie the RevenueCat customer to the account so Plus follows it to a new phone. Billing may be
   // unavailable (simulator, no key); that never blocks the account itself.
   const billing = await setBillingUser(account.id);
-  if (billing.ok) applyBilling(billing.value);
+  if (billing.ok) applyBillingStatus(billing.value);
   return { ok: true, value: account };
-}
-
-/** Mirrors useAppLifecycle's reconciliation after the RevenueCat customer changes. */
-function applyBilling(status: BillingStatus) {
-  useRuntime.setState({ billingStatus: status, billing: 'checked' });
-  const { settings, updateSettings } = useGoomi.getState();
-  const next = status.hasPlus ? (status.isTrial ? 'trial' : 'active') : settings.subscription === 'not-configured' ? 'not-configured' : 'expired';
-  if (next !== settings.subscription) updateSettings({ subscription: next });
 }
 
 /** The server's view of the session; null when signed out. Errors (offline) keep the local account. */
@@ -212,7 +204,7 @@ async function forgetLocalAccount(provider: AuthProvider | undefined) {
   }
   useGoomi.getState().clearAccount();
   const billing = await setBillingUser(null);
-  if (billing.ok) applyBilling(billing.value);
+  if (billing.ok) applyBillingStatus(billing.value);
 }
 
 export async function signOut(): Promise<AuthResult<null>> {

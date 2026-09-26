@@ -8,6 +8,7 @@ import { Mascot } from '../src/ui/mascot';
 import { Prop } from '../src/ui/props';
 import { palette } from '../src/ui/theme';
 import { useGoomi } from '../src/state/store';
+import { applyBillingStatus } from '../src/state/runtime';
 import { loadBillingPlans, purchasePlan, restoreBillingPurchases, type BillingPlan, type BillingStatus } from '../src/services/billing';
 import { trackEvent } from '../src/services/analytics';
 import screenTime from '../modules/goomi-screen-time';
@@ -30,7 +31,6 @@ export default function Paywall() {
   const insets = useSafeAreaInsets();
   const params = useLocalSearchParams<{ source?: string }>();
   const completeOnboarding = useGoomi((state) => state.completeOnboarding);
-  const updateSettings = useGoomi((state) => state.updateSettings);
   const setDevPreview = useGoomi((state) => state.setDevPreview);
   const onboardingComplete = useGoomi((state) => state.profile.onboardingComplete);
   const [plans, setPlans] = useState<BillingPlan[]>([]);
@@ -73,7 +73,7 @@ export default function Paywall() {
   }, [load, source]);
 
   function finish(status: BillingStatus) {
-    updateSettings({ subscription: status.hasPlus ? status.isTrial ? 'trial' : 'active' : 'expired' });
+    applyBillingStatus(status);
     if (!status.hasPlus) return false;
     setDevPreview(false);
     completeOnboarding();

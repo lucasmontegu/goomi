@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { BANK_CAP, EMPTY_BANK, aiMaterial, applyBankPage, bankLangFor, isPlayableOffline } from "./bank";
+import { BANK_CAP, EMPTY_BANK, applyBankPage, bankLangFor, isPlayableOffline } from "./bank";
 import { DEFAULT_PROFILE } from "./content";
 import { createInitialLearningState, selectChallenges } from "./engine";
 import type { Challenge, ConceptMemory } from "./types";
@@ -47,25 +47,5 @@ describe("bank cache", () => {
 
   test("language mapping from the profile", () => {
     expect([bankLangFor("Spanish"), bankLangFor("Español"), bankLangFor("Portuguese"), bankLangFor("English"), bankLangFor("Japanese")]).toEqual(["es", "es", "pt-BR", "en", "en"]);
-  });
-});
-
-describe("AI materials", () => {
-  const previous = { id: "ai-local", kind: "pdf" as const, createdAt: 1, text: "" };
-  test("processing, ready and failed states map to the library", () => {
-    const progress = { stage: "generate", step: 5, total: 7 };
-    expect(aiMaterial({ id: "m1", title: "Bio", status: "processing", lang: "es", error: null, progress }, previous)).toMatchObject({ status: "processing", remoteId: "m1", processingMethod: "ai", progress, challenges: [] });
-    const ready = aiMaterial({ id: "m1", title: "Bio", status: "ready", lang: "es", error: null, progress, challenges: [choice("q1", { topicId: "study" })] }, previous);
-    expect(ready).toMatchObject({ status: "ready", id: "ai-local" });
-    expect(ready.challenges).toHaveLength(1);
-    expect(aiMaterial({ id: "m1", title: "Bio", status: "failed", lang: "es", error: "no_questions", progress }, previous).message).toContain("enough to ask about");
-  });
-
-  test("ready AI questions join the study pool; processing ones don't", () => {
-    const state = createInitialLearningState();
-    const ready = aiMaterial({ id: "m1", title: "Bio", status: "ready", lang: "es", error: null, progress: { stage: "publish", step: 7, total: 7 }, challenges: [choice("q1", { topicId: "study", origin: "study-ai" })] }, previous);
-    const pending = aiMaterial({ id: "m2", title: "Chem", status: "processing", lang: "es", error: null, progress: { stage: "embed", step: 2, total: 7 } }, { ...previous, id: "ai-2" });
-    const picked = selectChallenges({ ...state, materials: [ready, pending] }, DEFAULT_PROFILE, { mode: "study", limit: 5 });
-    expect(picked.map((challenge) => challenge.id)).toEqual(["q1"]);
   });
 });

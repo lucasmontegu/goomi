@@ -1,5 +1,6 @@
 import '@/global.css';
 import { useEffect } from 'react';
+import { QueryClientProvider } from '@tanstack/react-query';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
@@ -12,11 +13,16 @@ import { BalsamiqSans_400Regular, BalsamiqSans_700Bold } from '@expo-google-font
 import { useGoomi } from '@/src/state/store';
 import { useAppLifecycle } from '@/src/state/runtime';
 import { useContentSync } from '@/src/services/content-sync';
+import { queryClient } from '@/src/services/query-client';
 import { palette } from '@/src/ui/theme';
 
 void SplashScreen.preventAutoHideAsync();
 export const unstable_settings = { initialRouteName: 'index' };
 export default function Layout() {
+  return <QueryClientProvider client={queryClient}><App /></QueryClientProvider>;
+}
+
+function App() {
   const [fontsLoaded, error] = useFonts({ Jakarta: PlusJakartaSans_400Regular, JakartaMedium: PlusJakartaSans_500Medium, JakartaSemibold: PlusJakartaSans_600SemiBold, JakartaBold: PlusJakartaSans_700Bold, Balsamiq: BalsamiqSans_400Regular, BalsamiqBold: BalsamiqSans_700Bold });
   const hydrated = useGoomi((s) => s.hydrated);
   useAppLifecycle();

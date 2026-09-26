@@ -8,7 +8,10 @@ export type Entitlements = {
   refresh(userId: string): Promise<{ active: boolean; expiresAt: Date | null } | null>;
 };
 
-const STALE_MS = 6 * 60 * 60 * 1000;
+/** An active entitlement is trusted for hours (the webhook refreshes it on change)… */
+const ACTIVE_STALE_MS = 6 * 60 * 60 * 1000;
+/** …but "not Plus" only briefly, so a purchase works even when its webhook is late. */
+const INACTIVE_STALE_MS = 5 * 60 * 1000;
 type ActiveEntitlement = { entitlement_id: string; expires_at: number | null };
 type CustomerResponse = { active_entitlements?: { items?: ActiveEntitlement[] } };
 
@@ -37,7 +40,7 @@ export function createEntitlements(db: Database, config: RevenueCatConfig, fetch
     refresh,
     async hasPlus(userId) {
       const cached = await db.entitlement.findUnique({ where: { userId } });
-      const fresh = cached && now() - cached.updatedAt.getTime() < STALE_MS && (!cached.expiresAt || cached.expiresAt.getTime() > now());
+      const fresh = cached && now() - cached.updatedAt.getTime() < (cached.active ? ACTIVE_STALE_MS : INACTIVE_STALE_MS) && (!cached.expiresAt || cached.expiresAt.getTime() > now());
       if (fresh) return cached.active;
       try {
         return (await refresh(userId))?.active ?? false;
