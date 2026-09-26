@@ -49,3 +49,6 @@ uniwind-types.d.ts
 # app-creator build outputs
 /build
 /agents
+
+# asc CLI local reports and artifacts
+/.asc

@@ -13,11 +13,12 @@
     "check-types": "tsc --noEmit",
     "env:generate": "varlock codegen",
     "build:ios": "eas build -p ios --profile production",
-    "build:ios:testflight": "eas build -p ios --profile production --auto-submit",
     "build:ios:dev": "eas build -p ios --profile development",
     "update:preview": "eas update --channel preview --environment preview",
     "update:production": "eas update --channel production --environment production",
-    "metadata:push": "eas metadata:push"
+    "metadata:push": "asc metadata push --app 6816274094 --version 1.0.0 --platform IOS --dir ./metadata",
+    "testflight": "bash scripts/testflight.sh",
+    "metadata:diff": "asc metadata push --app 6816274094 --version 1.0.0 --platform IOS --dir ./metadata --dry-run --output table"
   },
   "dependencies": {
     "@better-auth/expo": "catalog:",

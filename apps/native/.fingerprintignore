@@ -1,0 +1,2 @@
+# EAS build/submit settings only; native inputs come from EAS environments, not eas.json.
+eas.json

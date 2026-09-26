@@ -15,7 +15,8 @@
         "ITSAppUsesNonExemptEncryption": false,
         "NSPhotoLibraryUsageDescription": "Goomi reads the images you choose so it can turn your notes and slides into recall prompts.",
         "NSCameraUsageDescription": "Take a photo of your notes so Goomi can turn them into recall prompts."
-      }
+      },
+      "appleTeamId": "AL3H425S38"
     },
     "android": {
       "adaptiveIcon": {
@@ -126,7 +127,10 @@
     "updates": {
       "url": "https://u.expo.dev/dbb1cf0e-c9d4-42ed-bcaf-36d737b85c60",
       "checkAutomatically": "ON_LOAD",
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "requestHeaders": {
+        "expo-channel-name": "production"
+      }
     }
   }
 }
