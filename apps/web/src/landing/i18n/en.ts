@@ -1,0 +1,335 @@
+import type { LandingCopy } from "./types";
+
+/**
+ * English landing copy. The App Store description (apps/native/metadata/version/1.0.0/en-US.json) is the
+ * source of truth: keep claims here in step with it and with what the app actually does.
+ */
+export const en: LandingCopy = {
+  meta: {
+    title: "Goomi: Learn while you scroll",
+    description:
+      "Pick the apps you open on autopilot. When you reach for one, Goomi steps in with a short challenge, then lets you back in. Make your screen time add up.",
+    ogAlt: "Goomi, a lime clay companion, waving next to the words: Make your screen time add up.",
+  },
+  nav: {
+    home: "Goomi home",
+    links: [
+      { href: "/#how", label: "How it works" },
+      { href: "/#modes", label: "Modes" },
+      { href: "/#study", label: "Study" },
+      { href: "/#privacy", label: "Privacy" },
+      { href: "/#faq", label: "FAQ" },
+    ],
+    skip: "Skip to content",
+  },
+  store: {
+    live: { eyebrow: "Download on the", label: "App Store" },
+    soon: { eyebrow: "Coming soon on the", label: "App Store" },
+    soonShort: "Coming soon",
+  },
+  hero: {
+    note: "your next scroll could teach you something",
+    // Non-breaking space keeps "screen time" together on narrow phones.
+    titleStart: "Make your screen\u00A0time",
+    titleAccent: "add up.",
+    lead: "Pick the apps you open on autopilot. When you reach for one, Goomi steps in with a short challenge. Finish it and you're back in the app.",
+    tryOne: "Try one right here",
+    forIphone: "For iPhone",
+    sceneLabel: "Goomi, a soft lime clay creature, sitting on a white cushion with clay balls around. Tap Goomi or a ball to play.",
+    tilt: "Tilt to play",
+  },
+  challenge: {
+    before: "Quick one before you scroll",
+    unlocks: "Unlocks your app for 5 minutes",
+    progress: "Challenge",
+    of: "of",
+    correct: "Correct!",
+    wrong: "Not quite.",
+    answerIs: "It's",
+    memory: "+1 to memory",
+    later: "We'll bring this back later.",
+    next: "Try another",
+    back: "Back to your app",
+    backDone: "That's the whole loop. A few minutes later, another one.",
+    items: [
+      {
+        kind: "Map moment",
+        question: "Which country is the second-largest in South America?",
+        choices: ["Peru", "Argentina", "Colombia", "Bolivia"],
+        answer: 1,
+        explain: "Argentina covers about 2.8 million km². Only Brazil is bigger.",
+      },
+      {
+        kind: "True or false",
+        question: "An octopus has three hearts.",
+        choices: ["True", "False"],
+        answer: 0,
+        explain: "Two pump blood through the gills, and the third sends it around the rest of the body.",
+      },
+      {
+        kind: "Quick pick",
+        question: "Which planet has the longest day?",
+        choices: ["Jupiter", "Mars", "Venus", "Mercury"],
+        answer: 2,
+        explain: "One spin of Venus takes about 243 Earth days, longer than its whole trip around the Sun.",
+      },
+      {
+        kind: "New word",
+        question: "In Spanish, “sobremesa” means…",
+        choices: ["A tablecloth", "Staying at the table to talk after a meal", "Dessert", "A side table"],
+        answer: 1,
+        explain: "It's the unhurried chat after lunch or dinner, when nobody gets up yet.",
+      },
+      {
+        kind: "Timeline",
+        question: "Which is older?",
+        choices: ["The University of Oxford", "The Aztec capital, Tenochtitlan"],
+        answer: 0,
+        explain: "Teaching at Oxford goes back to 1096. Tenochtitlan was founded in 1325.",
+      },
+    ],
+  },
+  how: {
+    eyebrow: "How it works",
+    title: "Open app. Tiny challenge. Back to it.",
+    lead: "Goomi doesn't try to take your phone away. It turns the moments you reach for it into something that adds up.",
+    steps: [
+      {
+        title: "Pick the apps you open on autopilot",
+        body: "Choose them with Apple's Screen Time picker. Goomi never learns their names.",
+      },
+      {
+        title: "Reach for one, and Goomi steps in",
+        body: "Instead of the feed, a friendly shield: a quick recall question, a surprising fact or a mini brain game.",
+      },
+      {
+        title: "Answer in a few seconds",
+        body: "Right or wrong, you learn something. Goomi reacts, explains, and remembers what to bring back.",
+      },
+      {
+        title: "Back to your app. Later, another one.",
+        body: "You get a few minutes of use, then Goomi checks in again. Every moment has a clear ending.",
+      },
+    ],
+    phone: {
+      pickTitle: "Choose apps",
+      pickHint: "Apple's Screen Time picker",
+      pickDone: "Done",
+      categories: ["Social", "Entertainment", "Games", "Shopping & Food"],
+      shieldTitle: "Quick one first?",
+      shieldBody: "A short challenge, then you're back.",
+      shieldCta: "Open Goomi",
+      challengeKind: "Map moment",
+      challengeQuestion: "Second-largest country in South America?",
+      challengeChoices: ["Peru", "Argentina", "Colombia", "Bolivia"],
+      challengeCorrect: "Correct! +1 to memory",
+      challengeExplain: "Argentina covers about 2.8 million km². Only Brazil is bigger.",
+      challengeUnlock: "Back to your app",
+      unlocked: "5 min unlocked",
+      backNote: "Enjoy. See you in a bit.",
+    },
+  },
+  modes: {
+    eyebrow: "Modes for your day",
+    title: "One Goomi, four moods.",
+    lead: "Switch modes as your day changes. Goomi changes what it asks, and how often.",
+    tablist: "Modes",
+    examples: "Example challenges",
+    items: [
+      {
+        id: "free",
+        label: "Free",
+        pose: "globe",
+        title: "Curious about everything",
+        body: "Languages, geography, science, history, art and fun facts. The world, one small question at a time.",
+        examples: ["Map moment", "New word", "Art", "True or false"],
+      },
+      {
+        id: "study",
+        label: "Study",
+        pose: "read",
+        title: "Ready for the exam",
+        body: "Active recall on the material you uploaded. Weak concepts come back more often until they stick.",
+        examples: ["Your notes", "Recall", "Fill the gap", "Put in order"],
+      },
+      {
+        id: "work",
+        label: "Work",
+        pose: "think",
+        title: "Back to the task at hand",
+        body: "Short resets that bring you back to what you were doing, instead of pulling you further away.",
+        examples: ["Reflect", "Logic", "Mental math", "Pattern"],
+      },
+      {
+        id: "sleep",
+        label: "Sleep",
+        pose: "sleep",
+        title: "Softer before bed",
+        body: "Calm, low-stimulation moments. No scores to chase, no streak pressure. Just a gentle pause.",
+        examples: ["Breathe", "Reflect", "Memory"],
+      },
+    ],
+  },
+  study: {
+    eyebrow: "Study with your own material",
+    title: "Your notes, turned into flashcards.",
+    lead: "Add lecture notes, PDFs, slides or a photo of your notebook. Goomi turns them into recall prompts and flashcards, then brings weak concepts back more often with spaced repetition.",
+    sources: ["PDF", "Slides", "Photo of notes", "Pasted text"],
+    deckLabel: "Example flashcards",
+    flip: "Tap to flip",
+    flipBack: "Tap to see the question",
+    nextCard: "Next card",
+    yourNotes: "Your notes say",
+    cards: [
+      {
+        subject: "Biology · Lecture 4",
+        question: "Which part of a plant cell captures light for photosynthesis?",
+        answer: "The chloroplast.",
+        quote: "Chloroplasts capture light energy and store it as sugar.",
+      },
+      {
+        subject: "History · Chapter 12",
+        question: "In what year did the Berlin Wall fall?",
+        answer: "1989.",
+        quote: "The border opened on the night of 9 November 1989.",
+      },
+      {
+        subject: "Economics · Slides",
+        question: "Supply falls and demand stays the same. What tends to happen to the price?",
+        answer: "It rises.",
+        quote: "Less supply at the same demand pushes the price up.",
+      },
+    ],
+    repetition: {
+      title: "Spaced repetition, built in",
+      missed: "Missed it? It comes back sooner.",
+      knew: "Knew it? It waits a little longer.",
+    },
+  },
+  surprise: {
+    eyebrow: "Never the same twice",
+    title: "You won't know what's next.",
+    lead: "Goomi mixes recall, facts, words, maps and tiny brain games, so each check-in feels a little like a surprise. Every one of them ends. No feed, no infinite scroll.",
+    spin: "Surprise me",
+    dragHint: "Drag to spin",
+    answer: "Answer",
+    types: [
+      { label: "Quick pick", prompt: "Which planet has the longest day?", answer: "Venus" },
+      { label: "True or false", prompt: "An octopus has three hearts.", answer: "True" },
+      { label: "Map moment", prompt: "Which country is the second-largest in South America?", answer: "Argentina" },
+      { label: "New word", prompt: "“Sobremesa” in Spanish means…", answer: "Staying at the table to talk after a meal" },
+      { label: "Timeline", prompt: "Which is older: Oxford University or Tenochtitlan?", answer: "Oxford, by more than two centuries" },
+      { label: "Match up", prompt: "Match gracias, merci and obrigado to their languages.", answer: "Spanish, French, Portuguese" },
+      { label: "Micro sudoku", prompt: "Four numbers, four rows. Find the missing one.", answer: "Only one number fits" },
+      { label: "Memory", prompt: "A few colors flash for a moment. Bring them back to mind.", answer: "However many you remember" },
+      { label: "Fill the gap", prompt: "At sea level, water boils at ___ °C.", answer: "100" },
+      { label: "Your notes", prompt: "A question written from the material you added.", answer: "Straight from your notes" },
+      { label: "Pattern", prompt: "2, 4, 8, 16… what comes next?", answer: "32" },
+      { label: "Breathe", prompt: "Twelve slow seconds. Nothing to answer.", answer: "Just breathe" },
+    ],
+  },
+  privacy: {
+    eyebrow: "Private by design",
+    title: "What you do on your phone stays on your phone.",
+    lead: "Goomi uses Apple's Screen Time API. Which apps you use, and how long, stays on your device.",
+    tokenCaption: "Apple's picker hands Goomi private tokens, not app names.",
+    tokenRows: ["Social", "Entertainment", "Games"],
+    notLooking: "Goomi isn't looking.",
+    points: [
+      {
+        title: "Screen Time stays on your iPhone",
+        body: "Goomi can see how many apps you picked, never which ones. It doesn't read your Screen Time history.",
+      },
+      {
+        title: "Analytics is off unless you turn it on",
+        body: "Even then, it's a short, fixed list of events. Never your answers, notes or anything you type.",
+      },
+      {
+        title: "Your notes, your call",
+        body: "Notes and PDFs are read on your iPhone first. AI study only runs when you choose it, with providers that don't keep your text.",
+      },
+      {
+        title: "Delete it whenever you like",
+        body: "Remove a material or delete your account in the app, and it's gone from Goomi's server.",
+      },
+    ],
+    more: "Read the privacy policy",
+  },
+  plus: {
+    eyebrow: "Goomi Plus",
+    title: "Invest in a more curious you.",
+    lead: "Unlock every mode, many more study materials and all challenge types with a monthly or yearly subscription.",
+    benefits: [
+      "Every mode: Free, Study, Work and Sleep",
+      "All challenge types",
+      "Many more study materials",
+      "Flashcards made from your own notes",
+      "Spaced repetition that follows what you forget",
+      "Progress you can actually see",
+    ],
+    /** `{days}` is replaced with the trial length from config. */
+    trial: "{days}-day free trial on the yearly plan for eligible new subscribers.",
+    prices: "Prices are shown in the App Store, in your local currency.",
+    legal:
+      "Payment is charged to your Apple ID at confirmation of purchase. The subscription renews automatically unless you cancel at least 24 hours before the end of the current period. Manage or cancel it in your App Store account settings.",
+  },
+  faq: {
+    eyebrow: "FAQ",
+    title: "Good questions.",
+    items: [
+      {
+        q: "Is Goomi an app blocker?",
+        a: "Not really. Goomi isn't trying to cut your screen time. It turns the moments you reach for an app into short learning moments. The shield is a friendly nudge, not a lock you can't get past, and you can switch it off at any time.",
+      },
+      {
+        q: "Can Goomi see which apps I use?",
+        a: "No. When you choose apps, Apple's picker gives Goomi private tokens instead of app names. Goomi can see how many apps, categories and websites you picked, never which ones, and it never reads your Screen Time history.",
+      },
+      {
+        q: "How often does Goomi step in?",
+        a: "You choose. After a challenge your apps open for a usage budget of 3, 5 or 10 minutes of actual use, added up across the apps you picked. When it's used up, Goomi checks in again.",
+      },
+      {
+        q: "What happens to my notes and PDFs?",
+        a: "They're read on your iPhone first, and you can keep them there. If you choose AI study, the text goes to Goomi's server and to AI providers with zero-data-retention agreements. Removing the material deletes it from the server.",
+      },
+      {
+        q: "What do I need?",
+        a: "An iPhone. App moments use Apple's Screen Time and need iOS 17.4 or later.",
+      },
+      {
+        q: "Do I need an account?",
+        a: "No. Signing in with Apple or Google is optional. It lets your Goomi Plus subscription follow you to a new phone.",
+      },
+      {
+        q: "How does Goomi Plus work?",
+        a: "Goomi Plus is a monthly or yearly subscription through the App Store. It renews automatically until you cancel, which you can do anytime in your App Store account settings.",
+      },
+    ],
+  },
+  final: {
+    title: "Your phone is going to get used anyway.",
+    accent: "Make those minutes count.",
+  },
+  footer: {
+    tagline: "Make your screen time add up.",
+    product: "Product",
+    legal: "Legal",
+    links: {
+      how: "How it works",
+      modes: "Modes",
+      plus: "Goomi Plus",
+      faq: "FAQ",
+      privacy: "Privacy",
+      terms: "Terms",
+      support: "Support",
+    },
+    rights: "Goomi. All rights reserved.",
+    apple: "Apple, iPhone and App Store are trademarks of Apple Inc.",
+  },
+  legal: {
+    updated: "Last updated",
+    onThisPage: "On this page",
+    contact: "Questions? Write to",
+  },
+};

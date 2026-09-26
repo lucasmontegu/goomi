@@ -1,1 +1,276 @@
 @import "@goomi/ui/globals.css";
+
+/* ------------------------------------------------------------------------------------------------
+ * Goomi brand tokens. Mirrors apps/native/src/ui/theme.ts: one warm, lime-tinted grey family in both
+ * themes. `.dark` comes from next-themes (system by default).
+ * ---------------------------------------------------------------------------------------------- */
+:root {
+  --g-bg: #fafaf8;
+  --g-surface: #ffffff;
+  --g-soft: #f0f1ea;
+  --g-sunk: #e9ebe2;
+  --g-text: #0f0f10;
+  --g-muted: #5f6358;
+  --g-faint: #a3a79b;
+  --g-line: #e6e8de;
+  --g-accent-text: #2f3d0b;
+  --g-lime-soft: #f1fbd2;
+  --g-lavender-soft: #efeaff;
+  --g-mint-soft: #e4f9e9;
+  --g-shadow: rgba(38, 44, 20, 0.12);
+  --g-shadow-strong: rgba(38, 44, 20, 0.22);
+  --g-highlight: rgba(255, 255, 255, 0.9);
+}
+
+.dark {
+  --g-bg: #121311;
+  --g-surface: #1b1d19;
+  --g-soft: #2a2d26;
+  --g-sunk: #31352c;
+  --g-text: #fafaf8;
+  --g-muted: #a8ad9c;
+  --g-faint: #6e7366;
+  --g-line: #30342b;
+  --g-accent-text: #d9ff6b;
+  --g-lime-soft: #2a3316;
+  --g-lavender-soft: #2a2536;
+  --g-mint-soft: #1f3025;
+  --g-shadow: rgba(0, 0, 0, 0.45);
+  --g-shadow-strong: rgba(0, 0, 0, 0.6);
+  --g-highlight: rgba(255, 255, 255, 0.05);
+}
+
+@theme inline {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-balsamiq), var(--font-jakarta), ui-rounded, sans-serif;
+
+  --color-lime: #d9ff6b;
+  --color-ink: #0f0f10;
+  --color-ivory: #fafaf8;
+  --color-lavender: #c8b6ff;
+  --color-mint: #b6f3c6;
+  --color-night: #1a1726;
+
+  --color-g-bg: var(--g-bg);
+  --color-g-surface: var(--g-surface);
+  --color-g-soft: var(--g-soft);
+  --color-g-sunk: var(--g-sunk);
+  --color-g-text: var(--g-text);
+  --color-g-muted: var(--g-muted);
+  --color-g-faint: var(--g-faint);
+  --color-g-line: var(--g-line);
+  --color-g-accent: var(--g-accent-text);
+  --color-g-lime-soft: var(--g-lime-soft);
+  --color-g-lavender-soft: var(--g-lavender-soft);
+  --color-g-mint-soft: var(--g-mint-soft);
+}
+
+@theme static {
+  /* Motion vocabulary: `spring` settles with a soft overshoot, `pop` is the reward bounce. */
+  --ease-goomi: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-spring: linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1);
+  --ease-pop: linear(0, 0.009, 0.035 2.1%, 0.141 4.4%, 0.723 12.9%, 0.938 16.7%, 1.017 19.4%, 1.067, 1.099 24.3%, 1.108 26%, 1.103, 1.085 30.7%, 1.03 36.3%, 1.004 40.2%, 0.99 44%, 0.985 49%, 0.999 62.1%, 1.002 72.6%, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+  }
+  body {
+    background: var(--g-bg);
+    color: var(--g-text);
+    font-feature-settings: "ss01";
+  }
+  ::selection {
+    background: #d9ff6b;
+    color: #0f0f10;
+  }
+  :focus-visible {
+    outline: 2.5px solid color-mix(in oklab, var(--g-text) 85%, transparent);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------
+ * Clay: matte spheres, slabs and pills that echo Goomi's 3D renders without WebGL.
+ * ---------------------------------------------------------------------------------------------- */
+@utility clay-ball {
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at 34% 28%, color-mix(in oklab, var(--clay, #c8b6ff) 45%, white) 0%, transparent 42%),
+    radial-gradient(circle at 50% 50%, var(--clay, #c8b6ff) 55%, color-mix(in oklab, var(--clay, #c8b6ff) 78%, #3b3550) 100%);
+  box-shadow:
+    inset -0.18em -0.26em 0.5em color-mix(in oklab, var(--clay, #c8b6ff) 70%, black 30%),
+    inset 0.12em 0.14em 0.3em rgba(255, 255, 255, 0.55),
+    0 0.9em 1.4em -0.7em var(--g-shadow-strong);
+}
+
+@utility clay-slab {
+  box-shadow:
+    0 1px 0 var(--g-highlight) inset,
+    0 -2px 0 rgba(0, 0, 0, 0.04) inset,
+    0 24px 48px -28px var(--g-shadow-strong),
+    0 6px 14px -8px var(--g-shadow);
+}
+
+@utility clay-press {
+  transition:
+    transform 420ms var(--ease-pop),
+    box-shadow 300ms var(--ease-goomi),
+    background-color 200ms ease;
+  &:hover {
+    transform: translateY(-2px);
+  }
+  &:active {
+    transform: translateY(1px) scale(0.96, 0.94);
+    transition-duration: 90ms;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    transition: background-color 200ms ease;
+    &:hover,
+    &:active {
+      transform: none;
+    }
+  }
+}
+
+/* The primary lime pill: a pressable clay object, same in both themes. */
+@utility btn-lime {
+  background: #d9ff6b;
+  color: #0f0f10;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.65),
+    inset 0 -4px 0 rgba(73, 99, 0, 0.18),
+    0 14px 24px -14px rgba(73, 99, 0, 0.65);
+}
+
+@utility text-balance-pretty {
+  text-wrap: balance;
+}
+
+/* ------------------------------------------------------------------------------------------------
+ * Reveal on scroll. Hidden states only apply when scripting is on (the observer adds `.is-in`), so
+ * content is always readable without JavaScript, and never animates with reduced motion.
+ * ---------------------------------------------------------------------------------------------- */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0) scale(0.985);
+    transition:
+      opacity 700ms var(--ease-goomi),
+      transform 1100ms var(--ease-spring);
+    transition-delay: calc(var(--i, 0) * 70ms);
+  }
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Idle float for decorative clay. */
+@keyframes goomi-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--r, 0deg));
+  }
+  50% {
+    transform: translate3d(0, var(--float, -10px), 0) rotate(calc(var(--r, 0deg) + 6deg));
+  }
+}
+.float {
+  animation: goomi-float var(--dur, 6s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Squash & stretch, used when Goomi reacts. */
+@keyframes goomi-boing {
+  0% {
+    transform: scale(1, 1);
+  }
+  18% {
+    transform: scale(1.14, 0.84);
+  }
+  38% {
+    transform: scale(0.92, 1.1) translateY(-6%);
+  }
+  58% {
+    transform: scale(1.04, 0.97);
+  }
+  78% {
+    transform: scale(0.99, 1.01);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+.boing {
+  transform-origin: 50% 92%;
+  animation: goomi-boing 760ms var(--ease-goomi);
+}
+
+@keyframes goomi-pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.pop-in {
+  animation: goomi-pop-in 620ms var(--ease-pop) both;
+}
+
+@keyframes goomi-wiggle {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-4deg);
+  }
+  75% {
+    transform: rotate(4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float,
+  .boing,
+  .pop-in {
+    animation: none;
+  }
+}
+
+/* Soft grain so big flat fields read as material, not plastic. */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  border-radius: inherit;
+}
+.dark .grain::after {
+  mix-blend-mode: screen;
+  opacity: 0.035;
+}
+
+@keyframes goomi-ring {
+  from {
+    stroke-dashoffset: var(--c);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
