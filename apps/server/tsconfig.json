@@ -2,6 +2,7 @@
   "extends": "@goomi/config/tsconfig.base.json",
   "compilerOptions": {
     "noEmit": true,
+    "types": ["bun", "node"],
     "paths": {
       "@/*": ["./src/*"]
     },
