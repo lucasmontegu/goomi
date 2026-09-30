@@ -76,6 +76,10 @@ asc xcode archive \
 # The embedded runtime must equal the fingerprint the OTA workflow will compute.
 APP="$OUT/Goomi.xcarchive/Products/Applications/Goomi.app"
 EMBEDDED="$(/usr/libexec/PlistBuddy -c 'Print :EXUpdatesRuntimeVersion' "$APP/Expo.plist" 2>/dev/null || true)"
+# expo-updates writes the "file:fingerprint" sentinel and embeds the hash in EXUpdates.bundle instead.
+if [[ "$EMBEDDED" == "file:fingerprint" ]]; then
+  EMBEDDED="$(tr -d '[:space:]' <"$APP/EXUpdates.bundle/fingerprint" 2>/dev/null || true)"
+fi
 if [[ "$EMBEDDED" != "$FINGERPRINT" ]]; then
   echo "Embedded runtimeVersion '$EMBEDDED' != fingerprint '$FINGERPRINT'. OTA updates would not reach this build." >&2
   exit 1
