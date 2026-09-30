@@ -1,4 +1,5 @@
 import { execFileSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
 
 import { defineConfig } from "tsdown";
 
@@ -22,6 +23,14 @@ export default defineConfig({
   outDir: "./dist",
   clean: true,
   define: vercelEnvBlob(),
+  // The bundle ships without node_modules, so Bun would try to auto-install these optional
+  // packages on first use and crash on Vercel's read-only filesystem.
+  alias: Object.fromEntries(
+    ["@opentelemetry/api", "bufferutil", "utf-8-validate"].map((name) => [
+      name,
+      fileURLToPath(new URL("./src/stubs/missing-optional-dep.js", import.meta.url)),
+    ]),
+  ),
   deps: {
     // Bundle every dependency: Vercel traces package files with the "default" export condition,
     // but Bun resolves "node" first (e.g. @better-auth/telemetry → dist/node.mjs), so a function
