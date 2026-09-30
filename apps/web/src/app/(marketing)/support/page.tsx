@@ -1,23 +1,21 @@
 import type { Metadata } from "next";
 
 import { LegalPage, SupportContact } from "@/landing/components/legal-page";
-import { getCopy, getLegal } from "@/landing/i18n";
-
-const doc = getLegal().support;
+import { getLegal, support } from "@/landing/i18n";
 
 export const metadata: Metadata = {
-  title: doc.metaTitle,
-  description: doc.metaDescription,
+  title: support.metaTitle,
+  description: support.metaDescription,
   alternates: { canonical: "/support" },
-  openGraph: { url: "/support", title: doc.metaTitle, description: doc.metaDescription },
+  openGraph: { url: "/support", title: support.metaTitle, description: support.metaDescription },
 };
 
 export default function SupportPage() {
   return (
     <LegalPage
-      doc={doc}
-      ui={getCopy().legal}
-      aside={<SupportContact title={doc.contactTitle} body={doc.contactBody} cta={doc.contactCta} />}
+      doc={support}
+      ui={getLegal("en").ui}
+      aside={<SupportContact title={support.contactTitle} body={support.contactBody} cta={support.contactCta} />}
     />
   );
 }

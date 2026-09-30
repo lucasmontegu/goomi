@@ -89,7 +89,7 @@ Categories (Education / Productivity), the age rating (no objectionable content)
 
 1. **Signing.** Xcode 27 rejects API-key authentication for automatic signing ("Authentication failed … bearer token"), even with the Admin key. Sign in to Xcode → Settings → Accounts with the team's Apple Account and run `XCODE_SIGNING=account bun run testflight`. Xcode then enables Family Controls and assigns the App Group on the 4 App IDs. `asc web app-groups assign` fails its own safety check on these IDs.
 2. **Family Controls distribution entitlement.** Request it at https://developer.apple.com/contact/request/family-controls-distribution for the app **and each extension bundle ID**. The App Store export fails until Apple approves it.
-3. **Server.** Set `EXPO_PUBLIC_SERVER_URL` in the `preview` and `production` EAS environments, and `APPLE_APP_BUNDLE_IDENTIFIER=com.lumlabs.goomi` on the server.
+3. **Server.** `EXPO_PUBLIC_SERVER_URL=https://api.goomi.app` is set in the `preview` and `production` EAS environments. Still pending: `APPLE_APP_BUNDLE_IDENTIFIER=com.lumlabs.goomi` and the rest of the server env vars on Vercel.
 4. **Subscriptions.** Upload a paywall screenshot for review on both subscriptions: they stay `MISSING_METADATA` without it. Localize them to es-MX / pt-BR (`asc-subscription-localization` skill).
 5. **RevenueCat.** Upload the In-App Purchase key and the App Store Connect API key (.p8) to the `Goomi (App Store)` app.
-6. **Before external TestFlight or review.** Privacy policy URL, support URL (required for every locale), the App Privacy questionnaire, screenshots and the review contact.
+6. **Before external TestFlight or review.** Privacy policy and support URLs are in `apps/native/metadata` (push with `asc metadata apply`). Still to do: the App Privacy questionnaire (answers in [privacy-compliance.md](privacy-compliance.md)), screenshots and the review contact.

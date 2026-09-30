@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import * as Haptics from 'expo-haptics';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { appleAvailability, googleAvailability, signInWithApple, signInWithGoogle, type AuthProvider, type ProviderAvailability } from '@/src/services/auth';
+import { openLegal } from '@/src/services/legal';
 import { useGoomi, type Account } from '@/src/state/store';
 import { AppleLogo, GoogleG } from '@/src/ui/brand-icons';
 import { Button, CircleButton, Icon, Reveal, Tactile, Title, Txt } from '@/src/ui/core';
@@ -197,14 +198,14 @@ function BrandPill({ label, disabled, onPress, background, border, color, icon }
 }
 
 function Legal({ theme: t }: { theme: Theme }) {
-  const link = (doc: 'terms' | 'privacy', text: string) => <Text
+  const link = (page: 'terms' | 'privacy', text: string) => <Text
     accessibilityRole="link"
-    onPress={() => router.push(`/legal?doc=${doc}` as Href)}
+    onPress={() => void openLegal(page)}
     style={{ color: t.text, textDecorationLine: 'underline' }}
   >{text}</Text>;
   return <View style={{ paddingHorizontal: 12 }}>
     <Txt size={11} color={t.faint} style={{ textAlign: 'center', lineHeight: 16 }}>
-      By continuing you agree to Goomi’s {link('terms', 'Terms')} and {link('privacy', 'Privacy Policy')}. We never post anything or see your password.
+      By continuing you confirm you’re 13 or older and agree to Goomi’s {link('terms', 'Terms of Use')}. The {link('privacy', 'Privacy Policy')} explains what your account stores. We never post anything or see your password.
     </Txt>
   </View>;
 }

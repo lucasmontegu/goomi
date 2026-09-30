@@ -2,13 +2,15 @@ import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 
 import { LEGAL_UPDATED, SUPPORT_EMAIL } from "../config";
-import type { LandingCopy } from "../i18n";
-import type { LegalDoc } from "../i18n/legal-types";
+import type { LegalDoc, LegalUi } from "../i18n/legal-types";
 import { ClayBall, PoseImage } from "./ui";
 
-function formatDate(iso: string) {
-  return new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+function formatDate(iso: string, lang: string) {
+  return new Date(`${iso}T12:00:00Z`).toLocaleDateString(lang, { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
 }
+
+/** The same document in other languages. */
+export type LegalAlternate = { lang: string; label: string; href: string };
 
 function SmartLink({ href, children, className }: { href: string; children: ReactNode; className?: string }) {
   if (href.startsWith("/")) {
@@ -25,9 +27,9 @@ function SmartLink({ href, children, className }: { href: string; children: Reac
   );
 }
 
-export function LegalPage({ doc, ui, aside }: { doc: LegalDoc; ui: LandingCopy["legal"]; aside?: ReactNode }) {
+export function LegalPage({ doc, ui, aside, alternates = [] }: { doc: LegalDoc; ui: LegalUi; aside?: ReactNode; alternates?: LegalAlternate[] }) {
   return (
-    <article className="mx-auto max-w-[1100px] px-4 pt-6 pb-24 sm:px-6 sm:pt-10">
+    <article lang={ui.lang} className="mx-auto max-w-[1100px] px-4 pt-6 pb-24 sm:px-6 sm:pt-10">
       <header className="reveal grain relative isolate overflow-hidden rounded-[36px] bg-g-lavender-soft px-6 pt-10 pb-8 sm:rounded-[44px] sm:px-10 sm:pt-14">
         <ClayBall color="#D9FF6B" size={34} className="float absolute top-8 right-[38%] hidden sm:block" />
         <div className="grid items-end gap-4 sm:grid-cols-[1fr_auto]">
@@ -36,8 +38,21 @@ export function LegalPage({ doc, ui, aside }: { doc: LegalDoc; ui: LandingCopy["
             <h1 className="max-w-[16ch] text-[2.4rem] leading-[1] font-extrabold tracking-[-0.05em] text-balance text-g-text sm:text-6xl">{doc.title}</h1>
             <p className="max-w-[46ch] text-pretty text-[1.05rem] leading-relaxed text-g-muted sm:text-lg">{doc.lead}</p>
             <p className="mt-2 text-sm text-g-muted">
-              {ui.updated} <time dateTime={LEGAL_UPDATED}>{formatDate(LEGAL_UPDATED)}</time>
+              {ui.updated} <time dateTime={LEGAL_UPDATED}>{formatDate(LEGAL_UPDATED, ui.lang)}</time>
             </p>
+            {alternates.length > 0 && (
+              <p className="text-sm text-g-muted">
+                {ui.otherLanguages}{" "}
+                {alternates.map((alternate, i) => (
+                  <span key={alternate.lang}>
+                    {i > 0 && " · "}
+                    <Link href={alternate.href as "/privacy"} hrefLang={alternate.lang} lang={alternate.lang} className="font-semibold text-g-text underline decoration-lime decoration-2 underline-offset-4">
+                      {alternate.label}
+                    </Link>
+                  </span>
+                ))}
+              </p>
+            )}
           </div>
           <PoseImage pose={doc.pose} size={220} priority className="-mb-8 w-36 justify-self-end sm:-mb-10 sm:w-52" />
         </div>
@@ -61,6 +76,11 @@ export function LegalPage({ doc, ui, aside }: { doc: LegalDoc; ui: LandingCopy["
 
         <div className="flex max-w-[68ch] flex-col gap-11">
           {aside}
+          {doc.notice && (
+            <p role="note" className="reveal rounded-[24px] border border-g-line bg-g-soft p-5 text-[1rem] leading-[1.65] font-semibold text-g-text sm:p-6">
+              {doc.notice}
+            </p>
+          )}
           {doc.sections.map((section, i) => (
             <section key={section.id} id={section.id} aria-labelledby={`${section.id}-h`} className="reveal scroll-mt-28" style={{ "--i": Math.min(i, 2) } as CSSProperties}>
               <h2 id={`${section.id}-h`} className="text-[1.45rem] leading-tight font-bold tracking-[-0.03em] text-g-text">

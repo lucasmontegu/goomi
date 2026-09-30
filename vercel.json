@@ -29,6 +29,13 @@
   },
   "rewrites": [
     {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "api.goomi.app" }],
+      "destination": {
+        "service": "server"
+      }
+    },
+    {
       "source": "/api/(.*)",
       "destination": {
         "service": "server"

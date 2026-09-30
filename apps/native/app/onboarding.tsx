@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { KeyboardAwareScrollView, KeyboardStickyView } from 'react-native-keyboard-controller';
-import { StyleSheet, TextInput, View, useWindowDimensions, type TextInputProps } from 'react-native';
+import { StyleSheet, Text, TextInput, View, useWindowDimensions, type TextInputProps } from 'react-native';
 import { router, type Href } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -9,6 +9,7 @@ import { MODE_CONFIG, type Mode, type Profile, type TopicId } from '@/src/domain
 import { useGoomi } from '@/src/state/store';
 import { useProgress, useRuntime } from '@/src/state/runtime';
 import { trackEvent } from '@/src/services/analytics';
+import { openLegal } from '@/src/services/legal';
 import { Button, CircleButton, Eyebrow, Icon, Reveal, Tactile, Title, Txt } from '@/src/ui/core';
 import { Doodle, Notice } from '@/src/ui/kit';
 import { Mascot, type Pose } from '@/src/ui/mascot';
@@ -166,6 +167,7 @@ export default function Onboarding() {
       <Button title={cta} icon="arrow-forward" onPress={() => void next()} disabled={busy || !canContinue} />
       {(step === 17 && !unsupported) || step === 18 ? <Tactile label="Set this up later" onPress={() => go(19)} style={styles.later}><Txt size={13} weight="semibold" color="#777B6E">Maybe later</Txt></Tactile> : null}
       {step === 0 && <Txt size={12} color="#8A8E80" style={{ textAlign: 'center' }}>Takes about two minutes. Worth every one.</Txt>}
+      {step === 0 && <Consent />}
     </KeyboardStickyView>
   </View>;
 
@@ -334,6 +336,14 @@ function PlanLine({ prop, label, value, last }: { prop: PropName; label: string;
     <Txt size={13} color="#777B6E" style={{ flex: 1 }}>{label}</Txt>
     <Txt size={14} weight="bold" color={palette.ink} lines={1} style={{ maxWidth: '55%' }}>{value}</Txt>
   </View>;
+}
+
+/** Tapping “Meet Goomi” is the moment every user, with or without an account, accepts the terms. */
+function Consent() {
+  const link = (page: 'terms' | 'privacy', text: string) => <Text accessibilityRole="link" onPress={() => void openLegal(page)} style={{ color: palette.ink, textDecorationLine: 'underline' }}>{text}</Text>;
+  return <Txt size={11} color="#8A8E80" style={{ textAlign: 'center', lineHeight: 16, paddingHorizontal: 8 }}>
+    By continuing you confirm you’re 13 or older and agree to the {link('terms', 'Terms of Use')}. See the {link('privacy', 'Privacy Policy')}.
+  </Txt>;
 }
 
 const styles = StyleSheet.create({

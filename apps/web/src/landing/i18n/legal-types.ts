@@ -12,14 +12,27 @@ export type LegalDoc = {
   eyebrow: string;
   title: string;
   lead: string;
+  /** A highlighted paragraph above the sections, for what a reader must not miss. */
+  notice?: string;
   pose: Pose;
   metaTitle: string;
   metaDescription: string;
   sections: LegalSection[];
 };
 
-export type LegalCopy = {
-  privacy: LegalDoc;
-  terms: LegalDoc;
-  support: LegalDoc & { contactTitle: string; contactBody: string; contactCta: string };
+/** The legal pages published in every language. */
+export type LegalDocKey = "privacy" | "terms" | "deleteAccount";
+
+export type LegalUi = {
+  /** BCP 47 tag, used for the page's `lang` and its date format. */
+  lang: string;
+  languageName: string;
+  updated: string;
+  onThisPage: string;
+  contact: string;
+  otherLanguages: string;
 };
+
+export type LegalCopy = Record<LegalDocKey, LegalDoc> & { ui: LegalUi };
+
+export type SupportCopy = LegalDoc & { contactTitle: string; contactBody: string; contactCta: string };

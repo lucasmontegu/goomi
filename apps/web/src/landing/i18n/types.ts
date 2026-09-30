@@ -122,5 +122,4 @@ export type LandingCopy = {
     rights: string;
     apple: string;
   };
-  legal: { updated: string; onThisPage: string; contact: string };
 };

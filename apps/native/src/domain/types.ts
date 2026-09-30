@@ -78,6 +78,8 @@ export type StudyMaterial = {
   concepts: { id: string; term: string; definition: string; paragraph: number }[];
   challenges: Challenge[];
   message: string;
+  /** Set when the notes were a word list; concepts are words and `paragraph` is the line number. */
+  vocabulary?: { language: "Chinese" | "English" | "Portuguese" };
 };
 export type LearningState = {
   version: 1;

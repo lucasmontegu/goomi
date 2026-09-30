@@ -1,6 +1,6 @@
 import { MODE_CONFIG, SLEEP_CHALLENGE, STARTER_CHALLENGES, TOPICS, WORK_CHALLENGE } from "./content";
 import { isPlayableOffline } from "./bank";
-import type { Answer, AnswerResult, Challenge, ConceptMemory, LearningState, Mode, Profile, Progress, TopicId } from "./types";
+import type { Answer, AnswerResult, Challenge, ConceptMemory, Difficulty, LearningState, Mode, Profile, Progress, TopicId } from "./types";
 
 export const DAY_MS = 86_400_000;
 export const createInitialLearningState = (): LearningState => ({ version: 1, memories: {}, history: [], materials: [], savedTopicIds: [] });
@@ -142,6 +142,24 @@ export type SelectionOptions = {
 };
 
 /** Finite queue, due concepts first, then personal interests with a little format variety. */
+const RUNGS: readonly Difficulty[] = ["gentle", "curious", "deep"];
+
+/**
+ * The rung a concept is ready for. A new concept starts at the learner's level (never "deep" cold);
+ * each due review answered right climbs one rung, and a miss drops it back to "gentle".
+ */
+export function targetDifficulty(memory: ConceptMemory | undefined, level: Difficulty): Difficulty {
+  if (!memory) return level === "deep" ? "curious" : level;
+  return RUNGS[Math.min(RUNGS.length - 1, memory.consecutiveCorrect)]!;
+}
+
+/** Earned rungs outweigh the self-assessed level; one rung off still beats two. */
+function difficultyFit(challenge: Challenge, memory: ConceptMemory | undefined, level: Difficulty): number {
+  const distance = Math.abs(RUNGS.indexOf(challenge.difficulty) - RUNGS.indexOf(targetDifficulty(memory, level)));
+  if (!memory) return distance === 0 ? 10 : 0;
+  return distance === 0 ? 40 : distance === 1 ? 15 : 0;
+}
+
 export function selectChallenges(state: LearningState, profile: Profile, options: SelectionOptions = {}): Challenge[] {
   const now = options.now ?? Date.now();
   const mode = options.mode ?? profile.defaultMode;
@@ -166,7 +184,7 @@ export function selectChallenges(state: LearningState, profile: Profile, options
     return (due ? 1000 + Math.min(100, (now - memory.dueAt) / DAY_MS) + (1 - memory.correct / memory.attempts) * 100 : 0)
       + (profile.interests.includes(challenge.topicId) ? 30 : 0)
       + (challenge.country === profile.country ? 15 : 0)
-      + (challenge.difficulty === profile.level ? 10 : 0)
+      + difficultyFit(challenge, memory, profile.level)
       + (challenge.relatedConceptIds?.some((id) => state.memories[id]) ? 8 : 0)
       + (hashString(`${seed}:${challenge.id}`) % 1000) / 1000;
   };

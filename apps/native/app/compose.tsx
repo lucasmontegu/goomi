@@ -6,9 +6,10 @@ import * as ImagePicker from 'expo-image-picker';
 import { KeyboardAwareScrollView, KeyboardStickyView } from 'react-native-keyboard-controller';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { studyExtraction } from '@/modules/goomi-study';
-import { STUDY_PHASES, extractStudyMaterial, studyPhase, type StudyMaterial } from '@/src/domain';
+import { MAX_VOCAB_ENTRIES, STUDY_PHASES, extractStudyMaterial, studyPhase, type StudyMaterial } from '@/src/domain';
 import { useGoomi } from '@/src/state/store';
 import { trackEvent } from '@/src/services/analytics';
+import { openLegal } from '@/src/services/legal';
 import { ApiRequestError, aiStudyConfigured, useMaterialStatus, useUploadMaterial, type ApiError, type ApiErrorKind } from '@/src/services/content-sync';
 import { Icon, Reveal, Txt, Title } from '@/src/ui/core';
 import { Beads, Bubble, Notice, Pop, Surface } from '@/src/ui/kit';
@@ -60,6 +61,7 @@ export default function Compose() {
   const params = useLocalSearchParams<{ source?: string; materialId?: string }>();
   const addMaterial = useGoomi((state) => state.addMaterial);
   const removeMaterial = useGoomi((state) => state.removeMaterial);
+  const learningLanguages = useGoomi((state) => state.profile.learningLanguages);
   // Opened from a saved material ("Add text"): start in the editor with its text.
   const existing = useGoomi((state) => (params.materialId ? state.learning.materials.find((material) => material.id === params.materialId) : undefined));
 
@@ -84,9 +86,10 @@ export default function Compose() {
   const show = useCallback((next: Phase) => { if (mounted.current) setPhase(next); }, []);
 
   async function finish(title: string, text: string, kind: MaterialKind, notes: string[]) {
-    show({ name: 'processing', step: 1, detail: 'Lines like “X is …”' });
+    show({ name: 'processing', step: 1, detail: 'Definitions and word lists' });
     await nextFrame();
-    const material: StudyMaterial = { ...extractStudyMaterial(title, text), kind };
+    const languageHint = learningLanguages.find((language) => language === 'English' || language === 'Portuguese');
+    const material: StudyMaterial = { ...extractStudyMaterial(title, text, { languageHint }), kind };
     show({ name: 'processing', step: 2, detail: plural(material.concepts.length, 'prompt') });
     await nextFrame();
     addMaterial(material);
@@ -96,7 +99,9 @@ export default function Compose() {
     trackEvent('study_material_added', { format: kind });
     trackEvent('study_processing_completed', { conceptCount: material.concepts.length });
     if (text.length > MAX_TEXT) notes.push(`Goomi used the first ${MAX_TEXT.toLocaleString()} characters. Split longer notes to include the rest.`);
-    if (material.concepts.length === 24) notes.push('Goomi keeps up to 24 prompts per material. Add the rest as a second one.');
+    if (material.vocabulary ? material.concepts.length === MAX_VOCAB_ENTRIES : material.concepts.length === 24) notes.push(material.vocabulary
+      ? `Goomi keeps up to ${MAX_VOCAB_ENTRIES} words per list. Add the rest as a second one.`
+      : 'Goomi keeps up to 24 prompts per material. Add the rest as a second one.');
     show(material.status === 'ready' ? { name: 'ready', material, notes } : { name: 'no-concepts', material, notes });
   }
 
@@ -563,9 +568,10 @@ function ChooseState({ theme: t, pending, onAI, onLocal }: { theme: Theme; pendi
           ? `The text Goomi read, plus images of ${plural(low, 'page')} it couldn’t read, is sent to Goomi’s server.`
           : 'The text of your notes is sent to Goomi’s server.'} />
         <ConsentLine theme={t} icon="shield-checkmark-outline" text="AI models from Alibaba Cloud (Qwen) and Google (Gemini) process it through Vercel AI Gateway, only on providers that don’t keep it or train on it." />
+        <ConsentLine theme={t} icon="globe-outline" text="Goomi’s server and these providers are outside your country, mostly in the United States." />
         <ConsentLine theme={t} icon="trash-outline" text="Goomi keeps the text so questions can show “your notes say…”. Remove the material and it’s deleted from the server too." />
       </View>
-      <Pressable accessibilityRole="link" hitSlop={8} onPress={() => router.push({ pathname: '/legal', params: { doc: 'privacy' } } as Href)}>
+      <Pressable accessibilityRole="link" hitSlop={8} onPress={() => void openLegal('privacy')}>
         <Txt size={12} weight="semibold" color={t.muted}>How AI study handles your notes ›</Txt>
       </Pressable>
       <PillButton theme={t} title="Agree and prepare with AI" icon="sparkles-outline" onPress={onAI} />
@@ -584,7 +590,7 @@ function ChooseState({ theme: t, pending, onAI, onLocal }: { theme: Theme; pendi
   </View>;
 }
 
-function ConsentLine({ theme: t, icon, text }: { theme: Theme; icon: 'cloud-upload-outline' | 'shield-checkmark-outline' | 'trash-outline'; text: string }) {
+function ConsentLine({ theme: t, icon, text }: { theme: Theme; icon: 'cloud-upload-outline' | 'shield-checkmark-outline' | 'globe-outline' | 'trash-outline'; text: string }) {
   return <View style={{ flexDirection: 'row', gap: 10, alignItems: 'flex-start' }}>
     <Icon name={icon} size={17} color={t.muted} />
     <Txt size={13} color={t.text} style={{ flex: 1 }}>{text}</Txt>

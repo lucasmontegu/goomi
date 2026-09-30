@@ -1,16 +1,27 @@
 import { hashString } from "./engine";
 import type { Challenge, StudyMaterial } from "./types";
+import { parseVocabulary, vocabularyChallenges } from "./vocabulary";
+
+export type ExtractOptions = { now?: number; /** Language a Latin-script word list is in (English or Portuguese). */ languageHint?: string };
 
 /** Local, source-preserving extraction. This does not summarize, verify claims or call an AI. */
-export function extractStudyMaterial(title: string, text: string, now = Date.now()): StudyMaterial {
+export function extractStudyMaterial(title: string, text: string, { now = Date.now(), languageHint }: ExtractOptions = {}): StudyMaterial {
   const cleanText = text.replace(/\r\n?/g, "\n").trim().slice(0, 100_000);
   const cleanTitle = title.trim().slice(0, 120) || "Untitled notes";
   const materialId = `notes-${hashString(`${cleanTitle}:${cleanText}`).toString(36)}`;
   const material: StudyMaterial = {
     id: materialId, title: cleanTitle, kind: "text", createdAt: now, text: cleanText,
     status: "no-concepts", processingMethod: "local-extractive", concepts: [], challenges: [],
-    message: "Try a definition like “Photosynthesis is the process plants use to turn light into chemical energy.” Your wording stays intact.",
+    message: "Try a definition like “Photosynthesis is the process plants use to turn light into chemical energy.” or a word list like “你好 (nǐ hǎo) – hello”. Your wording stays intact.",
   };
+  const vocabulary = parseVocabulary(cleanText, languageHint);
+  if (vocabulary) {
+    const { concepts, challenges } = vocabularyChallenges(vocabulary, { id: materialId, title: cleanTitle });
+    return {
+      ...material, status: "ready", concepts, challenges, vocabulary: { language: vocabulary.language },
+      message: `${concepts.length} ${vocabulary.language} ${concepts.length === 1 ? "word" : "words"} from your list, each practised from easy to harder. Processed on this device.`,
+    };
+  }
   const seen = new Set<string>();
   const paragraphs = cleanText.split(/\n+/).filter((paragraph) => paragraph.trim());
   for (let paragraph = 0; paragraph < paragraphs.length && material.concepts.length < 24; paragraph++) {

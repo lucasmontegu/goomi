@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Alert, Linking, ScrollView, StyleSheet, View } from 'react-native';
-import { Redirect, router, useFocusEffect, useLocalSearchParams, type Href } from 'expo-router';
+import { router, useFocusEffect, type Href } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import Constants from 'expo-constants';
 import * as Notifications from 'expo-notifications';
@@ -12,6 +12,7 @@ import { applyBillingStatus, useRuntime } from '@/src/state/runtime';
 import { analyticsConfigured, setAnalyticsConsent as applyAnalyticsConsent, trackEvent } from '@/src/services/analytics';
 import { billingAvailability, getBillingStatus, restoreBillingPurchases, type BillingStatus } from '@/src/services/billing';
 import { deleteAccount, signOut } from '@/src/services/auth';
+import { openLegal } from '@/src/services/legal';
 import { CircleButton, Txt, Title } from '@/src/ui/core';
 import { Beads, ListGroup, ListRow, Notice, modeMeta } from '@/src/ui/kit';
 import { Mascot } from '@/src/ui/mascot';
@@ -53,10 +54,6 @@ function notificationsAllowed(status: Notifications.NotificationPermissionsStatu
 }
 
 export default function Settings() {
-  const { section } = useLocalSearchParams<{ section?: string }>();
-  if (section === 'privacy' || section === 'terms') {
-    return <Redirect href={`/legal?doc=${section}` as Href} />;
-  }
   return <SettingsScreen />;
 }
 
@@ -378,7 +375,7 @@ function SettingsScreen() {
             : 'Analytics isn’t configured in this build, so nothing is sent either way.'}
           trailing={<Toggle theme={t} label="Share anonymous usage analytics" value={analyticsConsent} onValueChange={setAnalytics} />}
         />
-        <ListRow theme={t} icon="shield-checkmark-outline" title="Privacy" detail="What stays on this phone, and what doesn’t" onPress={() => router.push('/legal?doc=privacy' as Href)} last />
+        <ListRow theme={t} icon="shield-checkmark-outline" title="Privacy policy" detail="What stays on this phone, and what doesn’t" onPress={() => void openLegal('privacy')} last />
       </ListGroup>
 
       <View style={{ gap: 10 }}>
@@ -450,7 +447,7 @@ function SettingsScreen() {
 
       <ListGroup theme={t} title="Help">
         <ListRow theme={t} icon="help-buoy-outline" title="Help & support" detail="How moments, unlocks and purchases work" onPress={() => router.push('/legal?doc=help' as Href)} />
-        <ListRow theme={t} icon="document-text-outline" title="Terms" onPress={() => router.push('/legal?doc=terms' as Href)} last />
+        <ListRow theme={t} icon="document-text-outline" title="Terms of use" onPress={() => void openLegal('terms')} last />
       </ListGroup>
 
       <ListGroup theme={t} title="Danger zone">

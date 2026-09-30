@@ -25,4 +25,18 @@ export const PLUS = {
 export const APPLE_EULA = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
 export const APPLE_SUBSCRIPTIONS = "https://apps.apple.com/account/subscriptions";
 
-export const LEGAL_UPDATED = "2026-09-26";
+/**
+ * Who stands behind Goomi in the legal pages. Goomi is run by an individual for now; when it moves to a
+ * company, change these (the terms already allow that transfer) and bump LEGAL_UPDATED.
+ * `venue` is the default court for disputes not covered by a consumer's local rules; confirm it matches
+ * the owner's registered domicile.
+ */
+export const OWNER = {
+  name: "Lucas Montegu",
+  country: "Argentina",
+  venue: "Ciudad Autónoma de Buenos Aires",
+} as const;
+
+export const APPLE_REFUNDS = "https://reportaproblem.apple.com";
+
+export const LEGAL_UPDATED = "2026-09-27";

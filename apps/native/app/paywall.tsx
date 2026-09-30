@@ -11,6 +11,7 @@ import { useGoomi } from '../src/state/store';
 import { applyBillingStatus } from '../src/state/runtime';
 import { loadBillingPlans, purchasePlan, restoreBillingPurchases, type BillingPlan, type BillingStatus } from '../src/services/billing';
 import { trackEvent } from '../src/services/analytics';
+import { openLegal } from '../src/services/legal';
 import screenTime from '../modules/goomi-screen-time';
 
 const muted = '#B7B9B0';
@@ -132,7 +133,7 @@ export default function Paywall() {
     ? Math.round((1 - annual.package.product.price / (monthly.package.product.price * 12)) * 100) : null;
   const savings = rawSavings !== null && rawSavings >= 5 ? rawSavings : null;
   const priceDisclosure = plan
-    ? `${hasTrial ? `${plan.trial.durationLabel} free, then ` : ''}${plan.priceString} every ${periodLabel(plan.renewalPeriod)}. Renews automatically. Cancel in your store settings.`
+    ? `${hasTrial ? `${plan.trial.durationLabel} free, then ` : ''}${plan.priceString} every ${periodLabel(plan.renewalPeriod)}. Renews automatically. Cancel in your store settings. By subscribing, you agree to the Terms of Use.`
     : 'Choose your plan when the store is ready. No payment has been made.';
 
   return <View style={s.screen}>
@@ -194,9 +195,9 @@ export default function Paywall() {
       <Txt size={10} color={muted} style={s.disclosure}>{priceDisclosure}</Txt>
       <Button title={operation === 'purchase' ? 'Connecting to the store…' : hasTrial ? 'Start free trial' : plan ? 'Continue with Plus' : 'Plans will be here soon'} disabled={!plan || !!operation || loading} onPress={() => void purchase()} />
       <View style={s.legal}>
-        <Tactile onPress={() => router.push('/settings?section=terms' as Href)} style={s.legalLink}><Txt size={10} color={muted}>Terms</Txt></Tactile>
+        <Tactile onPress={() => void openLegal('terms')} style={s.legalLink}><Txt size={10} color={muted}>Terms of Use</Txt></Tactile>
         <Txt size={10} color="#52554C">·</Txt>
-        <Tactile onPress={() => router.push('/settings?section=privacy' as Href)} style={s.legalLink}><Txt size={10} color={muted}>Privacy</Txt></Tactile>
+        <Tactile onPress={() => void openLegal('privacy')} style={s.legalLink}><Txt size={10} color={muted}>Privacy Policy</Txt></Tactile>
         <Txt size={10} color="#52554C">·</Txt>
         <Tactile disabled={!!operation} onPress={() => void restore()} style={s.legalLink}><Txt size={10} color={muted}>Restore purchases</Txt></Tactile>
       </View>

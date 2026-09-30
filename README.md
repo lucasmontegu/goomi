@@ -103,6 +103,8 @@ Run standalone Node/Bun tools that use Varlock from the owning app directory so 
 - Dry-run check (no upload): bun run deploy:check
 - Preview deploy: bun run deploy
 - Production deploy: bun run deploy:prod
+- The Vercel project's Root Directory must be the repo root: `vercel.json` declares both services from there.
+- Domains: `goomi.app` serves the web (landing), `www.goomi.app` redirects to it, and every request to `api.goomi.app` goes to the server unchanged (`/v1/*`, `/api/auth/*`). The native app uses `EXPO_PUBLIC_SERVER_URL=https://api.goomi.app` (set in the EAS `preview` and `production` environments).
 - Web requests under `/api/*` route to the server service and are rewritten before reaching the backend.
   Vercel Services share project environment variables, but deploys do not upload local `.env` files automatically. Link the project with `vercel link`, then run the env sync command before your first deploy (otherwise the deployment starts with no env vars), or pass one-off envs with `vercel deploy -e KEY=value`.
   Pass Vercel CLI flags to the env sync command directly, for example: `bun run env:production --scope your-team`.

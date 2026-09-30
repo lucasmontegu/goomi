@@ -12,6 +12,7 @@ import { Mascot } from '@/src/ui/mascot';
 import { plural } from '@/src/ui/copy';
 import { fonts, radius } from '@/src/ui/theme';
 import { useTheme } from '@/src/ui/use-theme';
+import { openLegal } from '@/src/services/legal';
 
 const DAY_MS = 86_400_000;
 
@@ -100,7 +101,7 @@ export default function Profile() {
         <ListRow theme={t} icon="notifications-outline" title="Reminders" value={settings.reminders ? 'On' : 'Off'} onPress={() => router.push('/settings' as Href)} />
         <ListRow theme={t} icon="contrast-outline" title="Appearance" value={settings.appearance === 'system' ? 'System' : settings.appearance === 'dark' ? 'Dark' : 'Light'} onPress={() => router.push('/settings' as Href)} />
         <ListRow theme={t} icon="help-buoy-outline" title="Help & support" onPress={() => router.push('/legal?doc=help' as Href)} />
-        <ListRow theme={t} icon="shield-checkmark-outline" title="Privacy" onPress={() => router.push('/legal?doc=privacy' as Href)} last />
+        <ListRow theme={t} icon="shield-checkmark-outline" title="Privacy policy" onPress={() => void openLegal('privacy')} last />
       </ListGroup>
 
       <Txt weight="display" size={15} color={t.faint} style={{ textAlign: 'center' }}>Small moments. A sharper you.</Txt>

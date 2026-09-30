@@ -327,9 +327,4 @@ export const en: LandingCopy = {
     rights: "Goomi. All rights reserved.",
     apple: "Apple, iPhone and App Store are trademarks of Apple Inc.",
   },
-  legal: {
-    updated: "Last updated",
-    onThisPage: "On this page",
-    contact: "Questions? Write to",
-  },
 };

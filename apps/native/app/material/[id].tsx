@@ -154,13 +154,13 @@ export default function Material() {
         <View style={{ flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 14 }}>
           <View style={{ gap: 2 }}>
             <Txt size={18} weight="semibold" color={t.text} style={{ letterSpacing: -0.4 }}>Study path</Txt>
-            <Txt size={12} color={t.muted}>In the order they appear in your notes</Txt>
+            <Txt size={12} color={t.muted}>{material.vocabulary ? 'Each word climbs from recognising it to typing it' : 'In the order they appear in your notes'}</Txt>
           </View>
           <Legend theme={t} />
         </View>
         <View>
           {concepts.map((concept, i) => <PathNode
-            key={concept.id} theme={t} concept={concept} index={i} state={states[i]!}
+            key={concept.id} theme={t} concept={concept} index={i} state={states[i]!} unit={material.vocabulary ? 'Line' : 'Paragraph'}
             current={i === current && states[i] !== 'learned'}
             first={i === 0} last={i === concepts.length - 1}
             linkedAbove={i > 0 && states[i - 1] === 'learned' && states[i] === 'learned'}
@@ -194,8 +194,8 @@ function Legend({ theme: t }: { theme: Theme }) {
 }
 
 /** One stop on the path: a node on a continuous spine, the concept beside it. Only "you are here" gets a surface. */
-function PathNode({ theme: t, concept, index, state, current, first, last, linkedAbove, linkedBelow }: {
-  theme: Theme; concept: StudyConcept; index: number; state: NodeState; current: boolean; first: boolean; last: boolean; linkedAbove: boolean; linkedBelow: boolean;
+function PathNode({ theme: t, concept, index, state, unit, current, first, last, linkedAbove, linkedBelow }: {
+  theme: Theme; concept: StudyConcept; index: number; state: NodeState; unit: 'Line' | 'Paragraph'; current: boolean; first: boolean; last: boolean; linkedAbove: boolean; linkedBelow: boolean;
 }) {
   const node = state === 'learned'
     ? { backgroundColor: palette.lime, borderColor: palette.lime }
@@ -220,7 +220,7 @@ function PathNode({ theme: t, concept, index, state, current, first, last, linke
       <Txt size={13} color={t.muted} lines={current ? 4 : 2}>{concept.definition}</Txt>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2 }}>
         <Icon name="document-text-outline" size={12} color={t.faint} />
-        <Txt size={11} color={t.faint} style={{ fontVariant: ['tabular-nums'] }}>Paragraph {concept.paragraph}</Txt>
+        <Txt size={11} color={t.faint} style={{ fontVariant: ['tabular-nums'] }}>{unit} {concept.paragraph}</Txt>
       </View>
     </View>
     {current && <View style={styles.here} pointerEvents="none"><Mascot pose="read" size={58} motion="still" shadow={false} /></View>}

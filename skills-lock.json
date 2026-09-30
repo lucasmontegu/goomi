@@ -255,6 +255,12 @@
       "skillPath": "skills/hono/SKILL.md",
       "computedHash": "e3f141a41800df815000216a53510fe6f888629471c214706cc05adff27297fb"
     },
+    "humanizer-zh": {
+      "source": "op7418/humanizer-zh",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "9813f49a01497e18c091593b44f98a26a5a6e278c1c3c73eaee76b5b701bc4d7"
+    },
     "neon-postgres": {
       "source": "neondatabase/agent-skills",
       "sourceType": "github",
