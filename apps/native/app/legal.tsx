@@ -1,8 +1,8 @@
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { Linking, ScrollView, StyleSheet, View } from 'react-native';
 import { router, type Href } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { openLegal, type LegalPage } from '@/src/services/legal';
+import { openLegal, SUPPORT_EMAIL, type LegalPage } from '@/src/services/legal';
 import { CircleButton, Icon, Reveal, Tactile, Txt, Title } from '@/src/ui/core';
 import { Doodle, Surface } from '@/src/ui/kit';
 import { Mascot, type Pose } from '@/src/ui/mascot';
@@ -66,6 +66,11 @@ const HELP: Document = {
     {
       heading: 'Reminders not showing up?',
       body: ['The daily reminder needs notifications allowed for Goomi in iOS Settings. Turn the reminder off and on again in Goomi’s Settings to reschedule it.'],
+    },
+    {
+      heading: 'Still stuck?',
+      body: [`Write to ${SUPPORT_EMAIL} and we’ll get back to you. For account or purchase questions, send it from the email you use in Goomi.`],
+      action: { label: 'Email support', href: `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent('Goomi help')}` },
     },
   ],
 };
@@ -139,7 +144,12 @@ function SectionBlock({ section, theme: t }: { section: Section; theme: Theme })
     </View>}
     {section.action && <Tactile
       label={section.action.label}
-      onPress={() => router.navigate(section.action!.href as Href)}
+      onPress={() => {
+        const { href } = section.action!;
+        // mailto: opens Mail; the address is in the body, selectable, in case no mail app is set up.
+        if (href.startsWith('mailto:')) void Linking.openURL(href).catch(() => {});
+        else router.navigate(href as Href);
+      }}
       style={[styles.link, { backgroundColor: t.soft }]}
     >
       <Txt size={14} weight="semibold" color={t.text} style={{ flex: 1 }}>{section.action.label}</Txt>

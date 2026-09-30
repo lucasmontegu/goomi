@@ -11,6 +11,7 @@
 | Subscription group | `Goomi Plus` (`22414038`): monthly `6816274303`, annual `6816274475` (7-day free trial, 174 territories) |
 | TestFlight group | `Internal` (`a4f512a2-b2cd-4d42-9953-43ccf8c398fc`) |
 | App Group | `group.com.lumlabs.goomi.screentime` (`72X2KX3KFF`) |
+| Support email | `support@goomi.app`: a Google Workspace group, so it outlives any one inbox. Web: `apps/web/src/landing/config.ts`; app: `apps/native/src/services/legal.ts` |
 | EAS project | `@lumlabs/goomi` (`dbb1cf0e-c9d4-42ed-bcaf-36d737b85c60`) |
 | App Store Connect API key | `asc` profile `goomi` (key `9KU4FMD8CM`, file in `~/.appstoreconnect/private_keys/`) |
 | RevenueCat | project `Goomi`, App Store app `Goomi (App Store)`, entitlement `goomi_pro` |

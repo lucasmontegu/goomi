@@ -10,6 +10,9 @@ export type LegalPage = 'privacy' | 'terms' | 'delete-account';
 
 const SITE_URL = 'https://goomi.app';
 
+/** Same address the site's legal pages list (apps/web/src/landing/config.ts). */
+export const SUPPORT_EMAIL = 'support@goomi.app';
+
 function languagePrefix(): string {
   let language = '';
   try { language = Intl.DateTimeFormat().resolvedOptions().locale.slice(0, 2).toLowerCase(); } catch { /* no Intl */ }
