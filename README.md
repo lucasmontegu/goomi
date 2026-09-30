@@ -92,22 +92,19 @@ Run standalone Node/Bun tools that use Varlock from the owning app directory so 
 
 ## Deployment
 
-### Vercel Services
+### Vercel (two projects)
 
-- Target: web + server
-- Config: `vercel.json`
-- Link the project first: bun run deploy:setup
-- Local Vercel dev: bun run dev:vercel
-- Sync preview env: bun run env:preview
-- Sync production env: bun run env:production
-- Dry-run check (no upload): bun run deploy:check
-- Preview deploy: bun run deploy
-- Production deploy: bun run deploy:prod
-- The Vercel project's Root Directory must be the repo root: `vercel.json` declares both services from there.
-- Domains: `goomi.app` serves the web (landing), `www.goomi.app` redirects to it, and every request to `api.goomi.app` goes to the server unchanged (`/v1/*`, `/api/auth/*`). The native app uses `EXPO_PUBLIC_SERVER_URL=https://api.goomi.app` (set in the EAS `preview` and `production` environments).
-- Web requests under `/api/*` route to the server service and are rewritten before reaching the backend.
-  Vercel Services share project environment variables, but deploys do not upload local `.env` files automatically. Link the project with `vercel link`, then run the env sync command before your first deploy (otherwise the deployment starts with no env vars), or pass one-off envs with `vercel deploy -e KEY=value`.
-  Pass Vercel CLI flags to the env sync command directly, for example: `bun run env:production --scope your-team`.
+Both projects deploy from GitHub on every push; production follows `main`.
+
+| Project | Root directory | Domains | Config |
+| --- | --- | --- | --- |
+| `goomi` (web) | `apps/web` | `goomi.app`, `www.goomi.app` | `apps/web/vercel.json` |
+| `goomi-server` (API) | `apps/server` | `api.goomi.app` | `apps/server/vercel.json` (also the crons) |
+
+- The web talks to the API at `https://api.goomi.app` (set in the web build command). The native app uses the same URL through `EXPO_PUBLIC_SERVER_URL`.
+- The server serves `/api/auth/*` for Better Auth and everything else at the root (`/bank`, `/cron/jobs`, …).
+- Environment variables live in each Vercel project; local `.env` files are never uploaded (`.vercelignore`). The server needs at least `DATABASE_URL`, `BETTER_AUTH_SECRET`, `CORS_ORIGIN=https://goomi.app` and `CRON_SECRET`, plus the optional provider keys in `apps/server/.env.schema`. `BETTER_AUTH_URL` is derived from the production domain.
+- Manual deploys: `bunx vercel deploy --cwd apps/web` or `--cwd apps/server` after `vercel link` in that directory.
 
 For more details, see the guide on [Deploying to Vercel](https://www.better-t-stack.dev/docs/guides/vercel).
 
@@ -137,13 +134,6 @@ goomi/
 - `bun run db:generate`: Generate database client/types
 - `bun run db:migrate`: Run database migrations
 - `bun run db:studio`: Open database studio UI
-- `bun run deploy:setup`: Link this repo to a Vercel project (first-time setup)
-- `bun run dev:vercel`: Run the Vercel Services dev environment locally
-- `bun run env:preview`: Sync local env files to the Vercel preview environment
-- `bun run env:production`: Sync local env files to the Vercel production environment
-- `bun run deploy`: Create a Vercel preview deployment
-- `bun run deploy:prod`: Deploy to Vercel production
-- `bun run deploy:check`: Dry-run a deploy to preview framework detection and included files without uploading
 
 ## Better Auth Schema Generation
 

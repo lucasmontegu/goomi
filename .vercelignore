@@ -6,6 +6,9 @@
 **/.env
 **/.env.*
 !**/.env.example
+# varlock's schemas hold no values, and the postinstall codegen needs them.
+!.env.schema
+!**/.env.schema
 local.db
 local.db-*
 .alchemy/
