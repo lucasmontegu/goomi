@@ -16,9 +16,10 @@ public class GoomiScreenTimeModule: Module {
   public func definition() -> ModuleDefinition {
     Name("GoomiScreenTime")
 
-    AsyncFunction("getStatus") { () -> [String: Any] in
-      self.status()
-    }.runOnQueue(.main)
+    AsyncFunction("getStatus") { () async -> [String: Any] in
+      await self.settleAuthorization()
+      return await MainActor.run { self.status() }
+    }
 
     AsyncFunction("requestAuthorization") { () async throws -> [String: Any] in
       try self.requirePhysicalDevice()
@@ -130,6 +131,23 @@ public class GoomiScreenTimeModule: Module {
       throw ScreenTimeError(message: "Choose at least one app, category, or website first.")
     }
   }
+  /// On a cold launch (e.g. opened from the shield) `authorizationStatus` reads `.notDetermined`
+  /// until FamilyControls loads the real value. Wait briefly for it when Goomi was authorized before,
+  /// so a transient read is never mistaken for the user turning Screen Time off.
+  @MainActor
+  private func settleAuthorization() async {
+    #if !targetEnvironment(simulator)
+    let center = AuthorizationCenter.shared
+    let defaults = GoomiScreenTimeShared.defaults
+    guard center.authorizationStatus == .notDetermined,
+          defaults.bool(forKey: "authorizedOnce") || defaults.data(forKey: "selection") != nil else { return }
+    for _ in 0..<20 where center.authorizationStatus == .notDetermined {
+      try? await Task.sleep(nanoseconds: 100_000_000)
+    }
+    #endif
+  }
+  /// Read-only apart from self-healing: `enabled` is the user's intent and survives a missing
+  /// authorization, so shields come back on their own once Screen Time access is approved again.
   private func status() -> [String: Any] {
     #if targetEnvironment(simulator)
     return ["supported": false, "authorization": "unavailable", "applicationCount": 0,
@@ -144,13 +162,15 @@ public class GoomiScreenTimeModule: Module {
     case .notDetermined: authorization = "notDetermined"
     @unknown default: authorization = "unavailable"
     }
-    if authorization != "approved" {
-      GoomiScreenTimeShared.defaults.set(false, forKey: "enabled")
-      GoomiScreenTimeShared.stopSession()
-      GoomiScreenTimeShared.clearShield()
-    } else if let expiry = GoomiScreenTimeShared.expiry, expiry <= Date() {
-      GoomiScreenTimeShared.stopSession()
-      GoomiScreenTimeShared.applyShield()
+    if authorization == "approved" {
+      GoomiScreenTimeShared.defaults.set(true, forKey: "authorizedOnce")
+      if let expiry = GoomiScreenTimeShared.expiry, expiry <= Date() {
+        GoomiScreenTimeShared.stopSession()
+        GoomiScreenTimeShared.applyShield()
+      } else if GoomiScreenTimeShared.enabled, GoomiScreenTimeShared.activity == nil,
+                !GoomiScreenTimeShared.defaults.bool(forKey: "shielded") {
+        GoomiScreenTimeShared.applyShield() // Enabled with no unlock running must mean shielded.
+      }
     }
     let s = GoomiScreenTimeShared.selection
     var canOpen = false

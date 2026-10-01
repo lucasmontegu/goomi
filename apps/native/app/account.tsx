@@ -21,14 +21,15 @@ type Phase =
   | { kind: 'error'; provider: AuthProvider; message: string };
 
 /**
- * Optional account step: after onboarding ("Your Goomi is ready") and from Profile/Settings.
- * Never required — purchases work without an account (App Store Review Guideline 5.1.1).
+ * Account step: required at the end of onboarding and before a purchase (so the RevenueCat customer
+ * is always the Goomi user), optional from Profile/Settings. Skipping is only offered when no sign-in
+ * provider works on this device, so nobody gets stuck.
  * Copy only promises what exists: the account holds the Goomi profile and the Plus subscription
  * (RevenueCat is linked to it). Learning progress is not synced across devices.
  */
 export default function AccountScreen() {
   const params = useLocalSearchParams<{ source?: string }>();
-  const source: 'onboarding' | 'profile' = params.source === 'profile' ? 'profile' : 'onboarding';
+  const source: 'onboarding' | 'profile' | 'paywall' = params.source === 'profile' || params.source === 'paywall' ? params.source : 'onboarding';
   const themed = useTheme();
   // Onboarding is always drawn on ivory; from Profile the screen follows the appearance setting.
   const t = source === 'onboarding' ? light : themed;
@@ -45,7 +46,7 @@ export default function AccountScreen() {
   }, []);
 
   function leave() {
-    if (source === 'profile') { router.back(); return; }
+    if (source !== 'onboarding') { router.back(); return; }
     router.replace({ pathname: '/paywall', params: { source: 'onboarding' } } as Href);
   }
 
@@ -65,6 +66,7 @@ export default function AccountScreen() {
   }
 
   const busy = phase.kind === 'signing-in';
+  const noProvider = apple !== null && !apple.available && !google.available;
 
   return <View style={{ flex: 1, backgroundColor: t.background }}>
     <StatusBar style={t.scheme === 'dark' ? 'light' : 'dark'} />
@@ -74,7 +76,7 @@ export default function AccountScreen() {
       contentContainerStyle={{ flexGrow: 1, paddingTop: insets.top + 8, paddingBottom: Math.max(insets.bottom, 16) + 8, paddingHorizontal: 24 }}
     >
       <View style={styles.top}>
-        {source === 'profile' && phase.kind !== 'success'
+        {source !== 'onboarding' && phase.kind !== 'success'
           ? <CircleButton icon="close" label="Close" onPress={() => { if (!busy) router.back(); }} />
           : <View style={{ height: 44 }} />}
       </View>
@@ -109,9 +111,9 @@ export default function AccountScreen() {
           <GoogleButton theme={t} disabled={busy || !google.available} onPress={() => void start('google')} />
           {!google.available && <Unavailable theme={t} text={google.reason} />}
 
-          <Tactile label="Maybe later" onPress={leave} style={styles.later}>
-            <Txt size={14} weight="semibold" color={t.muted}>Maybe later</Txt>
-          </Tactile>
+          {noProvider && <Tactile label="Continue without an account" onPress={leave} style={styles.later}>
+            <Txt size={14} weight="semibold" color={t.muted}>Continue without an account</Txt>
+          </Tactile>}
 
           <Legal theme={t} />
         </View>
@@ -129,7 +131,7 @@ function SigningIn({ theme: t, provider }: { theme: Theme; provider: AuthProvide
   </View>;
 }
 
-function Success({ theme: t, account, source, onContinue }: { theme: Theme; account: Account; source: 'onboarding' | 'profile'; onContinue: () => void }) {
+function Success({ theme: t, account, source, onContinue }: { theme: Theme; account: Account; source: 'onboarding' | 'profile' | 'paywall'; onContinue: () => void }) {
   return <View style={{ flex: 1 }}>
     <View style={styles.center}>
       <Mascot pose="celebrate" size={210} motion="bounce" />
@@ -140,7 +142,7 @@ function Success({ theme: t, account, source, onContinue }: { theme: Theme; acco
         </Txt>
       </Pop>
     </View>
-    <Button title={source === 'onboarding' ? 'Continue' : 'Done'} icon="arrow-forward" onPress={onContinue} />
+    <Button title={source === 'profile' ? 'Done' : 'Continue'} icon="arrow-forward" onPress={onContinue} />
   </View>;
 }
 

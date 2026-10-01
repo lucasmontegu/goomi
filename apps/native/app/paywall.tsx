@@ -34,6 +34,7 @@ export default function Paywall() {
   const completeOnboarding = useGoomi((state) => state.completeOnboarding);
   const setDevPreview = useGoomi((state) => state.setDevPreview);
   const onboardingComplete = useGoomi((state) => state.profile.onboardingComplete);
+  const account = useGoomi((state) => state.account);
   const [plans, setPlans] = useState<BillingPlan[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -84,6 +85,8 @@ export default function Paywall() {
 
   async function purchase() {
     if (!plan || operation) return;
+    // Plus always belongs to a Goomi account, so the RevenueCat customer is the user (never anonymous).
+    if (!account) { router.push({ pathname: '/account', params: { source: 'paywall' } } as Href); return; }
     setOperation('purchase'); setMessage(null);
     const result = await purchasePlan(plan);
     if (!active.current) return;

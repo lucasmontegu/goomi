@@ -119,7 +119,7 @@ export default function Onboarding() {
     if (step === 19) { router.push({ pathname: '/challenge', params: { onboarding: 'true' } } as Href); return; }
     if (step === LAST) {
       trackEvent('onboarding_completed', { interestCount: profile.interests.length, mode: settings.mode });
-      // Account first (optional, “Maybe later” allowed), then the paywall.
+      // Account first (required, so Plus always belongs to a user), then the paywall.
       router.push({ pathname: '/account', params: { source: 'onboarding' } } as Href);
       return;
     }
